@@ -6,13 +6,13 @@
     <id>/papers/feed.xml</id>
     <author>
         <name>Anders Claesson</name>
-        <email>akc@akc.is</email>
+        <email>anders.claesson@strath.ac.uk</email>
     </author>
     <updated>2012-01-20T00:00:00Z</updated>
     <entry>
     <title>Upper bounds for the Stanley-Wilf limit of 1324 and other layered patterns</title>
-    <link href="http://arxiv.org/abs/1111.5736" />
-    <id>http://arxiv.org/abs/1111.5736</id>
+    <link href="http://akc.is/papers" />
+    <id>http://akc.is/papers</id>
     <published>2012-01-20T00:00:00Z</published>
     <updated>2012-01-20T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="paper">
@@ -26,8 +26,8 @@
 </entry>
 <entry>
     <title>An involution on β(1,0)-trees</title>
-    <link href="http://arxiv.org/abs/1210.1608" />
-    <id>http://arxiv.org/abs/1210.1608</id>
+    <link href="http://akc.is/papers" />
+    <id>http://akc.is/papers</id>
     <published>2012-01-10T00:00:00Z</published>
     <updated>2012-01-10T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="paper">
@@ -43,8 +43,8 @@
 </entry>
 <entry>
     <title>Sorting and preimages of pattern classes</title>
-    <link href="http://arxiv.org/abs/1203.2437" />
-    <id>http://arxiv.org/abs/1203.2437</id>
+    <link href="http://akc.is/papers" />
+    <id>http://akc.is/papers</id>
     <published>2012-01-01T00:00:00Z</published>
     <updated>2012-01-01T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="paper">
@@ -58,8 +58,8 @@
 </entry>
 <entry>
     <title>An involution on bicubic maps and β(0,1)-trees</title>
-    <link href="http://arxiv.org/abs/1210.3219" />
-    <id>http://arxiv.org/abs/1210.3219</id>
+    <link href="http://akc.is/papers" />
+    <id>http://akc.is/papers</id>
     <published>2012-01-01T00:00:00Z</published>
     <updated>2012-01-01T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="paper">
@@ -73,8 +73,8 @@
 </entry>
 <entry>
     <title>n! matchings, n! posets</title>
-    <link href="http://arxiv.org/abs/1003.4728" />
-    <id>http://arxiv.org/abs/1003.4728</id>
+    <link href="http://akc.is/papers" />
+    <id>http://akc.is/papers</id>
     <published>2011-01-01T00:00:00Z</published>
     <updated>2011-01-01T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="paper">
@@ -90,8 +90,8 @@
 </entry>
 <entry>
     <title>Pattern avoidance in partial permutations</title>
-    <link href="http://www.combinatorics.org/Volume_18/Abstracts/v18i1p25.html" />
-    <id>http://www.combinatorics.org/Volume_18/Abstracts/v18i1p25.html</id>
+    <link href="http://akc.is/papers" />
+    <id>http://akc.is/papers</id>
     <published>2011-01-01T00:00:00Z</published>
     <updated>2011-01-01T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="paper">
@@ -105,8 +105,8 @@
 </entry>
 <entry>
     <title>Partition and composition matrices</title>
-    <link href="http://arxiv.org/abs/1006.1312" />
-    <id>http://arxiv.org/abs/1006.1312</id>
+    <link href="http://akc.is/papers" />
+    <id>http://akc.is/papers</id>
     <published>2011-01-01T00:00:00Z</published>
     <updated>2011-01-01T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="paper">
@@ -122,8 +122,8 @@
 </entry>
 <entry>
     <title>A direct encoding of Stoimenow's matchings as ascent sequences</title>
-    <link href="http://arxiv.org/abs/0910.1619" />
-    <id>http://arxiv.org/abs/0910.1619</id>
+    <link href="http://akc.is/papers" />
+    <id>http://akc.is/papers</id>
     <published>2011-01-01T00:00:00Z</published>
     <updated>2011-01-01T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="paper">
@@ -137,8 +137,8 @@
 </entry>
 <entry>
     <title>Mesh patterns and the expansion of permutation statistics as sums of permutation patterns</title>
-    <link href="http://www.combinatorics.org/Volume_18/Abstracts/v18i2p5.html" />
-    <id>http://www.combinatorics.org/Volume_18/Abstracts/v18i2p5.html</id>
+    <link href="http://akc.is/papers" />
+    <id>http://akc.is/papers</id>
     <published>2011-01-01T00:00:00Z</published>
     <updated>2011-01-01T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="paper">
@@ -152,8 +152,8 @@
 </entry>
 <entry>
     <title>On the inverse image of pattern classes under bubble sort</title>
-    <link href="http://arxiv.org/abs/1008.5299" />
-    <id>http://arxiv.org/abs/1008.5299</id>
+    <link href="http://akc.is/papers" />
+    <id>http://akc.is/papers</id>
     <published>2011-01-01T00:00:00Z</published>
     <updated>2011-01-01T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="paper">
