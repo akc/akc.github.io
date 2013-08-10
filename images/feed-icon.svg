@@ -6,8 +6,8 @@
   <rect id="svg_1" fill="#62bbff" y="0" x="0" ry="55" rx="55" height="256" width="256"/>
   <rect id="svg_2" fill="#62bbff" y="5" x="5" ry="50" rx="50" height="246" width="246"/>
   <rect id="svg_3" fill="#62bbff" y="10" x="10" ry="47" rx="47" height="236" width="236"/>
-  <circle id="svg_4" fill="#fef9ec" r="24" cy="189" cx="68"/>
-  <path id="svg_5" fill="#fef9ec" d="m160,213l-34,0a82,82 0 0 0 -82,-82l0,-34a116,116 0 0 1 116,116z"/>
-  <path id="svg_6" fill="#fef9ec" d="m184,213a140,140 0 0 0 -140,-140l0,-35a175,175 0 0 1 175,175l-35,0z"/>
+  <circle id="svg_4" fill="#ffffff" r="24" cy="189" cx="68"/>
+  <path id="svg_5" fill="#ffffff" d="m160,213l-34,0a82,82 0 0 0 -82,-82l0,-34a116,116 0 0 1 116,116z"/>
+  <path id="svg_6" fill="#ffffff" d="m184,213a140,140 0 0 0 -140,-140l0,-35a175,175 0 0 1 175,175l-35,0z"/>
  </g>
 </svg>
