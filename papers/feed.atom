@@ -8,8 +8,26 @@
         <name>Anders Claesson</name>
         <email>anders.claesson@strath.ac.uk</email>
     </author>
-    <updated>2012-01-20T00:00:00Z</updated>
+    <updated>2013-08-20T00:00:00Z</updated>
     <entry>
+    <title>Isomorphisms between pattern classes</title>
+    <link href="http://akc.is/papers/2013-08-20-AAC.html" />
+    <id>http://akc.is/papers/2013-08-20-AAC.html</id>
+    <published>2013-08-20T00:00:00Z</published>
+    <updated>2013-08-20T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="paper">
+  Michael Albert, M. D. Atkinson, Anders Claesson<br/>
+  <a href="http://arxiv.org/abs/1308.3262">Isomorphisms between pattern classes</a><br/>
+  
+    Preprint 
+  
+ (2013) <br/>
+  
+  
+</div>
+]]></summary>
+</entry>
+<entry>
     <title>Upper bounds for the Stanley-Wilf limit of 1324 and other layered patterns</title>
     <link href="http://akc.is/papers/2012-01-20-CJS.html" />
     <id>http://akc.is/papers/2012-01-20-CJS.html</id>
@@ -172,24 +190,6 @@
     The Electronic Journal of Combinatorics 18(2)
   
  (2011) <br/>
-  
-  
-</div>
-]]></summary>
-</entry>
-<entry>
-    <title>On the inverse image of pattern classes under bubble sort</title>
-    <link href="http://akc.is/papers/2011-01-01-AABCD.html" />
-    <id>http://akc.is/papers/2011-01-01-AABCD.html</id>
-    <published>2011-01-01T00:00:00Z</published>
-    <updated>2011-01-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
-  Michael H. Albert, M. D. Atkinson, Mathilde Bouvel, Anders Claesson, Mark Dukes<br/>
-  <a href="http://arxiv.org/abs/1008.5299">On the inverse image of pattern classes under bubble sort</a><br/>
-  
-    Journal of Combinatorics 2
-  
- (2011) 231--243<br/>
   
   
 </div>
