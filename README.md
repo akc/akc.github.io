@@ -1,4 +1,4 @@
 [akc.is](http://akc.is)
-================
+=======================
 
-Copyright (c) 2013 Anders Claesson
+Copyright &copy 2013, 2014 Anders Claesson
