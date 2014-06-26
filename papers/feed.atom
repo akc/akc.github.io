@@ -15,7 +15,7 @@
     <id>http://akc.is/papers/2014-05-13-CH.html</id>
     <published>2014-05-13T00:00:00Z</published>
     <updated>2014-05-13T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
+    <summary type="html"><![CDATA[<div class="item">
   Anders Claesson, Stuart A. Hannah<br/>
   <a href="http://arxiv.org/abs/1405.2441">Decomposing labeled interval orders as pairs of permutations</a><br/>
   
@@ -33,7 +33,7 @@
     <id>http://akc.is/papers/2013-08-20-AAC.html</id>
     <published>2013-08-20T00:00:00Z</published>
     <updated>2013-08-20T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
+    <summary type="html"><![CDATA[<div class="item">
   Michael Albert, M. D. Atkinson, Anders Claesson<br/>
   <a href="http://arxiv.org/abs/1308.3262">Isomorphisms between pattern classes</a><br/>
   
@@ -51,7 +51,7 @@
     <id>http://akc.is/papers/2013-04-01-CKS.html</id>
     <published>2013-04-01T00:00:00Z</published>
     <updated>2013-04-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
+    <summary type="html"><![CDATA[<div class="item">
   Anders Claesson, Sergey Kitaev, Einar Steingrímsson<br/>
   <a href="http://arxiv.org/abs/1210.1608">An involution on β(1,0)-trees</a><br/>
   
@@ -71,7 +71,7 @@
     <id>http://akc.is/papers/2012-01-20-CJS.html</id>
     <published>2012-01-20T00:00:00Z</published>
     <updated>2012-01-20T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
+    <summary type="html"><![CDATA[<div class="item">
   Anders Claesson, Vít Jelínek, Einar Steingrímsson<br/>
   <a href="http://arxiv.org/abs/1111.5736">Upper bounds for the Stanley-Wilf limit of 1324 and other layered patterns</a><br/>
   
@@ -91,7 +91,7 @@
     <id>http://akc.is/papers/2012-01-01-CU.html</id>
     <published>2012-01-01T00:00:00Z</published>
     <updated>2012-01-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
+    <summary type="html"><![CDATA[<div class="item">
   Anders Claesson, Henning Úlfarsson<br/>
   <a href="http://arxiv.org/abs/1203.2437">Sorting and preimages of pattern classes</a><br/>
   
@@ -109,7 +109,7 @@
     <id>http://akc.is/papers/2012-01-01-CKdeM.html</id>
     <published>2012-01-01T00:00:00Z</published>
     <updated>2012-01-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
+    <summary type="html"><![CDATA[<div class="item">
   Anders Claesson, Sergey Kitaev, Anna de Mier<br/>
   <a href="http://arxiv.org/abs/1210.3219">An involution on bicubic maps and β(0,1)-trees</a><br/>
   
@@ -127,7 +127,7 @@
     <id>http://akc.is/papers/2011-01-01-CL.html</id>
     <published>2011-01-01T00:00:00Z</published>
     <updated>2011-01-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
+    <summary type="html"><![CDATA[<div class="item">
   Anders Claesson, Svante Linusson<br/>
   <a href="http://arxiv.org/abs/1003.4728">n! matchings, n! posets</a><br/>
   
@@ -147,7 +147,7 @@
     <id>http://akc.is/papers/2011-01-01-CJJK.html</id>
     <published>2011-01-01T00:00:00Z</published>
     <updated>2011-01-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
+    <summary type="html"><![CDATA[<div class="item">
   Anders Claesson, Vít Jelínek, Eva Jelínková, Sergey Kitaev<br/>
   <a href="http://www.combinatorics.org/Volume_18/Abstracts/v18i1p25.html">Pattern avoidance in partial permutations</a><br/>
   
@@ -165,7 +165,7 @@
     <id>http://akc.is/papers/2011-01-01-CDKu.html</id>
     <published>2011-01-01T00:00:00Z</published>
     <updated>2011-01-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
+    <summary type="html"><![CDATA[<div class="item">
   Anders Claesson, Mark Dukes, Martina Kubitzke<br/>
   <a href="http://arxiv.org/abs/1006.1312">Partition and composition matrices</a><br/>
   
@@ -185,7 +185,7 @@
     <id>http://akc.is/papers/2011-01-01-CDKi.html</id>
     <published>2011-01-01T00:00:00Z</published>
     <updated>2011-01-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="paper">
+    <summary type="html"><![CDATA[<div class="item">
   Anders Claesson, Mark Dukes, Sergey Kitaev<br/>
   <a href="http://arxiv.org/abs/0910.1619">A direct encoding of Stoimenow's matchings as ascent sequences</a><br/>
   
