@@ -8,8 +8,26 @@
         <name>Anders Claesson</name>
         <email>anders.claesson@strath.ac.uk</email>
     </author>
-    <updated>2014-05-13T00:00:00Z</updated>
+    <updated>2015-01-01T00:00:00Z</updated>
     <entry>
+    <title>An involution on bicubic maps and β(0,1)-trees</title>
+    <link href="http://akc.is/papers/2015-01-01-CKdeM.html" />
+    <id>http://akc.is/papers/2015-01-01-CKdeM.html</id>
+    <published>2015-01-01T00:00:00Z</published>
+    <updated>2015-01-01T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="item">
+  Anders Claesson, Sergey Kitaev, Anna de Mier<br/>
+  <a href="http://ajc.maths.uq.edu.au/pdf/61/ajc_v61_p001.pdf">An involution on bicubic maps and β(0,1)-trees</a><br/>
+  
+    The Australasian Journal of Combinatorics 61(1)
+  
+ (2015) 1--18<br/>
+  
+  
+</div>
+]]></summary>
+</entry>
+<entry>
     <title>Decomposing labeled interval orders as pairs of permutations</title>
     <link href="http://akc.is/papers/2014-05-13-CH.html" />
     <id>http://akc.is/papers/2014-05-13-CH.html</id>
@@ -40,24 +58,6 @@
     Journal of Combinatorics (to appear)
   
  (2014) <br/>
-  
-  
-</div>
-]]></summary>
-</entry>
-<entry>
-    <title>An involution on bicubic maps and β(0,1)-trees</title>
-    <link href="http://akc.is/papers/2014-01-01-CKdeM.html" />
-    <id>http://akc.is/papers/2014-01-01-CKdeM.html</id>
-    <published>2014-01-01T00:00:00Z</published>
-    <updated>2014-01-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="item">
-  Anders Claesson, Sergey Kitaev, Anna de Mier<br/>
-  <a href="http://ajc.maths.uq.edu.au/pdf/61/ajc_v61_p001.pdf">An involution on bicubic maps and β(0,1)-trees</a><br/>
-  
-    The Australasian Journal of Combinatorics 61(1)
-  
- (2014) 1--18<br/>
   
   
 </div>
