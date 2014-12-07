@@ -28,6 +28,24 @@
 ]]></summary>
 </entry>
 <entry>
+    <title>Coincidence among families of mesh patterns</title>
+    <link href="http://akc.is/papers/2014-12-01-CTU.html" />
+    <id>http://akc.is/papers/2014-12-01-CTU.html</id>
+    <published>2014-12-01T00:00:00Z</published>
+    <updated>2014-12-01T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="item">
+  Anders Claesson, Bridget Eileen Tenner, Henning Úlfarsson<br/>
+  <a href="http://arxiv.org/abs/1412.0703">Coincidence among families of mesh patterns</a><br/>
+  
+    arXiv:1412.0703 
+  
+ (2014) <br/>
+  
+  
+</div>
+]]></summary>
+</entry>
+<entry>
     <title>Decomposing labeled interval orders as pairs of permutations</title>
     <link href="http://akc.is/papers/2014-05-13-CH.html" />
     <id>http://akc.is/papers/2014-05-13-CH.html</id>
@@ -35,7 +53,7 @@
     <updated>2014-05-13T00:00:00Z</updated>
     <summary type="html"><![CDATA[<div class="item">
   Anders Claesson, Stuart A. Hannah<br/>
-  <a href="http://arxiv.org/abs/1405.2441">Decomposing labeled interval orders as pairs of permutations</a><br/>
+  <a href="http://www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p16">Decomposing labeled interval orders as pairs of permutations</a><br/>
   
     The Electronic Journal of Combinatorics 21(4)
   
@@ -174,24 +192,6 @@
  (2011) 1624--1637<br/>
   
     <a href="http://dx.doi.org/10.1016/j.jcta.2011.02.001" class="doi">http://dx.doi.org/10.1016/j.jcta.2011.02.001</a><br/>
-  
-  
-</div>
-]]></summary>
-</entry>
-<entry>
-    <title>A direct encoding of Stoimenow's matchings as ascent sequences</title>
-    <link href="http://akc.is/papers/2011-01-01-CDKi.html" />
-    <id>http://akc.is/papers/2011-01-01-CDKi.html</id>
-    <published>2011-01-01T00:00:00Z</published>
-    <updated>2011-01-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="item">
-  Anders Claesson, Mark Dukes, Sergey Kitaev<br/>
-  <a href="http://arxiv.org/abs/0910.1619">A direct encoding of Stoimenow's matchings as ascent sequences</a><br/>
-  
-    The Australasian Journal of Combinatorics 49
-  
- (2011) 47--59<br/>
   
   
 </div>
