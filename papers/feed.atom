@@ -8,8 +8,28 @@
         <name>Anders Claesson</name>
         <email>anders.claesson@strath.ac.uk</email>
     </author>
-    <updated>2015-02-11T00:00:00Z</updated>
+    <updated>2015-03-20T00:00:00Z</updated>
     <entry>
+    <title>Isomorphisms between pattern classes</title>
+    <link href="http://akc.is/papers/2015-03-20-AAC.html" />
+    <id>http://akc.is/papers/2015-03-20-AAC.html</id>
+    <published>2015-03-20T00:00:00Z</published>
+    <updated>2015-03-20T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="item">
+  Michael Albert, M. D. Atkinson, Anders Claesson<br/>
+  <a href="http://arxiv.org/abs/1308.3262">Isomorphisms between pattern classes</a><br/>
+  
+    Journal of Combinatorics 6
+  
+ (2015) 3--17<br/>
+  
+    <a href="http://dx.doi.org/10.4310/JOC.2015.v6.n1.a1" class="doi">http://dx.doi.org/10.4310/JOC.2015.v6.n1.a1</a><br/>
+  
+  
+</div>
+]]></summary>
+</entry>
+<entry>
     <title>Subword counting and the incidence algebra</title>
     <link href="http://akc.is/papers/2015-02-11-C.html" />
     <id>http://akc.is/papers/2015-02-11-C.html</id>
@@ -76,24 +96,6 @@
     The Electronic Journal of Combinatorics 21(4)
   
  (2014) P4.16<br/>
-  
-  
-</div>
-]]></summary>
-</entry>
-<entry>
-    <title>Isomorphisms between pattern classes</title>
-    <link href="http://akc.is/papers/2014-02-01-AAC.html" />
-    <id>http://akc.is/papers/2014-02-01-AAC.html</id>
-    <published>2014-02-01T00:00:00Z</published>
-    <updated>2014-02-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="item">
-  Michael Albert, M. D. Atkinson, Anders Claesson<br/>
-  <a href="http://arxiv.org/abs/1308.3262">Isomorphisms between pattern classes</a><br/>
-  
-    Journal of Combinatorics (to appear)
-  
- (2014) <br/>
   
   
 </div>
