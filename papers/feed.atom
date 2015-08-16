@@ -8,8 +8,26 @@
         <name>Anders Claesson</name>
         <email>anders.claesson@strath.ac.uk</email>
     </author>
-    <updated>2015-03-20T00:00:00Z</updated>
+    <updated>2015-08-16T00:00:00Z</updated>
     <entry>
+    <title>Coincidence among families of mesh patterns</title>
+    <link href="http://akc.is/papers/2015-08-16-CTU.html" />
+    <id>http://akc.is/papers/2015-08-16-CTU.html</id>
+    <published>2015-08-16T00:00:00Z</published>
+    <updated>2015-08-16T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="item">
+  Anders Claesson, Bridget Eileen Tenner, Henning Úlfarsson<br/>
+  <a href="http://ajc.maths.uq.edu.au/pdf/63/ajc_v63_p088.pdf">Coincidence among families of mesh patterns</a><br/>
+  
+    Australasian Journal of Combinatorics 63(1)
+  
+ (2015) 88--106<br/>
+  
+  
+</div>
+]]></summary>
+</entry>
+<entry>
     <title>Isomorphisms between pattern classes</title>
     <link href="http://akc.is/papers/2015-03-20-AAC.html" />
     <id>http://akc.is/papers/2015-03-20-AAC.html</id>
@@ -57,27 +75,9 @@
   Anders Claesson, Sergey Kitaev, Anna de Mier<br/>
   <a href="http://ajc.maths.uq.edu.au/pdf/61/ajc_v61_p001.pdf">An involution on bicubic maps and β(0,1)-trees</a><br/>
   
-    The Australasian Journal of Combinatorics 61(1)
+    Australasian Journal of Combinatorics 61(1)
   
  (2015) 1--18<br/>
-  
-  
-</div>
-]]></summary>
-</entry>
-<entry>
-    <title>Coincidence among families of mesh patterns</title>
-    <link href="http://akc.is/papers/2014-12-01-CTU.html" />
-    <id>http://akc.is/papers/2014-12-01-CTU.html</id>
-    <published>2014-12-01T00:00:00Z</published>
-    <updated>2014-12-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="item">
-  Anders Claesson, Bridget Eileen Tenner, Henning Úlfarsson<br/>
-  <a href="http://arxiv.org/abs/1412.0703">Coincidence among families of mesh patterns</a><br/>
-  
-    arXiv:1412.0703 
-  
- (2014) <br/>
   
   
 </div>
