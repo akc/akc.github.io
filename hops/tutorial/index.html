@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Anders Claesson" />
+  <meta name="date" content="2015-12-12" />
+  <title>HOPS Tutorial</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="github-pandoc.css" type="text/css" />
+</head>
+<body>
+<!--
+<div id="header">
+<h1 class="title">HOPS Tutorial</h1>
+<h2 class="author">Anders Claesson</h2>
+<h3 class="date">12 December 2015</h3>
+</div>
+-->
+<h1 id="hops-tutorial">HOPS Tutorial</h1>
+<p>To get a feeling for the HOPS language and using its interpreter let us look at a number of examples.</p>
+<h2 id="generating-functions">Generating functions</h2>
+<p>The generating function, <em>f</em>, for the <strong>Fibonacci numbers</strong> satisfies <em>f=1+(x+x<sup>2</sup>)f</em>, and we can get the coefficient of <em>f</em> directly from that equation:</p>
+<pre><code>$ hops &#39;f=1+(x+x^2)*f&#39;
+f=1+(x+x^2)*f =&gt; {1,1,2,3,5,8,13,21,34,55,89,144,233,377,610}</code></pre>
+<p>Alternatively, we could first solve for <em>f</em> in <em>f=1+(x+x<sup>2</sup>)f</em> and let <code>hops</code> expand that expression:</p>
+<pre><code>$ hops &#39;f=1/(1-x-x^2)&#39;
+f=1/(1-x-x^2) =&gt; {1,1,2,3,5,8,13,21,34,55,89,144,233,377,610}</code></pre>
+<p>The exponential generating function for the <strong>Bell numbers</strong> is <em>exp(e<sup>x</sup>-1)</em> and we can give that expression to <code>hops</code>:</p>
+<pre><code>$ hops --prec=10 &#39;exp(exp(x)-1)&#39;
+exp(exp(x)-1) =&gt; {1,1,1,5/6,5/8,13/30,203/720,877/5040,23/224,1007/17280}</code></pre>
+<p>To get the Bell numbers we, however, also need to multiply the coefficient of <em>x<sup>n</sup></em> in that series by <em>n!</em>; this is what the laplace transform does:</p>
+<pre><code>$ hops --prec=10 &#39;f=exp(exp(x)-1);laplace(f)&#39;
+f=exp(exp(x)-1);laplace(f) =&gt; {1,1,2,5,15,52,203,877,4140,21147}</code></pre>
+<p>Power series defined by trigonometric functions are fine too. Here's how we might generate the Euler numbers:</p>
+<pre><code>$ hops --prec=11 &#39;f=sec(x)+tan(x);laplace(f)&#39;
+f=sec(x)+tan(x);laplace(f) =&gt; {1,1,1,2,5,16,61,272,1385,7936,50521}</code></pre>
+<p>The <strong>number of ballots</strong> (ordered set partitions) is most simply defined by its exponential generating function <em>y=1/(2-e<sup>x</sup>)</em>:</p>
+<pre><code>$ hops --prec 10 &#39;y=1/(2-exp(x));laplace(y)&#39;
+y=1/(2-exp(x));laplace(y) =&gt; {1,1,3,13,75,541,4683,47293,545835,7087261}</code></pre>
+<p>Alternatively, one can exploit that <em>y'=2y<sup>2</sup>-y</em>:</p>
+<pre><code>$ hops --prec 10 &#39;y=1+integral(2*y^2-y);laplace(y)&#39;
+y=1+integral(2*y^2-y);laplace(y) =&gt; {1,1,3,13,75,541,4683,47293,545835,7087261}</code></pre>
+<p>Let <em>A</em> be the exponential generating function for the <strong>number of labeled interval orders</strong> (<a href="https://oeis.org/A079144">A079144</a>). Zagier <a href="http://people.mpim-bonn.mpg.de/zagier/files/doi/10.1016/S0040-9383(00)00005-7/fulltext.pdf">[Vassiliev invariants and a strange identity related to the Dedekind eta-function, Topology 40 (2001)]</a> showed that <code>A(24*x)=exp(x)*T(x)</code> where <em>T</em> is the exponential generating function for the seqence of Glaisher's <em>T</em> numbers (<a href="https://oeis.org/A002439">A002439</a>). Moreover, the exponential generating function for the <em>aerated</em> seqence of Glaisher's <em>T</em> numbers is <code>sin(2*x)/(2*cos(3*x))</code>. Putting this together we have an HOPS-expression for the number of labeled interval orders:</p>
+<pre><code>$ hops &#39;g=sin(2*x)/(2*cos(3*x));T=laplacei(BISECT1(laplace(g)));laplace((exp(x)*T)@(x/24))&#39;
+g=sin(2*x)/(2*cos(3*x));T=laplacei(BISECT1(laplace(g)));laplace((exp(x)*T)@(x/24)) =&gt; {1,1,3,19,207,3451,81663}</code></pre>
+<h2 id="simple-sequence-notation">Simple sequence notation</h2>
+<p>We have seen how to define a few different sequences using generating functions and functional equations. HOPS also supports a more naive way of specifying sequences. Here's a simple finite sequence:</p>
+<pre><code>$ hops &#39;{1,2,3}&#39;
+{1,2,3} =&gt; {1,2,3}</code></pre>
+<p>We can also use ellipses to build infinite sequences:</p>
+<pre><code>$ hops &#39;{1,2,...}&#39;
+{1,2,...} =&gt; {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}</code></pre>
+<p>What happened in the background here is that <code>hops</code> fitted the first degree polynomial <em>p(n)=1+n</em> to the values <em>p(0)=1</em> and <em>p(1)=2</em>. We could alternatively have given this formula explicitly:</p>
+<pre><code>$ hops &#39;{1+n}&#39;
+{1+n} =&gt; {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}</code></pre>
+<p>We are not limited to first degree polynomials either:</p>
+<pre><code>$ hops &#39;{0,1,8,27,...}&#39;
+{0,1,8,27,...} =&gt; {0,1,8,27,64,125,216,343,512,729,1000,1331,1728,2197,2744}
+
+$ hops &#39;{n^3}&#39;
+{n^3} =&gt; {0,1,8,27,64,125,216,343,512,729,1000,1331,1728,2197,2744}</code></pre>
+<p>The number of integer compositions of <em>n</em> is 1 if <em>n=0</em> and <em>2<sup>n-1</sup></em> if <em>n&gt;0</em>; see <a href="https://oeis.org/A011782">A011782</a>. Here's how we might specify that formula:</p>
+<pre><code>$ hops &#39;{1,2^(n-1)}&#39;
+{1,2^(n-1)} =&gt; {1,1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192}</code></pre>
+<p>Factorials are fine too. Here's the order of the alternating group (<a href="https://oeis.org/A001710">A001710</a>):</p>
+<pre><code>$ hops --prec=12 &#39;{1,1,n!/2}&#39;
+{1,1,n!/2} =&gt; {1,1,1,3,12,60,360,2520,20160,181440,1814400,19958400}</code></pre>
+<h2 id="composing-programs">Composing programs</h2>
+<p>Using the special variable <code>stdin</code> we can compose programs:</p>
+<pre><code>$ hops &#39;f=1+(x+x^2)*f&#39; | hops &#39;stdin/(1-x)&#39;
+f=1+(x+x^2)*f;f/(1-x) =&gt; {1,2,4,7,12,20,33,54,88,143,232,376,609,986,1596}</code></pre>
+<p>As a side note, one can show that HOPS programs form a monoid under this type of composition.</p>
+<p>Be aware that <code>hops</code> may have to rename variables when composing programs:</p>
+<pre><code>$ hops --prec=10 &#39;f=1+(x+x^2)*f&#39; | hops &#39;f=1/(1-2*x);f/(1-x*stdin)&#39;
+f=1+(x+x^2)*f;g=1+2*x*g;g/(1-x*f) =&gt; {1,3,8,21,54,137,344,857,2122,5229,12836}</code></pre>
+<h2 id="oeis-a-numbers">OEIS A-numbers</h2>
+<p>OEIS A-numbers can be used directly in HOPS programs and they are interpreted as ordinary generating functions. E.g. this is the difference between the Catalan numbers (<a href="https://oeis.org/A000108">A000108</a>) and the Motzkin numbers (<a href="https://oeis.org/A001006">A001006</a>):</p>
+<pre><code>$ hops &#39;A000108-A001006&#39;
+A000108-A001006 =&gt; {0,0,0,1,5,21,81,302,1107,4027,14608,52988,192501,701065,2560806}</code></pre>
+<h2 id="misc-transformations">Misc transformations</h2>
+<p>HOPS knows about many of the transformations used by OEIS <a href="https://oeis.org/transforms.html" class="uri">https://oeis.org/transforms.html</a>.</p>
+<p>As an example, the sequence <a href="https://oeis.org/A067145">A067145</a> claims to shift left under reversion:</p>
+<pre><code>S A067145 1,1,-1,3,-13,69,-419,2809,-20353,157199,-1281993,10963825,-97828031,
+N A067145 Shifts left under reversion.</code></pre>
+<p>Let's test that claim:</p>
+<pre><code>$ hops &#39;REVERT(A067145)-LEFT(A067145)&#39;
+REVERT(A067145)-LEFT(A067145) =&gt; {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}</code></pre>
+<h2 id="hops-scripts">HOPS scripts</h2>
+<p>Sometimes it is useful be able to apply many transformations to the same input. One way to achieve that is to write a script with the transformations we are interested in. E.g. if we create a file <code>transforms.hops</code> containing</p>
+<pre><code>BINOMIAL(stdin)
+EULER(stdin)
+REVEGF(stdin)
+STIRLING(stdin)</code></pre>
+<p>then we can apply all of these transforms to <code>1/(1-x)</code> as follows:</p>
+<pre><code>$ hops &#39;1/(1-x)&#39; | hops --prec=9 -f transforms.hops
+f=1/(1-x);BINOMIAL(f) =&gt; {1,2,4,8,16,32,64,128,256}
+f=1/(1-x);EULER(f) =&gt; {1,2,3,5,7,11,15,22,30}
+f=1/(1-x);REVEGF(f) =&gt; {1,-2,9,-64,625,-7776,117649,-2097152,43046721}
+f=1/(1-x);STIRLING(f) =&gt; {1,2,5,15,52,203,877,4140,21147}</code></pre>
+<p>N.B: As in this example, the preferred file extension for HOPS program files is <code>.hops</code>.</p>
+<h2 id="tagging">Tagging</h2>
+<p>The <code>hops</code> command can assign tags to sequences:</p>
+<pre><code>$ printf &quot;1,1,2,5,17,33\n1,1,2,5,19,34\n&quot; | hops --tag 1
+TAG000001 =&gt; {1,1,2,5,17,33}
+TAG000002 =&gt; {1,1,2,5,19,34}</code></pre>
+
+<footer>
+Anders Claesson
+- 12 December 2015
+</footer>
+
+</body>
+</html>

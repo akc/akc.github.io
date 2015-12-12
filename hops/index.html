@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Anders Claesson" />
+  <meta name="date" content="2015-12-12" />
+  <title>HOPS</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="github-pandoc.css" type="text/css" />
+</head>
+<body>
+<!--
+<div id="header">
+<h1 class="title">HOPS</h1>
+<h2 class="author">Anders Claesson</h2>
+<h3 class="date">12 December 2015</h3>
+</div>
+-->
+<h1 style="font-weight:normal; font-size:15px;">
+<img src="hops.png" alt="HOPS" />HOPS - Handy Operations on Power Series
+</h1>
+<hr/>
+<p><strong>HOPS</strong> is a small domain specific scripting language for working with power series and integer sequences. It comes with an interpreter called <code>hops</code>.</p>
+<p>Here we generate the sequence of <a href="https://oeis.org/A000108">Catalan numbers</a> from its generating function:</p>
+<pre><code>$ hops --prec=11 &#39;2/(1+sqrt(1-4*x))&#39;
+2/(1+sqrt(1-4*x)) =&gt; {1,1,2,5,14,42,132,429,1430,4862,16796}</code></pre>
+<p>Or, using an implicit defition:</p>
+<pre><code>$ hops --prec=11 &#39;C=1+x*C^2&#39;
+C=1+x*C^2 =&gt; {1,1,2,5,14,42,132,429,1430,4862,16796}</code></pre>
+<p>Or, using an explicit formula for the <em>n</em>-th term:</p>
+<pre><code>$ hops --prec=11 &#39;{(2*n)!/(n!*(n+1)!)}&#39;
+{(2*n)!/(n!*(n+1)!)} =&gt; {1,1,2,5,14,42,132,429,1430,4862,16796}</code></pre>
+<p>See the <a href="#documentation">documentation</a> section below for more.</p>
+<h2 id="installation">Installation</h2>
+<p>The easiest way to get started is to download a prebuilt binary. Such binaries can be found on the <a href="https://github.com/akc/hops/releases">releases page</a>. The binaries are statically linked and should work on any Linux system.</p>
+<p>Alternative ways of installing <code>hops</code> include using the <a href="https://nixos.org/nix/">nix</a> package manager:</p>
+<pre><code>$ nix-env -f &quot;&lt;nixpkgs&gt;&quot; -iA haskellPackages.hops</code></pre>
+<p>Or using <a href="https://www.haskell.org/cabal/">cabal</a>:</p>
+<pre><code>$ cabal update &amp;&amp; cabal install hops</code></pre>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="tutorial.html">Tutorial</a></li>
+<li><a href="language.html">Description of the HOPS language</a></li>
+<li><a href="hops.html">Man page</a></li>
+</ul>
+<h2 id="contribute">Contribute</h2>
+<ul>
+<li><a href="https://github.com/akc/hops/issues">Issue tracker</a> on GitHub</li>
+<li><a href="https://github.com/akc/hops">Source code</a> on GitHub</li>
+<li>You can also <a href="http://akc.is/email/">contact me</a> directly</li>
+</ul>
+<h2 id="how-to-cite">How to cite</h2>
+<pre><code>@misc{hops,
+  author = &quot;Anders Claesson&quot;,
+  title  = &quot;HOPS: Handy Operations on Power Series&quot;,
+  year   = 2015,
+  howpublished = &quot;\url{http://akc.is/hops}&quot;
+}</code></pre>
+<h2 id="license">License</h2>
+<p>This project is licensed under a <a href="https://github.com/akc/hops/blob/master/LICENSE">BSD license</a>.</p>
+
+<footer>
+Anders Claesson
+- 12 December 2015
+</footer>
+
+</body>
+</html>
