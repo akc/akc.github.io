@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="github-pandoc.css" type="text/css" />
+</head>
+<body>
+<h1 id="sloane-build-status">sloane <a href="https://travis-ci.org/akc/sloane"><img src="https://travis-ci.org/akc/sloane.svg" alt="Build Status" /></a></h1>
+<p>A command line interface to the <a href="http://oeis.org">On-Line Encyclopedia of Integer Sequences</a>.</p>
+<div class="figure">
+<img src="demo.gif" alt="" />
+
+</div>
+<p>See the <a href="https://github.com/akc/sloane/blob/master/sloane.md">man page</a> for furher uses.</p>
+<h2 id="install">Install</h2>
+<p>The easiest way to get started is to download a prebuilt binary. Such binaries can be found on the <a href="https://github.com/akc/sloane/releases">releases page</a>. The binaries are statically linked and should work on any Linux system.</p>
+<p>Alternative ways of installing <code>sloane</code> include using the <a href="https://nixos.org/nix/">nix</a> package manager:</p>
+<pre><code>$ nix-env -f &quot;&lt;nixpkgs&gt;&quot; -iA haskellPackages.sloane</code></pre>
+<p>Or using <a href="https://www.haskell.org/cabal/">cabal</a>:</p>
+<pre><code>$ cabal install sloane</code></pre>
+<h2 id="contribute">Contribute</h2>
+<ul>
+<li><a href="https://github.com/akc/sloane/issues">Issue tracker</a> on GitHub</li>
+<li><a href="https://github.com/akc/sloane">Source code</a> on GitHub</li>
+<li>You can also <a href="http://akc.is/email/">contact me</a> directly</li>
+</ul>
+<h2 id="how-to-cite">How to cite</h2>
+<pre><code>@misc{sloane,
+  author = &quot;Anders Claesson&quot;,
+  title  = &quot;sloane: A command line interface to the OEIS&quot;,
+  year   =  2015,
+  howpublished = &quot;\url{http://akc.is/sloane}&quot;
+}</code></pre>
+<h2 id="license">License</h2>
+<p>This project is licensed under a <a href="https://github.com/akc/sloane/blob/master/LICENSE">BSD license</a>.</p>
+
+
+</body>
+</html>
