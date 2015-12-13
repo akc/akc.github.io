@@ -21,13 +21,13 @@
 <h1 id="hops-tutorial">HOPS Tutorial</h1>
 <p>To get a feeling for the HOPS language and using its interpreter let us look at a number of examples.</p>
 <h2 id="generating-functions">Generating functions</h2>
-<p>The generating function, <em>f</em>, for the <strong>Fibonacci numbers</strong> satisfies <em>f=1+(x+x<sup>2</sup>)f</em>, and we can get the coefficient of <em>f</em> directly from that equation:</p>
+<p>The generating function, <em>f</em>, for the <em>Fibonacci numbers</em> satisfies <em>f=1+(x+x<sup>2</sup>)f</em>, and we can get the coefficient of <em>f</em> directly from that equation:</p>
 <pre><code>$ hops &#39;f=1+(x+x^2)*f&#39;
 f=1+(x+x^2)*f =&gt; {1,1,2,3,5,8,13,21,34,55,89,144,233,377,610}</code></pre>
 <p>Alternatively, we could first solve for <em>f</em> in <em>f=1+(x+x<sup>2</sup>)f</em> and let <code>hops</code> expand that expression:</p>
 <pre><code>$ hops &#39;f=1/(1-x-x^2)&#39;
 f=1/(1-x-x^2) =&gt; {1,1,2,3,5,8,13,21,34,55,89,144,233,377,610}</code></pre>
-<p>The exponential generating function for the <strong>Bell numbers</strong> is <em>exp(e<sup>x</sup>-1)</em> and we can give that expression to <code>hops</code>:</p>
+<p>The exponential generating function for the <em>Bell numbers</em> is <em>exp(e<sup>x</sup>-1)</em> and we can give that expression to <code>hops</code>:</p>
 <pre><code>$ hops --prec=10 &#39;exp(exp(x)-1)&#39;
 exp(exp(x)-1) =&gt; {1,1,1,5/6,5/8,13/30,203/720,877/5040,23/224,1007/17280}</code></pre>
 <p>To get the Bell numbers we, however, also need to multiply the coefficient of <em>x<sup>n</sup></em> in that series by <em>n!</em>; this is what the laplace transform does:</p>
@@ -36,13 +36,13 @@ f=exp(exp(x)-1);laplace(f) =&gt; {1,1,2,5,15,52,203,877,4140,21147}</code></pre>
 <p>Power series defined by trigonometric functions are fine too. Here's how we might generate the Euler numbers:</p>
 <pre><code>$ hops --prec=11 &#39;f=sec(x)+tan(x);laplace(f)&#39;
 f=sec(x)+tan(x);laplace(f) =&gt; {1,1,1,2,5,16,61,272,1385,7936,50521}</code></pre>
-<p>The <strong>number of ballots</strong> (ordered set partitions) is most simply defined by its exponential generating function <em>y=1/(2-e<sup>x</sup>)</em>:</p>
+<p>The <em>number of ballots</em> (ordered set partitions) is most simply defined by its exponential generating function <em>y=1/(2-e<sup>x</sup>)</em>:</p>
 <pre><code>$ hops --prec 10 &#39;y=1/(2-exp(x));laplace(y)&#39;
 y=1/(2-exp(x));laplace(y) =&gt; {1,1,3,13,75,541,4683,47293,545835,7087261}</code></pre>
 <p>Alternatively, one can exploit that <em>y'=2y<sup>2</sup>-y</em>:</p>
 <pre><code>$ hops --prec 10 &#39;y=1+integral(2*y^2-y);laplace(y)&#39;
 y=1+integral(2*y^2-y);laplace(y) =&gt; {1,1,3,13,75,541,4683,47293,545835,7087261}</code></pre>
-<p>Let <em>A</em> be the exponential generating function for the <strong>number of labeled interval orders</strong> (<a href="https://oeis.org/A079144">A079144</a>). Zagier <a href="http://people.mpim-bonn.mpg.de/zagier/files/doi/10.1016/S0040-9383(00)00005-7/fulltext.pdf">[Vassiliev invariants and a strange identity related to the Dedekind eta-function, Topology 40 (2001)]</a> showed that <code>A(24*x)=exp(x)*T(x)</code> where <em>T</em> is the exponential generating function for the seqence of Glaisher's <em>T</em> numbers (<a href="https://oeis.org/A002439">A002439</a>). Moreover, the exponential generating function for the <em>aerated</em> seqence of Glaisher's <em>T</em> numbers is <code>sin(2*x)/(2*cos(3*x))</code>. Putting this together we have an HOPS-expression for the number of labeled interval orders:</p>
+<p>Let <em>A</em> be the exponential generating function for the <em>number of labeled interval orders</em> (<a href="https://oeis.org/A079144">A079144</a>). Zagier <a href="http://people.mpim-bonn.mpg.de/zagier/files/doi/10.1016/S0040-9383(00)00005-7/fulltext.pdf">[Vassiliev invariants and a strange identity related to the Dedekind eta-function, Topology 40 (2001)]</a> showed that <code>A(24*x)=exp(x)*T(x)</code> where <em>T</em> is the exponential generating function for the seqence of Glaisher's <em>T</em> numbers (<a href="https://oeis.org/A002439">A002439</a>). Moreover, the exponential generating function for the <em>aerated</em> seqence of Glaisher's <em>T</em> numbers is <code>sin(2*x)/(2*cos(3*x))</code>. Putting this together we have an HOPS-expression for the number of labeled interval orders:</p>
 <pre><code>$ hops &#39;g=sin(2*x)/(2*cos(3*x));T=laplacei(BISECT1(laplace(g)));laplace((exp(x)*T)@(x/24))&#39;
 g=sin(2*x)/(2*cos(3*x));T=laplacei(BISECT1(laplace(g)));laplace((exp(x)*T)@(x/24)) =&gt; {1,1,3,19,207,3451,81663}</code></pre>
 <h2 id="simple-sequence-notation">Simple sequence notation</h2>
@@ -80,8 +80,7 @@ f=1+(x+x^2)*f;g=1+2*x*g;g/(1-x*f) =&gt; {1,3,8,21,54,137,344,857,2122,5229,12836
 <pre><code>$ hops &#39;A000108-A001006&#39;
 A000108-A001006 =&gt; {0,0,0,1,5,21,81,302,1107,4027,14608,52988,192501,701065,2560806}</code></pre>
 <h2 id="misc-transformations">Misc transformations</h2>
-<p>HOPS knows about many of the transformations used by OEIS <a href="https://oeis.org/transforms.html" class="uri">https://oeis.org/transforms.html</a>.</p>
-<p>As an example, the sequence <a href="https://oeis.org/A067145">A067145</a> claims to shift left under reversion:</p>
+<p>HOPS knows about many of the <a href="https://oeis.org/transforms.html">transformations used by the OEIS</a>. As an example, the sequence <a href="https://oeis.org/A067145">A067145</a> claims to shift left under reversion:</p>
 <pre><code>S A067145 1,1,-1,3,-13,69,-419,2809,-20353,157199,-1281993,10963825,-97828031,
 N A067145 Shifts left under reversion.</code></pre>
 <p>Let's test that claim:</p>
