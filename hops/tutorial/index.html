@@ -42,7 +42,7 @@ y=1/(2-exp(x));laplace(y) =&gt; {1,1,3,13,75,541,4683,47293,545835,7087261}</cod
 <p>Alternatively, one can exploit that <em>y'=2y<sup>2</sup>-y</em>:</p>
 <pre><code>$ hops --prec 10 &#39;y=1+integral(2*y^2-y);laplace(y)&#39;
 y=1+integral(2*y^2-y);laplace(y) =&gt; {1,1,3,13,75,541,4683,47293,545835,7087261}</code></pre>
-<p>Let <em>A</em> be the exponential generating function for the <a href="https://oeis.org/A079144">number of labeled interval orders</a>. Zagier <a href="http://people.mpim-bonn.mpg.de/zagier/files/doi/10.1016/S0040-9383(00)00005-7/fulltext.pdf">[Vassiliev invariants and a strange identity related to the Dedekind eta-function, Topology 40 (2001)]</a> showed that <code>A(24*x)=exp(x)*T(x)</code> where <em>T</em> is the exponential generating function for the seqence of Glaisher's <em>T</em> numbers (<a href="https://oeis.org/A002439">A002439</a>). Moreover, the exponential generating function for the <em>aerated</em> seqence of Glaisher's <em>T</em> numbers is <code>sin(2*x)/(2*cos(3*x))</code>. Putting this together we have an HOPS-expression for the number of labeled interval orders:</p>
+<p>Let <em>A</em> be the exponential generating function for the <a href="https://oeis.org/A079144">number of labeled interval orders</a>. <a href="http://people.mpim-bonn.mpg.de/zagier/files/doi/10.1016/S0040-9383(00)00005-7/fulltext.pdf">Zagier</a> showed that <code>A(24*x)=exp(x)*T(x)</code> where <em>T</em> is the exponential generating function for the seqence of Glaisher's <em>T</em> numbers (<a href="https://oeis.org/A002439">A002439</a>). Moreover, the exponential generating function for the <em>aerated</em> seqence of Glaisher's <em>T</em> numbers is <code>sin(2*x)/(2*cos(3*x))</code>. Putting this together we have an HOPS-expression for the number of labeled interval orders:</p>
 <pre><code>$ hops &#39;g=sin(2*x)/(2*cos(3*x));T=laplacei(BISECT1(laplace(g)));laplace((exp(x)*T)@(x/24))&#39;
 g=sin(2*x)/(2*cos(3*x));T=laplacei(BISECT1(laplace(g)));laplace((exp(x)*T)@(x/24)) =&gt; {1,1,3,19,207,3451,81663}</code></pre>
 <h2 id="simple-sequence-notation">Simple sequence notation</h2>
@@ -104,6 +104,7 @@ f=1/(1-x);STIRLING(f) =&gt; {1,2,5,15,52,203,877,4140,21147}</code></pre>
 <pre><code>$ printf &quot;1,1,2,5,17,33\n1,1,2,5,19,34\n&quot; | hops --tag 1
 TAG000001 =&gt; {1,1,2,5,17,33}
 TAG000002 =&gt; {1,1,2,5,19,34}</code></pre>
+<p>Vassiliev invariants and a strange identity related to the Dedekind eta-function, Topology 40 (2001)</p>
 
 <footer>
 Anders Claesson
