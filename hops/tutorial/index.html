@@ -61,10 +61,10 @@ g=sin(2*x)/(2*cos(3*x));T=laplacei(BISECT1(laplace(g)));laplace((exp(x)*T)@(x/24
 
 $ hops &#39;{n^3}&#39;
 {n^3} =&gt; {0,1,8,27,64,125,216,343,512,729,1000,1331,1728,2197,2744}</code></pre>
-<p>The number of integer compositions of <em>n</em> is 1 if <em>n=0</em> and <em>2<sup>n-1</sup></em> if <em>n&gt;0</em>; see <a href="https://oeis.org/A011782">A011782</a>. Here's how we might specify that formula:</p>
+<p>The <a href="https://oeis.org/A011782">number of integer compositions</a> of <em>n</em> is 1 if <em>n=0</em> and <em>2<sup>n-1</sup></em> if <em>n&gt;0</em>. Here's how we might specify that formula:</p>
 <pre><code>$ hops &#39;{1,2^(n-1)}&#39;
 {1,2^(n-1)} =&gt; {1,1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192}</code></pre>
-<p>Factorials are fine too. Here's the order of the alternating group (<a href="https://oeis.org/A001710">A001710</a>):</p>
+<p>Factorials are fine too. Here's the <a href="https://oeis.org/A001710">order of the alternating group</a>:</p>
 <pre><code>$ hops --prec=12 &#39;{1,1,n!/2}&#39;
 {1,1,n!/2} =&gt; {1,1,1,3,12,60,360,2520,20160,181440,1814400,19958400}</code></pre>
 <h2 id="composing-programs">Composing programs</h2>
