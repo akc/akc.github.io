@@ -52,8 +52,14 @@ g=sin(2*x)/(2*cos(3*x));T=laplacei(BISECT1(laplace(g)));laplace((exp(x)*T)@(x/24
 <pre><code>$ hops &#39;{0,1,8,27,...}&#39;
 {0,1,8,27,...} =&gt; {0,1,8,27,64,125,216,343,512,729,1000,1331,1728,2197,2744}
 
+$ hops &#39;{0,1,8,27,...}&#39; | sloane
+
+S A000578 0,1,8,27,64,125,216,343,512,729,1000,1331,1728,2197,2744,3375,
+N A000578 The cubes: a(n) = n^3.
+
 $ hops &#39;{n^3}&#39;
 {n^3} =&gt; {0,1,8,27,64,125,216,343,512,729,1000,1331,1728,2197,2744}</code></pre>
+<p>Note that the example above also illustrates that we can pipe the output of <code>hops</code> through <code>sloane</code>; see <a href="http://akc.is/sloane" class="uri">http://akc.is/sloane</a>.</p>
 <p>The <a href="https://oeis.org/A011782">number of integer compositions</a> of <em>n</em> is 1 if <em>n=0</em> and <em>2<sup>n-1</sup></em> if <em>n&gt;0</em>. Here's how we might specify that formula:</p>
 <pre><code>$ hops &#39;{1,2^(n-1)}&#39;
 {1,2^(n-1)} =&gt; {1,1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192}</code></pre>
