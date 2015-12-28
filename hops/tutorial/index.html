@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Anders Claesson" />
-  <meta name="date" content="2015-12-12" />
+  <meta name="date" content="2015-12-28" />
   <title>HOPS Tutorial</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
@@ -122,12 +122,13 @@ f=1+(x+x^2)*f;g=1+2*x*g;g/(1-x*f) =&gt; {1,3,8,21,54,137,344,857,2122,5229,12836
   <span class="kw">|</span> <span class="kw">hops</span> --to-json \
   <span class="kw">|</span> <span class="kw">jq</span> -c <span class="st">&quot;if (.seq | </span><span class="ot">$norm</span><span class="st">) &lt; </span><span class="ot">$N</span><span class="st"> then . else empty end&quot;</span> \
   <span class="kw">|</span> <span class="kw">hops</span> --from-json</code></pre></div>
-<p>Then <code>./deconv &lt;sequence&gt;</code> would find power series <span class="math inline"><em>G</em></span> and <span class="math inline"><em>H</em></span> such that <span class="math inline"><em>F</em> = <em>G</em> ⋅ <em>H</em></span>, where <span class="math inline"><em>F</em></span> is the generating function for <code>&lt;sequence&gt;</code>, <span class="math inline"><em>G</em></span> is the generating function for some sequence in the OEIS, and <span class="math inline"><em>H</em></span> has &quot;small&quot; norm. Here, the norm of a finite sequence (or polynomial, or truncated power series) is the sum of the squares of its elements, and <span class="math inline"><em>H</em></span> is said to have small norm if its norm is smaller than the square root of the norm of <span class="math inline"><em>F</em></span>. For simplicity we further assume that the constant term of <span class="math inline"><em>G</em></span> is <span class="math inline">1</span>.</p>
-<p>As an alternative we could require that <span class="math inline"><em>H</em></span> also be in the OEIS. This could be accomplished by replacing the last three lines with <code>sloane --filter</code> (see <a href="http://akc.is/sloane/">sloane</a>).</p>
+<p>Then <code>./deconv &lt;sequence&gt;</code> would find power series <span class="math inline"><em>G</em></span> and <span class="math inline"><em>H</em></span> such that <span class="math inline"><em>F</em> = <em>G</em> ⋅ <em>H</em></span>, where <span class="math inline"><em>F</em></span> is the generating function for <code>&lt;sequence&gt;</code>, <span class="math inline"><em>G</em></span> is the generating function for some sequence in the OEIS, and <span class="math inline"><em>H</em></span> has &quot;small&quot; norm. Here, the norm of a finite sequence (or polynomial, or truncated power series) is the sum of the squares of its elements, and <span class="math inline"><em>H</em></span> is said to have small norm if its norm is smaller than the square root of the norm of <span class="math inline"><em>F</em></span>. For simplicity we further assume that the constant term of <span class="math inline"><em>G</em></span> is <span class="math inline">1</span>. It should also be noted that using <code>jq</code> this way comes with a caveat: In contrast with <code>hops</code>, <code>jq</code> only supports IEEE 754 64-bit numbers, so rounding could occur for numbers with more that 15 decimal digits.</p>
+<p>As an alternative to restricting the norm of <span class="math inline"><em>H</em></span> we could require that <span class="math inline"><em>H</em></span> be in the OEIS, and one way to accomplished that would be to replace the last three lines in the above script with <code>sloane --filter</code> (see <a href="http://akc.is/sloane/">sloane</a>).</p>
 <h2 id="oeis-a-numbers">OEIS A-numbers</h2>
 <p>OEIS A-numbers can be used directly in HOPS programs and they are interpreted as ordinary generating functions. E.g. this is the difference between the Catalan numbers (<a href="https://oeis.org/A000108">A000108</a>) and the Motzkin numbers (<a href="https://oeis.org/A001006">A001006</a>):</p>
 <pre><code>$ hops &#39;A000108-A001006&#39;
 A000108-A001006 =&gt; {0,0,0,1,5,21,81,302,1107,4027,14608,52988,192501,701065,2560806}</code></pre>
+<p>The first time you use A-numbers with <code>hops</code> you will be asked to run <code>hops --update</code>. This will download <code>https://oeis.org/stripped.gz</code> and unpack it into <code>.oeis-data/stripped</code> in your home directory. Alternatively, you can do this by hand using <code>wget</code> and <code>gunzip</code>, say, if you prefer.</p>
 <h2 id="misc-transformations">Misc transformations</h2>
 <p>HOPS knows about many of the <a href="https://oeis.org/transforms.html">transformations used by the OEIS</a>. As an example, the sequence <a href="https://oeis.org/A067145">A067145</a> claims to shift left under reversion:</p>
 <pre><code>S A067145 1,1,-1,3,-13,69,-419,2809,-20353,157199,-1281993,10963825,-97828031,
@@ -156,7 +157,7 @@ TAG000002 =&gt; {1,1,2,5,19,34}</code></pre>
 
 <footer>
 Anders Claesson
-- 12 December 2015
+- 28 December 2015
 </footer>
 
 </body>
