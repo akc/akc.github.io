@@ -4,13 +4,13 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title>SLOANE(1) User Manual | Version 4.1.1</title>
+  <title>SLOANE(1) User Manual | Version 4.2.0</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="../github-pandoc.css" type="text/css" />
 </head>
 <body>
 <div id="header">
-<h1 class="title">SLOANE(1) User Manual | Version 4.1.1</h1>
+<h1 class="title">SLOANE(1) User Manual | Version 4.2.0</h1>
 <h3 class="date">4 Sep 2015</h3>
 </div>
 <h1 id="name">NAME</h1>
@@ -19,7 +19,8 @@
 <p><code>sloane [--long] [-k KEYS] [-n N] [--all] [--monochrome] [--json] [--oeis] TERMS...</code><br />
 <code>sloane [--invert] --filter</code></p>
 <h1 id="description">DESCRIPTION</h1>
-<p><code>sloane</code> provides a command line interface to Sloane's OEIS (The On-Line Encyclopedia of Integer Sequences). It can be used offline (the default) as well as online (with the <code>--oeis</code> option). Local searches are faster but a bit less flexible. A common way to use <code>sloane</code> is to search for entries matching a sequence of consecutive terms:</p>
+<p><code>sloane</code> provides a command line interface to Sloane's OEIS (The On-Line Encyclopedia of Integer Sequences). It can be used offline (the default) as well as online (with the <code>--oeis</code> option). Local searches are faster but a bit less flexible. The first time <code>sloane</code> is used in offline mode the user will be asked to run <code>sloane --update</code>. This will download <code>https://oeis.org/{names.gz, stripped.gz}</code> and unpack them into <code>.oeis-data/{names, stripped}</code> in your home directory. Alternatively, one can do this by hand using <code>wget</code> and <code>gunzip</code>, say, if prefered.</p>
+<p>A common way to use <code>sloane</code> is to search for entries matching a sequence of consecutive terms:</p>
 <pre><code>sloane 1,3,19,183,2371,38703</code></pre>
 <p>At the time of writing this would return</p>
 <pre><code>S A006531 1,1,3,19,183,2371,38703,763099,17648823,468603091,14050842303,
