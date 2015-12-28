@@ -154,6 +154,10 @@ f=1/(1-x);STIRLING(f) =&gt; {1,2,5,15,52,203,877,4140,21147}</code></pre>
 <pre><code>$ printf &quot;1,1,2,5,17,33\n1,1,2,5,19,34\n&quot; | hops --tag 1
 TAG000001 =&gt; {1,1,2,5,17,33}
 TAG000002 =&gt; {1,1,2,5,19,34}</code></pre>
+<h2 id="bash-completion">Bash completion</h2>
+<p>A bash completion script can be obtained by running</p>
+<pre><code>hops --bash-completion-script `which hops`</code></pre>
+<p>This functionality is due to the excellent <a href="https://github.com/pcapriotti/optparse-applicative">optparse-applicative</a> library. For more information see <a href="https://github.com/pcapriotti/optparse-applicative/wiki/Bash-Completion" class="uri">https://github.com/pcapriotti/optparse-applicative/wiki/Bash-Completion</a>.</p>
 
 <footer>
 Anders Claesson
