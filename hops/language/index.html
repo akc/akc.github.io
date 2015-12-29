@@ -90,7 +90,7 @@
 </tr>
 <tr class="even">
 <td align="left"><code>abs(f)</code></td>
-<td align="left">coefficient-wise absolute value</td>
+<td align="left"><code>f</code> multiplied by the sign of its leading coefficient</td>
 </tr>
 <tr class="odd">
 <td align="left"><code>log(f)</code></td>
@@ -176,198 +176,202 @@
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left"><code>ABS(f)</code></td>
+<td align="left">coefficient-wise absolute value</td>
+</tr>
+<tr class="even">
 <td align="left"><code>AERATE1(f)</code></td>
 <td align="left"><code>f(x^2)</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>AERATE2(f)</code></td>
 <td align="left"><code>f(x^3)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>BARRY1(f)</code></td>
 <td align="left"><code>1/(1-x-x^2*f)</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>BARRY2(f)</code></td>
 <td align="left"><code>1/(1+x+x^2*f)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>BINOMIAL(f)</code></td>
 <td align="left"><code>g=exp(x)*laplacei(f);laplace(g)</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>BINOMIALi(f)</code></td>
 <td align="left"><code>g=exp(-x)*laplacei(f);laplace(g)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>BIN1(f)</code></td>
 <td align="left"><code>g={(-1)^n/n!}*((laplacei(x*f))@(-x));LEFT(laplace(-g))</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>BISECT0(f)</code></td>
 <td align="left">if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>BISECT0(f)={a0,a2,a4,...}</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>BISECT1(f)</code></td>
 <td align="left">if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>BISECT1(f)={a1,a3,a5,...}</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>BOUS2(f)</code></td>
-<td align="left">See [<a href="https://oeis.org/transforms.txt">1</a>]</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>BOUS2i(f)</code></td>
-<td align="left">See [<a href="https://oeis.org/transforms.txt">1</a>]</td>
+<td align="left">see [<a href="https://oeis.org/transforms.txt">1</a>]</td>
 </tr>
 <tr class="even">
-<td align="left"><code>BOUS(f)</code></td>
-<td align="left">See [<a href="https://oeis.org/transforms.txt">1</a>]</td>
+<td align="left"><code>BOUS2i(f)</code></td>
+<td align="left">see [<a href="https://oeis.org/transforms.txt">1</a>]</td>
 </tr>
 <tr class="odd">
+<td align="left"><code>BOUS(f)</code></td>
+<td align="left">see [<a href="https://oeis.org/transforms.txt">1</a>]</td>
+</tr>
+<tr class="even">
 <td align="left"><code>CATALAN(f)</code></td>
 <td align="left"><code>C=1+x*C^2;f@(x*C)</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>CATALANi(f)</code></td>
 <td align="left"><code>f@(x*(1-x))</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>CONV(f)</code></td>
 <td align="left"><code>f^2</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>CONVi(f)</code></td>
 <td align="left"><code>sqrt(f)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>DIFF(f)</code></td>
 <td align="left"><code>LEFT(f)-f</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>EULER(f)</code></td>
 <td align="left"><a href="http://mathworld.wolfram.com/EulerTransform.html">Euler transform</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>EULERi(f)</code></td>
 <td align="left">inverse <a href="http://mathworld.wolfram.com/EulerTransform.html">Euler transform</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>EXPCONV(f)</code></td>
 <td align="left"><code>g=laplacei(f);laplace(g*g)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>EXP(f)</code></td>
 <td align="left"><code>g={1/n!}@(laplacei(x*f));laplace(g-1)/x</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>HANKEL(f)</code></td>
 <td align="left"><a href="https://cs.uwaterloo.ca/journals/JIS/VOL4/LAYMAN/hankel.html">Hankel transform</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>lHANKEL(f)</code></td>
 <td align="left"><code>g=f.*f-LEFT(f).*RIGHT(f);LEFT(g)</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>INVERT(f)</code></td>
 <td align="left"><code>LEFT(1/(1-x*f))</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>INVERTi(f)</code></td>
 <td align="left"><code>LEFT(-1/(1+x*f))</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>LAH(f)</code></td>
 <td align="left"><code>g=(laplacei(f))@(x/(1-x));laplace(g)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>LAHi(f)</code></td>
 <td align="left"><code>g=(laplacei(f))@(x/(1+x));laplace(g)</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>LEFT(f)</code></td>
 <td align="left">if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>LEFT(f)={a1,a2,a3,...}</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>LOG(f)</code></td>
 <td align="left"><code>g=log(1+laplacei(x*f));LEFT(laplace(g))</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>M2(f)</code></td>
 <td align="left"><code>2*f-f(0)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>M2i(f)</code></td>
 <td align="left"><code>(f + f(0))/2</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>MOBIUS(f)</code></td>
 <td align="left">See [<a href="https://oeis.org/transforms.txt">1</a>]</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>MOBIUSi(f)</code></td>
 <td align="left">See [<a href="https://oeis.org/transforms.txt">1</a>]</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>NEGATE(f)</code></td>
 <td align="left"><code>(1-x/(1-x)).*f</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>PARTITION(f)</code></td>
 <td align="left">See [<a href="https://oeis.org/transforms.txt">1</a>]</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>POINT(f)</code></td>
 <td align="left"><code>laplace(x*D(laplacei(f)))</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>PRODS(f)</code></td>
 <td align="left">if <code>f = {a0,a1,a2,...}</code> then <code>PRODS(f)={a0,a0*a1,a0*a1*a2,...}</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>PSUM(f)</code></td>
 <td align="left"><code>f/(1-x)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>PSUMSIGN(f)</code></td>
 <td align="left"><code>f/(1+x)</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>REVERT(f)</code></td>
 <td align="left"><code>LEFT(revert(x*f))</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>REVEGF(f)</code></td>
 <td align="left"><code>LEFT(laplace(revert((x*f)./(1+x*laplace(1/(1-x))))))</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>RIGHT(f)</code></td>
 <td align="left"><code>1+x*f</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>STIRLING(f)</code></td>
 <td align="left"><code>g=laplacei(x*f);laplace(g@({0,1/n!}))/x</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>STIRLINGi(f)</code></td>
 <td align="left"><code>g=laplacei(x*f);laplace(g@({0,(-1)^(n+1)/n!}))/x</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>T019(f)</code></td>
 <td align="left">if <code>f={a[n]}</code> then <code>{a[n+2]-2*a[n+1]+a[n]}</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>TRISECT0(f)</code></td>
 <td align="left">if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>TRISECT0(f)={a0,a3,a6,...}</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>TRISECT1(f)</code></td>
 <td align="left">if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>TRISECT0(f)={a1,a4,a7,...}</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>TRISECT2(f)</code></td>
 <td align="left">if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>TRISECT0(f)={a2,a5,a8,...}</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>WEIGHT(f)</code></td>
 <td align="left">if <code>f={a0,a1,a2,...}</code> then <code>WEIGHT(f)=(1+x^n)^a0*(1+x^n)^a1*...</code></td>
 </tr>
