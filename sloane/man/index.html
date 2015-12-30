@@ -29,11 +29,26 @@ N A006531 Semiorders on n elements.</code></pre>
 <p>As shown here the default is to return the sequence (S) and the name (N) fields. These are the only fields that are available in offline mode. In online mode all fields are available. To select among the fields use the <code>-k</code> option, or, to select all fields, use to <code>--long</code> option. The following search would show the sequence, name, comments, and formula fields:</p>
 <pre><code>sloane -k SNCF --oeis 1,3,19,183,2371,38703</code></pre>
 <p>One can also lookup A-numbers or do a free text search; see the <strong>EXAMPLES</strong> section.</p>
-<p>The <code>--filter</code> option can be very useful when checking a large number of sequences. In this mode <code>sloane</code> reads standard input line-by-line, if the sequence read is in the local database, then it is returned to standard output; if not, it is ignored. This way one can quickly filter out the sequences from the input that are in the local database. To be concrete, assume that <em>FILE</em> contains one sequence per line. Then</p>
+<p>The <code>--filter</code> option can be very useful when checking a large number of sequences. In this mode <code>sloane</code> expects input in the form returned by <strong>hops</strong>(1). It reads standard input line-by-line, if the sequence in the right hand side of the entry read is in the local database, then the entry is returned to standard output; if not, it is ignored. This way one can quickly filter out the sequences from the input that are in the local database. To be concrete, assume that <em>FILE</em> contains these entries:</p>
+<pre><code>CATALAN(1/(1-2*x)) =&gt; {1,2,6,20,70,252,924,3432,12870,48620}
+CATALANi(1/(1-2*x)) =&gt; {1,2,2,0,-4,-8,-8,0,16,32}
+CONV(1/(1-2*x)) =&gt; {1,4,12,32,80,192,448,1024,2304,5120}
+BIN1(1/(1-2*x)) =&gt; {1,-4,13,-40,121,-364,1093,-3280,9841}</code></pre>
+<p>Then</p>
 <pre><code>sloane --filter &lt;FILE</code></pre>
-<p>returns the subset of the sequences in <em>FILE</em> that are in the local database. To also lookup the names of those sequences one could run</p>
+<p>returns the subset of the sequences in <em>FILE</em> that are in the local database. In this case, all but the last one. To also lookup the names of those sequences one could run</p>
 <pre><code>sloane --filter &lt;FILE | sloane</code></pre>
-<p>The way this works is that if <code>sloane</code> is called without search terms then it reads from standard input.</p>
+<p>If the sequences one wishes to filter are not already in form returned by <code>hops</code> then one may mold them into that form using <code>hops --tag</code>. For instanse, if <em>FILE</em> consists of</p>
+<pre><code>1,2,6,20,70,252,924,3432,12870,48620
+1,2,2,0,-4,-8,-8,0,16,32
+1,4,12,32,80,192,448,1024,2304,5120
+1,-4,13,-40,121,-364,1093,-3280,9841</code></pre>
+<p>Then <code>hops --tag 1 &lt;FILE</code> would result in</p>
+<pre><code>TAG000001 =&gt; {1,2,6,20,70,252,924,3432,12870,48620}
+TAG000002 =&gt; {1,2,2,0,-4,-8,-8,0,16,32}
+TAG000003 =&gt; {1,4,12,32,80,192,448,1024,2304,5120}
+TAG000004 =&gt; {1,-4,13,-40,121,-364,1093,-3280,9841}</code></pre>
+<p>which can be filtered through <code>sloane</code> as above.</p>
 <h1 id="options">OPTIONS</h1>
 <dl>
 <dt>--oeis</dt>
