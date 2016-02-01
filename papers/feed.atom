@@ -8,8 +8,26 @@
         <name>Anders Claesson</name>
         <email>anders.claesson@strath.ac.uk</email>
     </author>
-    <updated>2015-08-16T00:00:00Z</updated>
+    <updated>2015-12-01T00:00:00Z</updated>
     <entry>
+    <title>Simultaneous Avoidance of a Vincular and a Covincular Pattern of Length 3</title>
+    <link href="http://akc.is/papers/2015-12-01-BCU.html" />
+    <id>http://akc.is/papers/2015-12-01-BCU.html</id>
+    <published>2015-12-01T00:00:00Z</published>
+    <updated>2015-12-01T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="item">
+  Christian Bean, Anders Claesson, Henning Úlfarsson<br/>
+  <a href="http://arxiv.org/abs/1512.03226">Simultaneous Avoidance of a Vincular and a Covincular Pattern of Length 3</a><br/>
+  
+    arXiv:1512.03226 
+  
+ (2015) <br/>
+  
+  
+</div>
+]]></summary>
+</entry>
+<entry>
     <title>Coincidence among families of mesh patterns</title>
     <link href="http://akc.is/papers/2015-08-16-CTU.html" />
     <id>http://akc.is/papers/2015-08-16-CTU.html</id>
@@ -174,24 +192,6 @@
  (2011) 435--449<br/>
   
     <a href="http://dx.doi.org/10.1090/S0002-9939-2010-10678-0" class="doi">http://dx.doi.org/10.1090/S0002-9939-2010-10678-0</a><br/>
-  
-  
-</div>
-]]></summary>
-</entry>
-<entry>
-    <title>Pattern avoidance in partial permutations</title>
-    <link href="http://akc.is/papers/2011-01-01-CJJK.html" />
-    <id>http://akc.is/papers/2011-01-01-CJJK.html</id>
-    <published>2011-01-01T00:00:00Z</published>
-    <updated>2011-01-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="item">
-  Anders Claesson, Vít Jelínek, Eva Jelínková, Sergey Kitaev<br/>
-  <a href="http://www.combinatorics.org/Volume_18/Abstracts/v18i1p25.html">Pattern avoidance in partial permutations</a><br/>
-  
-    The Electronic Journal of Combinatorics 18(1)
-  
- (2011) P25<br/>
   
   
 </div>
