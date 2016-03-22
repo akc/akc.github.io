@@ -4,73 +4,46 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="date" content="2015-12-28" />
-  <title>SLOANE(1) User Manual | Version 4.2.0</title>
+  <meta name="date" content="2016-03-22" />
+  <title>SLOANE(1) User Manual | Version 5.0.0</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="../github-pandoc.css" type="text/css" />
 </head>
 <body>
 <div id="header">
-<h1 class="title">SLOANE(1) User Manual | Version 4.2.0</h1>
-<h3 class="date">28 Dec 2015</h3>
+<h1 class="title">SLOANE(1) User Manual | Version 5.0.0</h1>
+<h3 class="date">22 March 2016</h3>
 </div>
 <h1 id="name">NAME</h1>
 <p>sloane - lookup integer sequences, OEIS A-numbers, etc.</p>
 <h1 id="synopsis">SYNOPSIS</h1>
-<p><code>sloane [--long] [-k KEYS] [-n N] [--all] [--monochrome] [--json] [--oeis] TERMS...</code><br />
-<code>sloane [--invert] --filter</code></p>
+<p><code>sloane [-n N] [--all] [--oeis] TERMS...</code><br />
+<code>sloane [--invert] --filter</code><br />
+<code>sloane (--update|--version|--help)</code></p>
 <h1 id="description">DESCRIPTION</h1>
-<p><code>sloane</code> provides a command line interface to Sloane's OEIS (The On-Line Encyclopedia of Integer Sequences). It can be used offline (the default) as well as online (with the <code>--oeis</code> option). Local searches are faster but a bit less flexible. The first time <code>sloane</code> is used in offline mode the user will be asked to run <code>sloane --update</code>. This will download <code>https://oeis.org/{names.gz,stripped.gz}</code> and unpack them into <code>.oeis-data/{names,stripped}</code> in the home directory. Alternatively, one can do this by hand using <code>wget</code> and <code>gunzip</code>, say, if prefered.</p>
+<p><code>sloane</code> provides a command line interface to Sloane's OEIS (The On-Line Encyclopedia of Integer Sequences). It can be used offline (the default) as well as online (with the <code>--oeis</code> option). The first time <code>sloane</code> is used in offline mode the user will be asked to run <code>sloane --update</code>. This will download <code>https://oeis.org/{names.gz,stripped.gz}</code> and unpack them into <code>.oeis-data/{names,stripped}</code> in the home directory. Alternatively, one can do this by hand using <code>wget</code> and <code>gunzip</code>, say, if prefered.</p>
 <p>A common way to use <code>sloane</code> is to search for entries matching a sequence of consecutive terms:</p>
 <pre><code>sloane 1,3,19,183,2371,38703</code></pre>
 <p>At the time of writing this would return</p>
-<pre><code>S A006531 1,1,3,19,183,2371,38703,763099,17648823,468603091,14050842303,
-N A006531 Semiorders on n elements.</code></pre>
-<p>As shown here the default is to return the sequence (S) and the name (N) fields. These are the only fields that are available in offline mode. In online mode all fields are available. To select among the fields use the <code>-k</code> option, or, to select all fields, use to <code>--long</code> option. The following search would show the sequence, name, comments, and formula fields:</p>
-<pre><code>sloane -k SNCF --oeis 1,3,19,183,2371,38703</code></pre>
-<p>One can also lookup A-numbers or do a free text search; see the <strong>EXAMPLES</strong> section.</p>
-<p>The <code>--filter</code> option can be very useful when checking a large number of sequences. In this mode <code>sloane</code> expects input in the form returned by <strong>hops</strong>(1). It reads standard input line-by-line, if the sequence in the right hand side of the entry read is in the local database, then the entry is returned to standard output; if not, it is ignored. This way one can quickly filter out the sequences from the input that are in the local database. To be concrete, assume that <em>FILE</em> contains these entries:</p>
-<pre><code>CATALAN(1/(1-2*x)) =&gt; {1,2,6,20,70,252,924,3432,12870,48620}
-CATALANi(1/(1-2*x)) =&gt; {1,2,2,0,-4,-8,-8,0,16,32}
-CONV(1/(1-2*x)) =&gt; {1,4,12,32,80,192,448,1024,2304,5120}
-BIN1(1/(1-2*x)) =&gt; {1,-4,13,-40,121,-364,1093,-3280,9841}</code></pre>
-<p>Then</p>
-<pre><code>sloane --filter &lt;FILE</code></pre>
-<p>returns the subset of the sequences in <em>FILE</em> that are in the local database. In this case, all but the last one. To also lookup the names of those sequences one could run</p>
+<pre><code>{
+  &quot;trail&quot;: [&quot;{1,3,19,183,2371,38703}&quot;],
+  &quot;hops&quot;: &quot;A006531&quot;,
+  &quot;name&quot;: &quot;Semiorders on n elements.&quot;,
+  &quot;seq&quot;: [1,1,3,19,183,2371,38703,763099,17648823,468603091,...]
+}</code></pre>
+<p>The <code>--filter</code> option can be very useful when checking a large number of sequences. In this mode <code>sloane</code> expects input in the form returned by <strong>hops</strong>(1). It reads standard input line-by-line, if the sequence in the right hand side of the entry read is in the local database, then the entry is returned to standard output; if not, it is ignored. This way one can quickly filter out the sequences from the input that are in the local database. To also lookup the names of those sequences one could run</p>
 <pre><code>sloane --filter &lt;FILE | sloane</code></pre>
-<p>If the sequences one wishes to filter are not already in form returned by <code>hops</code> then one may mold them into that form using <code>hops --tag</code>. For instanse, if <em>FILE</em> consists of</p>
-<pre><code>1,2,6,20,70,252,924,3432,12870,48620
-1,2,2,0,-4,-8,-8,0,16,32
-1,4,12,32,80,192,448,1024,2304,5120
-1,-4,13,-40,121,-364,1093,-3280,9841</code></pre>
-<p>Then <code>hops --tag 1 &lt;FILE</code> would result in</p>
-<pre><code>TAG000001 =&gt; {1,2,6,20,70,252,924,3432,12870,48620}
-TAG000002 =&gt; {1,2,2,0,-4,-8,-8,0,16,32}
-TAG000003 =&gt; {1,4,12,32,80,192,448,1024,2304,5120}
-TAG000004 =&gt; {1,-4,13,-40,121,-364,1093,-3280,9841}</code></pre>
-<p>which can be filtered through <code>sloane</code> as above.</p>
+<p>If the sequences one wishes to filter are not already in form returned by <code>hops</code> then one may mold them into that form using <code>hops --tag</code>. See the <strong>EXAMPLES</strong> section for more usage examples.</p>
 <h1 id="options">OPTIONS</h1>
 <dl>
 <dt>--oeis</dt>
 <dd>Online search; lookup the provided terms in Sloane's On-Line Encyclopedia of Integer Sequences (OEIS).
-</dd>
-<dt>-k <em>KEYS</em></dt>
-<dd>Keys of fields to print (default: SN).
-</dd>
-<dt>--long</dt>
-<dd>Long format; print all fields.
 </dd>
 <dt>-n <em>N</em></dt>
 <dd>Fetch at most this many entries (default: 5).
 </dd>
 <dt>--all</dt>
 <dd>Fetch all matching entries (equivalent to -n 999999).
-</dd>
-<dt>--monochrome</dt>
-<dd>Do not colorize the output. Useful when piping the output to another program.
-</dd>
-<dt>--json</dt>
-<dd>Output results is JSON format.
 </dd>
 <dt>--invert</dt>
 <dd>Return sequences <em>not</em> in the database (used with <code>--filter</code>).
@@ -88,62 +61,47 @@ TAG000004 =&gt; {1,-4,13,-40,121,-364,1093,-3280,9841}</code></pre>
 <h1 id="examples">EXAMPLES</h1>
 <p>Lookup A-numbers:</p>
 <pre><code>$ sloane A000111 A000112
-
-S A000111 1,1,1,2,5,16,61,272,1385,7936,50521,353792,2702765,
-N A000111 Euler or up/down numbers: e.g.f. sec(x) + tan(x)..
-
-S A000112 1,1,2,5,16,63,318,2045,16999,183231,2567284,46749427,
-N A000112 Number of partially ordered sets (&quot;posets&quot;) with n..</code></pre>
+{
+  &quot;hops&quot;: &quot;A000111&quot;,
+  &quot;name&quot;: &quot;Euler or up/down numbers: e.g.f. sec(x) + tan(x)...&quot;,
+  &quot;seq&quot;: [1,1,1,2,5,16,61,272,1385,7936,50521,353792,2702765,22368256,...]
+}
+{
+  &quot;hops&quot;: &quot;A000112&quot;,
+  &quot;name&quot;: &quot;Number of partially ordered sets (\&quot;posets\&quot;) with n unlabeled elements.&quot;,
+  &quot;seq&quot;: [1,1,2,5,16,63,318,2045,16999,183231,2567284,46749427,...]
+}</code></pre>
 <p>Lookup a sequence (limit to at most two results):</p>
-<pre><code>$ sloane -n2 1,1,2,5,15,52,203,877,4140,21147,115975,678570,
-
-S A000110 1,1,2,5,15,52,203,877,4140,21147,115975,678570,4213597,
-N A000110 Bell or exponential numbers: number of ways to partition..
-
-S A192128 1,1,2,5,15,52,203,877,4140,21147,115975,678570,4213597,
-N A192128 Number of set partitions of {1, ..., n} that avoid..</code></pre>
+<pre><code>$ sloane -n2 1,1,2,5,15,52,203,877,4140,21147,115975,678570
+{
+  &quot;trail&quot;: [&quot;{1,1,2,5,15,52,203,877,4140,21147,115975,678570}&quot;],
+  &quot;hops&quot;: &quot;A000110&quot;,
+  &quot;name&quot;: &quot;Bell or exponential numbers: number of ways to partition a set of n...&quot;,
+  &quot;seq&quot;: [1,1,2,5,15,52,203,877,4140,21147,115975,678570,4213597,27644437,...]
+}
+{
+  &quot;trail&quot;: [&quot;{1,1,2,5,15,52,203,877,4140,21147,115975,678570}&quot;],
+  &quot;hops&quot;: &quot;A192127&quot;,
+  &quot;name&quot;: &quot;Number of set partitions of {1, ..., n} that avoid 6-nestings.&quot;,
+  &quot;seq&quot;: [1,1,2,5,15,52,203,877,4140,21147,115975,678570,4213596,27644383,...]
+}</code></pre>
 <p>Lookup a sequence generated by <strong>hops</strong>(1):</p>
 <pre><code>$ hops &#39;y=1+integral(2*y^2-y);laplace(y)&#39; | sloane
-
-S A000670 1,1,3,13,75,541,4683,47293,545835,7087261,102247563,
-N A000670 Fubini numbers: number of preferential arrangements of..
-
-S A034172 1,1,3,13,75,541,4683,47293,545835,7087261,102247563,
-N A034172 Nearest integer to n!/(2*log(2)^(n+1)).</code></pre>
-<p>Show the sequence, name, comments, and formula fields of the sequence whose A-number is A006531:</p>
-<pre><code>sloane -k SNCF --oeis id:A006531</code></pre>
+{
+  &quot;trail&quot;:[&quot;y=1+integral(2*y^2-y);laplace(y)&quot;],
+  &quot;hops&quot;:&quot;A000670&quot;,
+  &quot;name&quot;:&quot;Fubini numbers: number of preferential arrangements of n labeled ...&quot;,
+  &quot;seq&quot;:[1,1,3,13,75,541,4683,47293,545835,7087261,102247563,1622632573,...]
+}
+{
+  &quot;trail&quot;:[&quot;y=1+integral(2*y^2-y);laplace(y)&quot;],
+  &quot;hops&quot;:&quot;A034172&quot;,&quot;name&quot;:&quot;Nearest integer to n!/(2*log(2)^(n+1)).&quot;,
+  &quot;seq&quot;:[1,1,3,13,75,541,4683,47293,545835,7087261,102247563,1622632573,...]
+}</code></pre>
+<p>Fetch the OEIS entry whose A-number is A006531:</p>
+<pre><code>sloane --oeis id:A006531</code></pre>
 <p>Return at most 3 results of a free text search:</p>
 <pre><code>sloane -n 3 --oeis &quot;(2+2)-free posets&quot;</code></pre>
-<p><code>sloane</code> normally crops long lines to fit the widths of the terminal. If this is unwanted, pipe the output through cat or less:</p>
-<pre><code>sloane --long --oeis id:A000110 | less -R</code></pre>
-<h1 id="keys">KEYS</h1>
-<p>These are the <a href="http://oeis.org/eishelp2.html">keys used by the OEIS</a>.</p>
-<pre><code>I  ID number
-
-S  1st line of unsigned sequence
-T  2nd line of unsigned sequence
-U  3rd line of unsigned sequence
-
-V  1st line of signed sequence
-W  2nd line of signed sequence
-X  3rd line of signed sequence
-
-N  Name
-C  Comments
-D  References
-H  Links
-F  Formula
-e  Examples
-
-p  Maple program
-t  Mathematica program
-o  Program in other language
-
-Y  Cross-references
-K  Keywords
-O  Offset
-A  Author
-E  Extensions and errors</code></pre>
 <h1 id="notes">NOTES</h1>
 <p>Please use the <code>--oeis</code> option with some moderation as not to overburden the OEIS-server; see <a href="http://oeis.org/wiki/Welcome#Policy_on_Searching_the_Database">OEIS' policy on searching the database</a>.</p>
 <h1 id="see-also">SEE ALSO</h1>
