@@ -18,13 +18,13 @@
 <p><strong>HOPS</strong> is a small domain specific scripting language for working with power series and integer sequences. It comes with an interpreter called <code>hops</code>.</p>
 <p>Here we generate the sequence of <a href="https://oeis.org/A000108">Catalan numbers</a> from its generating function:</p>
 <pre><code>$ hops --prec=11 &#39;2/(1+sqrt(1-4*x))&#39;
-2/(1+sqrt(1-4*x)) =&gt; {1,1,2,5,14,42,132,429,1430,4862,16796}</code></pre>
+{&quot;hops&quot;:&quot;2/(1+sqrt(1-4*x))&quot;,&quot;seq&quot;:[1,1,2,5,14,42,132,429,1430,4862,16796]}</code></pre>
 <p>Or, using an implicit defition:</p>
 <pre><code>$ hops --prec=11 &#39;C=1+x*C^2&#39;
-C=1+x*C^2 =&gt; {1,1,2,5,14,42,132,429,1430,4862,16796}</code></pre>
+{&quot;hops&quot;:&quot;C=1+x*C^2&quot;,&quot;seq&quot;:[1,1,2,5,14,42,132,429,1430,4862,16796]}</code></pre>
 <p>Or, using an explicit formula for the <em>n</em>-th term:</p>
 <pre><code>$ hops --prec=11 &#39;{(2*n)!/(n!*(n+1)!)}&#39;
-{(2*n)!/(n!*(n+1)!)} =&gt; {1,1,2,5,14,42,132,429,1430,4862,16796}</code></pre>
+{&quot;hops&quot;:&quot;{(2*n)!/(n!*(n+1)!)}&quot;,&quot;seq&quot;:[1,1,2,5,14,42,132,429,1430,4862,16796]}</code></pre>
 <p>See the <a href="#documentation">documentation</a> section below for more.</p>
 <h2 id="installation">Installation</h2>
 <p>The easiest way to get started is to download a prebuilt binary. Such binaries can be found on the <a href="https://github.com/akc/hops/releases">releases page</a>. The binaries are statically linked and should work on any Linux system.</p>

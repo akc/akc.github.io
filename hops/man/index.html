@@ -4,15 +4,15 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="date" content="2015-10-11" />
-  <title>HOPS(1) User Manual | Version 0.4.1</title>
+  <meta name="date" content="2016-03-22" />
+  <title>HOPS(1) User Manual | Version 0.5.0</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="../github-pandoc.css" type="text/css" />
 </head>
 <body>
 <div id="header">
-<h1 class="title">HOPS(1) User Manual | Version 0.4.1</h1>
-<h3 class="date">11 Oct 2015</h3>
+<h1 class="title">HOPS(1) User Manual | Version 0.5.0</h1>
+<h3 class="date">22 March 2016</h3>
 </div>
 <h1 id="name">NAME</h1>
 <p>hops - handy operations on power series.</p>
@@ -20,8 +20,7 @@
 <p><code>hops [--prec N] PROGRAMS...</code><br />
 <code>hops [--prec N] (-f|--script) FILENAME</code><br />
 <code>hops --tag N</code><br />
-<code>hops (--to-json|--from-json)</code><br />
-<code>hops (--list-transforms|--dump|--update|--version|--help)</code></p>
+<code>hops (--dump|--update|--version|--help)</code></p>
 <h1 id="description">DESCRIPTION</h1>
 <p>With <code>hops</code> one can generate integer (or rational) sequences from programs containing power series and functional equations. See <a href="http://akc.is/hops" class="uri">http://akc.is/hops</a> for more information about the HOPS language and how to program in it.</p>
 <h1 id="options">OPTIONS</h1>
@@ -35,17 +34,8 @@
 <dt>--tag N</dt>
 <dd>Read sequences from stdin and tag them, starting at N.
 </dd>
-<dt>--to-json</dt>
-<dd>Convert to JSON.
-</dd>
-<dt>--from-json</dt>
-<dd>Convert from JSON.
-</dd>
 <dt>--dump</dt>
 <dd>Output all the sequences of the local data base.
-</dd>
-<dt>--list-transforms</dt>
-<dd>List the names of all transforms.
 </dd>
 <dt>--update</dt>
 <dd>Update the local database.
