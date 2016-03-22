@@ -69,8 +69,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   &quot;hops&quot;:&quot;exp(exp(x)-1)&quot;,
   &quot;seq&quot;:[1,1,1,5,5,13,203,877,23,1007],
   &quot;denominators&quot;:[1,1,1,6,8,30,720,5040,224,17280]
-}
-</code></pre>
+}</code></pre>
 <p>To get the Bell numbers we, however, also need to multiply the coefficient of <em>x<sup>n</sup></em> in that series by <em>n!</em>; this is what the laplace transform does:</p>
 <pre><code>$ hops --prec=10 &#39;f=exp(exp(x)-1);laplace(f)&#39;
 {
