@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="date" content="2016-03-22" />
+  <meta name="date" content="2016-03-27" />
   <title>SLOANE(1) User Manual | Version 5.0.0</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="../github-pandoc.css" type="text/css" />
@@ -12,7 +12,7 @@
 <body>
 <div id="header">
 <h1 class="title">SLOANE(1) User Manual | Version 5.0.0</h1>
-<h3 class="date">22 March 2016</h3>
+<h3 class="date">27 March 2016</h3>
 </div>
 <h1 id="name">NAME</h1>
 <p>sloane - lookup integer sequences, OEIS A-numbers, etc.</p>
@@ -44,6 +44,9 @@
 </dd>
 <dt>--all</dt>
 <dd>Fetch all matching entries (equivalent to -n 999999).
+</dd>
+<dt>--filter</dt>
+<dd>Filter out those sequences from standard input that are in the local database. The input is expected to be in the form returned by <strong>hops</strong>(1).
 </dd>
 <dt>--invert</dt>
 <dd>Return sequences <em>not</em> in the database (used with <code>--filter</code>).
