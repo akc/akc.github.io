@@ -11,6 +11,81 @@
     <updated>2017-02-18T00:00:00Z</updated>
     <entry>
     <title>akc.is/blog</title>
+    <link href="http://akc.is/blog/2017-02-18-Virtual-species-and-sign-reversing-involutions.html" />
+    <id>http://akc.is/blog/2017-02-18-Virtual-species-and-sign-reversing-involutions.html</id>
+    <published>2017-02-18T00:00:00Z</published>
+    <updated>2017-02-18T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<h1 id="inverse-species-and-sign-reversing-involutions">Inverse species and sign-reversing involutions</h1>
+<div class="blog">
+<p>Given a finite set <span class="math inline">\(U\)</span> with <span class="math inline">\(n\)</span> element. Assuming <span class="math inline">\(n\)</span> is positive, how would you prove that there are as many subsets of <span class="math inline">\(S\)</span> with even cardinality as there are with odd cardinality? One way is to use the binomial theorem: <span class="math display">\[
+0^n = (1-1)^n = \sum_{k=0}^n{n \choose k}(-1)^k
+    = \sum_{\text{$k$ even}}{n \choose k} - \sum_{\text{$k$ odd}}{n \choose k}.
+\]</span> That’s neat, but not very combinatorial. For a more combinatorial proof we can use a so called sign-reversing involution.</p>
+<p>A function <span class="math inline">\(f:X\to X\)</span> is an <em>involution</em> if it is its own inverse, or, in symbols, <span class="math inline">\(f(f(x))=x\)</span>. Assume that a function <span class="math inline">\(\epsilon:X\to\{-1,1\}\)</span> is given. We refer to <span class="math inline">\(\epsilon(x)\)</span> as the <em>sign</em> of <span class="math inline">\(x\)</span>. Now, <span class="math inline">\(f\)</span> is a <em>sign-reversing involution</em> if for each non fixed point <span class="math inline">\(x\)</span> in <span class="math inline">\(X\)</span> the sign of <span class="math inline">\(x\)</span> is reversed by <span class="math inline">\(f\)</span>; that is, <span class="math inline">\(\epsilon(f(x))=-\epsilon(x)\)</span>. If <span class="math inline">\(f\)</span> is a sign-reversing involution of <span class="math inline">\(X\)</span>, then <span class="math display">\[\newcommand{Fix}{\mathrm{Fix}}
+\sum_{x\in X}\epsilon(x) = \!\!\sum_{x\in \Fix(f)}\!\!\!\epsilon(x),
+\]</span> where <span class="math inline">\(\Fix(f)=\{x\in X: f(x)=x\}\)</span> denotes the set of fixed points of <span class="math inline">\(f\)</span>. This is because, under <span class="math inline">\(f\)</span>, each negative non fixed point is paired with a unique positive non fixed point, and vice versa. For counting purposes we usually also require that all fixed points of <span class="math inline">\(f\)</span> have the same sign, and thus the right hand sum is <span class="math inline">\(\pm|\Fix(f)|\)</span>.</p>
+<p>In the example of counting subsets of a nonempty set <span class="math inline">\(U\)</span> with respect to parity, a natural sign function is defined by <span class="math inline">\(\epsilon(S) = (-1)^{|S|}\)</span>, for <span class="math inline">\(S\subseteq U\)</span>. Assuming <span class="math inline">\(U\)</span> is equipped with a total order and that <span class="math inline">\(\hat 0\)</span> denotes the smallest element of <span class="math inline">\(U\)</span>, a sign reversing involution is given by <span class="math display">\[
+f(S) =
+\begin{cases}
+  S \setminus \{\hat 0\} &amp; \text{if $\hat 0\in S$}, \\
+  S \cup \{\hat 0\}      &amp; \text{if $\hat 0\notin S $}.
+\end{cases}
+\]</span> For instance, if <span class="math inline">\(U=\{1,2\}\)</span> then <span class="math inline">\(f(\emptyset)=\{1\}\)</span>, <span class="math inline">\(f(\{1\})=\emptyset\)</span>, <span class="math inline">\(f(\{2\})=\{1,2\}\)</span>, and <span class="math inline">\(f(\{1,2\})=\{2\}\)</span>. Note that <span class="math inline">\(f\)</span> is fixed point free; thus <span class="math inline">\(\Fix(f)=\emptyset\)</span> and <span class="math display">\[
+\#\{S : S\subseteq U, \text{$|S|$ even}\} -
+\#\{S : S\subseteq U, \text{$|S|$ odd}\} = |\Fix(f)| = 0.
+\]</span> Now, that’s a simple and beautiful proof, but is this a proof from The Book, as Paul Erdős might have asked? Is there a more general and “natural” combinatorial proof? E.g. do we have to assume a total order on <span class="math inline">\(U\)</span> and do we have to mention special elements, such as <span class="math inline">\(\hat 0\)</span>? Before proceeding to the next paragraph you might want to take a moment and try to come up with such a proof.</p>
+<p>Let <span class="math inline">\(E\)</span> be the <a href="https://en.wikipedia.org/wiki/Combinatorial_species">combinatorial species</a> of sets, defined by <span class="math inline">\(E[U]=\{U\}\)</span>. Its exponential generating function is <span class="math inline">\(E(x)=e^x\)</span>, and its multiplicative inverse is the <a href="https://byorgey.wordpress.com/2017/02/10/virtual-species-suffice/">virtual species</a> <span class="math inline">\(E^{-1}\)</span> such that <span class="math inline">\(E\cdot E^{-1}=1\)</span>, where <span class="math inline">\(1[U]=\{U\}\)</span> if <span class="math inline">\(U=\emptyset\)</span> and <span class="math inline">\(1[U]=\emptyset\)</span> otherwise. Note that <span class="math display">\[
+E^{-1} = (1+E_+)^{-1} = \sum_{k\geq 0} (-1)^k(E_+)^k,
+\]</span> where <span class="math inline">\(E_+\)</span> denotes the species of nonempty sets. Thus, <span class="math inline">\(E^{-1}\)</span> is the species of signed ballots (also called ordered set partitions), where the sign of a ballot <span class="math inline">\(B_1 B_2\dots B_k\)</span> is <span class="math inline">\((-1)^k\)</span>; that is, the parity of the number of blocks. For instance, <span class="math inline">\(\{d\}\{a,c,e\}\{b\}\)</span> is a ballot of <span class="math inline">\(U=\{a,b,c,d,e\}\)</span> and its sign is <span class="math inline">\((-1)^3=-1\)</span>.</p>
+<p>The species of subsets <span class="math inline">\(\newcommand{\Pow}{\mathfrak{P}}\Pow\)</span> is defined by <span class="math inline">\(\Pow[U]=\{(S,U\setminus S): S\subseteq U\}\)</span>. Note that <span class="math display">\[
+(E \cdot E)[U]
+   = \sum_{S\subseteq U} E[S] \times E[U\setminus S]
+   = \sum_{S\subseteq U} \{S\} \times \{U\setminus S\}
+   = \Pow[U].
+\]</span> That is, <span class="math inline">\(\Pow=E^2\)</span> and its exponential generating function is <span class="math display">\[
+\Pow(x)=E(x)^2 = e^{2x}=\sum_{n\geq 0}2^n \frac{x^n}{n!}.
+\]</span> Further, counting subsets with respect to the sign <span class="math inline">\((-1)^{|S|}\)</span> we get <span class="math display">\[E(-x)E(x) = e^{-x}e^{x} = e^0 = 1.
+\]</span></p>
+<p>Thus, the species interpretation of there being as many subsets of even cardinality as of odd cardinality is <span class="math inline">\(E\cdot E^{-1}=1\)</span>. So, a combinatorial proof of this fact can be given by a sign-reversing involution demonstrating that <span class="math inline">\(E\cdot E^{-1}=1\)</span>. The objects of <span class="math inline">\(E\cdot E^{-1}\)</span> are pairs <span class="math inline">\((S, \beta)\)</span> such that <span class="math inline">\(S\subseteq U\)</span> and <span class="math inline">\(\beta=B_1 B_2\dots B_k\)</span> is a signed ballot of <span class="math inline">\(U\setminus S\)</span>. For example, <span class="math inline">\((E\cdot E^{-1})[\{a,b,c\}]\)</span> consists of the pairs <span class="math display">\[
+\begin{array}{c|c}
+  \text{positive pairs} &amp; \text{negative pairs} \\
+  (\{a,b,c\}, \emptyset)    &amp; (\emptyset,\{a,b,c\}) \\
+  (\emptyset, \{a\}\{b,c\}) &amp; (\{a\}, \{b,c\})      \\
+  (\emptyset, \{b\}\{a,c\}) &amp; (\{b\}, \{a,c\})      \\
+  (\emptyset, \{c\}\{a,b\}) &amp; (\{c\}, \{a,b\})      \\
+  (\emptyset, \{a,b\}\{c\}) &amp; (\{a,b\}, \{c\})      \\
+  (\emptyset, \{a,c\}\{b\}) &amp; (\{a,c\}, \{b\})      \\
+  (\emptyset, \{b,c\}\{a\}) &amp; (\{b,c\}, \{a\})      \\
+  (\{a\}, \{b\}\{c\})       &amp; (\emptyset, \{a\}\{b\}\{c\})  \\
+  (\{a\}, \{c\}\{b\})       &amp; (\emptyset, \{a\}\{c\}\{b\})  \\
+  (\{b\}, \{a\}\{c\})       &amp; (\emptyset, \{b\}\{a\}\{c\})  \\
+  (\{b\}, \{c\}\{a\})       &amp; (\emptyset, \{b\}\{c\}\{a\})  \\
+  (\{c\}, \{a\}\{b\})       &amp; (\emptyset, \{c\}\{a\}\{b\})  \\
+  (\{c\}, \{b\}\{a\})       &amp; (\emptyset, \{c\}\{b\}\{a\})  \\
+\end{array}
+\]</span> This suggest the natural sign-reversing involution <span class="math display">\[
+f(S,B_1 B_2 \dots B_k) =
+\begin{cases}
+  (B_1, B_2 B_3 \dots B_k) &amp;\text{if $S=\emptyset$,}\\
+  (\emptyset, SB_1 B_2 \dots B_k) &amp;\text{if $S\neq\emptyset$.}
+\end{cases}
+\]</span> The table above is arranged so that pairs on the same row are images of each other under <span class="math inline">\(f\)</span>.</p>
+<p>More generally, if <span class="math inline">\(F\)</span> is a species such that <span class="math inline">\(|F[\emptyset]|=1\)</span> then the multiplicative inverse, <span class="math inline">\(F^{-1}\)</span>, is the virtual species of lists <span class="math inline">\(\alpha_1\alpha_2\dots\alpha_k\)</span> of nonempty <span class="math inline">\(F\)</span>-structures in which the sign is <span class="math inline">\((-1)^k\)</span>. A proof is given by the fixed point free sign-reversing involution <span class="math display">\[
+f(\alpha,\alpha_1 \alpha_2 \dots \alpha_k) =
+\begin{cases}
+  (\alpha_1, \alpha_2 \alpha_3 \dots \alpha_k)
+    &amp;\text{if $\alpha\in F[\emptyset]$,}\\
+  (\emptyset, \alpha \alpha_1 \alpha_2 \dots \alpha_k)
+    &amp;\text{if $\alpha\notin F[\emptyset]$.}
+\end{cases}
+\]</span></p>
+<p>For more examples of the use of sign-reversing involutions the reader might want to have a look at my <a href="http://www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p16">paper</a> with Stuart Hannah.</p>
+<p>Finally I’d like to thank my friend <a href="https://algo.is/">Bjark</a> for suggesting that I write this post.</p>
+</div>
+]]></summary>
+</entry>
+<entry>
+    <title>akc.is/blog</title>
     <link href="http://akc.is/blog/2017-02-18-Inverse-species-and-sign-reversing-involutions.html" />
     <id>http://akc.is/blog/2017-02-18-Inverse-species-and-sign-reversing-involutions.html</id>
     <published>2017-02-18T00:00:00Z</published>
