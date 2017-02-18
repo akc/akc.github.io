@@ -31,8 +31,8 @@ f(S) =
   S \cup \{\hat 0\}      &amp; \text{if $\hat 0\notin S $}.
 \end{cases}
 \]</span> For instance, if <span class="math inline">\(U=\{1,2\}\)</span> then <span class="math inline">\(f(\emptyset)=\{1\}\)</span>, <span class="math inline">\(f(\{1\})=\emptyset\)</span>, <span class="math inline">\(f(\{2\})=\{1,2\}\)</span>, and <span class="math inline">\(f(\{1,2\})=\{2\}\)</span>. Note that <span class="math inline">\(f\)</span> is fixed point free; thus <span class="math inline">\(\Fix(f)=\emptyset\)</span> and <span class="math display">\[
-\#\{S : S\subseteq U, \text{$|S|$ even}\} -
-\#\{S : S\subseteq U, \text{$|S|$ odd}\} = |\Fix(f)| = 0.
+\#\{S\subseteq U: \text{$|S|$ even}\} -
+\#\{S\subseteq U: \text{$|S|$ odd}\} = |\Fix(f)| = 0.
 \]</span> Now, that’s a simple and beautiful proof, but is there a more general and “natural” combinatorial proof? E.g. do we have to assume a total order on <span class="math inline">\(U\)</span> and do we have to mention special elements, such as <span class="math inline">\(\hat 0\)</span>? Before proceeding to the next paragraph you might want to take a moment and try to come up with such a proof.</p>
 <p>Let <span class="math inline">\(E\)</span> be the <a href="https://en.wikipedia.org/wiki/Combinatorial_species">combinatorial species</a> of sets, defined by <span class="math inline">\(E[U]=\{U\}\)</span>. Its exponential generating function is <span class="math inline">\(E(x)=e^x\)</span>, and its multiplicative inverse is the <a href="https://byorgey.wordpress.com/2017/02/10/virtual-species-suffice/">virtual species</a> <span class="math inline">\(E^{-1}\)</span> such that <span class="math inline">\(E\cdot E^{-1}=1\)</span>, where <span class="math inline">\(1[U]=\{U\}\)</span> if <span class="math inline">\(U=\emptyset\)</span> and <span class="math inline">\(1[U]=\emptyset\)</span> otherwise. Note that <span class="math display">\[
 E^{-1} = (1+E_+)^{-1} = \sum_{k\geq 0} (-1)^k(E_+)^k,
