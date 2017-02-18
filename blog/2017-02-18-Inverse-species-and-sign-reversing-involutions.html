@@ -37,13 +37,13 @@
       <div class="ten columns offset-by-one">
 	<h1 id="inverse-species-and-sign-reversing-involutions">Inverse species and sign-reversing involutions</h1>
 <div class="blog">
-<p>Given a finite set <span class="math inline">\(U\)</span> with <span class="math inline">\(n\)</span> element. Assuming <span class="math inline">\(n\)</span> is positive, how would you prove that there are as many subsets of <span class="math inline">\(S\)</span> with even cardinality as there are with odd cardinality? One way is to use the binomial theorem: <span class="math display">\[
+<p>Given a finite set <span class="math inline">\(U\)</span> with <span class="math inline">\(n\)</span> elements. Assuming <span class="math inline">\(n\)</span> is positive, how would you prove that there are as many subsets of <span class="math inline">\(S\)</span> with even cardinality as there are with odd cardinality? One way is to use the binomial theorem: <span class="math display">\[
 0^n = (1-1)^n = \sum_{k=0}^n{n \choose k}(-1)^k
     = \sum_{\text{$k$ even}}{n \choose k} - \sum_{\text{$k$ odd}}{n \choose k}.
 \]</span> That’s neat, but not very combinatorial. For a more combinatorial proof we can use a so called sign-reversing involution.</p>
 <p>A function <span class="math inline">\(f:X\to X\)</span> is an <em>involution</em> if it is its own inverse, or, in symbols, <span class="math inline">\(f(f(x))=x\)</span>. Assume that a function <span class="math inline">\(\epsilon:X\to\{-1,1\}\)</span> is given. We refer to <span class="math inline">\(\epsilon(x)\)</span> as the <em>sign</em> of <span class="math inline">\(x\)</span>. Now, <span class="math inline">\(f\)</span> is a <em>sign-reversing involution</em> if for each non fixed point <span class="math inline">\(x\)</span> in <span class="math inline">\(X\)</span> the sign of <span class="math inline">\(x\)</span> is reversed by <span class="math inline">\(f\)</span>; that is, <span class="math inline">\(\epsilon(f(x))=-\epsilon(x)\)</span>. If <span class="math inline">\(f\)</span> is a sign-reversing involution of <span class="math inline">\(X\)</span>, then <span class="math display">\[\newcommand{Fix}{\mathrm{Fix}}
 \sum_{x\in X}\epsilon(x) = \!\!\sum_{x\in \Fix(f)}\!\!\!\epsilon(x),
-\]</span> where <span class="math inline">\(\Fix(f)=\{x\in X: f(x)=x\}\)</span> denotes the set of fixed points of <span class="math inline">\(f\)</span>. This is because, under <span class="math inline">\(f\)</span>, each negative non fixed point is paired with a unique positive non fixed point, and vice versa. For counting purposes we usually also require that all fixed points of <span class="math inline">\(f\)</span> have the same sign, and thus the right hand sum is <span class="math inline">\(\pm|\Fix(f)|\)</span>.</p>
+\]</span> where <span class="math inline">\(\Fix(f)=\{x\in X: f(x)=x\}\)</span> denotes the set of fixed points of <span class="math inline">\(f\)</span>. This is because, under <span class="math inline">\(f\)</span>, each negative non fixed point is paired with a unique positive non fixed point, and vice versa. For counting purposes we usually also require that all fixed points of <span class="math inline">\(f\)</span> have the same sign, and thus the right hand sum is <span class="math inline">\(\pm|\Fix(f)|.\)</span></p>
 <p>In the example of counting subsets of a nonempty set <span class="math inline">\(U\)</span> with respect to parity, a natural sign function is defined by <span class="math inline">\(\epsilon(S) = (-1)^{|S|}\)</span>, for <span class="math inline">\(S\subseteq U\)</span>. Assuming <span class="math inline">\(U\)</span> is equipped with a total order and that <span class="math inline">\(\hat 0\)</span> denotes the smallest element of <span class="math inline">\(U\)</span>, a sign reversing involution is given by <span class="math display">\[
 f(S) =
 \begin{cases}
@@ -59,8 +59,8 @@ E^{-1} = (1+E_+)^{-1} = \sum_{k\geq 0} (-1)^k(E_+)^k,
 \]</span> where <span class="math inline">\(E_+\)</span> denotes the species of nonempty sets. Thus, <span class="math inline">\(E^{-1}\)</span> is the species of signed ballots (also called ordered set partitions), where the sign of a ballot <span class="math inline">\(B_1 B_2\dots B_k\)</span> is <span class="math inline">\((-1)^k\)</span>; that is, the parity of the number of blocks. For instance, <span class="math inline">\(\{d\}\{a,c,e\}\{b\}\)</span> is a ballot of <span class="math inline">\(U=\{a,b,c,d,e\}\)</span> and its sign is <span class="math inline">\((-1)^3=-1\)</span>.</p>
 <p>The species of subsets <span class="math inline">\(\newcommand{\Pow}{\mathfrak{P}}\Pow\)</span> is defined by <span class="math inline">\(\Pow[U]=\{(S,U\setminus S): S\subseteq U\}\)</span>. Note that <span class="math display">\[
 (E \cdot E)[U]
-   = \sum_{S\subseteq U} E[S] \times E[U\setminus S]
-   = \sum_{S\subseteq U} \{S\} \times \{U\setminus S\}
+   = \bigcup_{S\subseteq U} E[S] \times E[U\setminus S]
+   = \bigcup_{S\subseteq U} \{S\} \times \{U\setminus S\}
    = \Pow[U].
 \]</span> That is, <span class="math inline">\(\Pow=E^2\)</span> and its exponential generating function is <span class="math display">\[
 \Pow(x)=E(x)^2 = e^{2x}=\sum_{n\geq 0}2^n \frac{x^n}{n!}.
@@ -99,7 +99,7 @@ f(\alpha,\alpha_1 \alpha_2 \dots \alpha_k) =
 \end{cases}
 \]</span></p>
 <p>For more examples of the use of sign-reversing involutions the reader might want to have a look at my <a href="http://www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p16">paper</a> with Stuart Hannah.</p>
-<p>Finally I’d like to thank my friend <a href="https://algo.is/">Bjark</a> for suggesting that I write this post.</p>
+<p>Finally I’d like to thank my friend <a href="https://algo.is/">Bjarki</a> for suggesting that I write this post.</p>
 </div>
 
       </div>
