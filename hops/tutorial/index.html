@@ -51,7 +51,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1 id="hops-tutorial">HOPS Tutorial</h1>
 <p>To get a feeling for the HOPS language and using its interpreter let us look at a number of examples.</p>
 <h2 id="generating-functions">Generating functions</h2>
-<p>The generating function, <em>f</em>, for the <a href="https://oeis.org/A000045">Fibonacci numbers</a> satisfies <em>f=1+(x+x<sup>2</sup>)f</em>, and we can get the coefficient of <em>f</em> directly from that equation:</p>
+<p>The generating function, <em>f</em>, for the <a href="https://oeis.org/A000045">Fibonacci numbers</a> satisfies <em>f=1+(x+x<sup>2</sup>)f</em>, and we can get the coefficients of <em>f</em> directly from that equation:</p>
 <pre><code>$ hops &#39;f=1+(x+x^2)*f&#39;
 {
   &quot;hops&quot;:&quot;f=1+(x+x^2)*f&quot;,
@@ -100,14 +100,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   &quot;hops&quot;:&quot;g=sin(2*x)/(2*cos(3*x));T=laplacei(BISECT1(laplace(g)));laplace((exp(x)*T)@(x/24))&quot;,
   &quot;seq&quot;:[1,1,3,19,207,3451,81663]
 }</code></pre>
-<h2 id="simple-sequence-notation">Simple sequence notation</h2>
-<p>We have seen how to define a few different sequences using generating functions and functional equations. HOPS also supports a more naive way of specifying sequences. Here's a simple finite sequence:</p>
-<pre><code>$ hops &#39;{1,2,3}&#39;
-{
-  &quot;hops&quot;:&quot;{1,2,3}&quot;,
-  &quot;seq&quot;:[1,2,3]
-}</code></pre>
-<p>We can also use ellipses to build infinite sequences:</p>
+<h2 id="polynomial-notation">Polynomial notation</h2>
+<p>Instead of writing polynomials using sums of various powers of x, one can simply enclose the coefficients in square brackets. For example, <em>[1,2,3]</em> is equivalent to <em>1 + 2x + 3x^2</em>.</p>
+<pre><code>$ hops &#39;[1,2,3]&#39;
+{&quot;hops&quot;:&quot;[1,2,3]&quot;,&quot;seq&quot;:[1,2,3,0,0,0,0,0,0,0,0,0,0,0,0]}
+$ hops &#39;1/(1-[0,1,1])&#39;
+{&quot;hops&quot;:&quot;1/(1-[0,1,1])&quot;,&quot;seq&quot;:[1,1,2,3,5,8,13,21,34,55,89,144,233,377,610]}</code></pre>
+<h2 id="sequence-notation">Sequence notation</h2>
+<p>We have seen how to define a few different sequences using generating functions and functional equations. HOPS also supports a more naive way of specifying infinite sequences using curly brackets.</p>
 <pre><code>$ hops &#39;{1,2,...}&#39;
 {
   &quot;hops&quot;:&quot;{1,2,...}&quot;,
@@ -154,6 +154,34 @@ $ hops &#39;{n^3}&#39;
   &quot;hops&quot;:&quot;{1,1,n!/2}&quot;,
   &quot;seq&quot;:[1,1,1,3,12,60,360,2520,20160,181440,1814400,19958400]
 }</code></pre>
+<p>One can also use curly brackets to specify an indeterminate sequence. For example, <em>{1,2,3}</em> signifies an infinite series that is indeterminate beyond the third coefficient. When such series are used in computations, only the determinate coefficients are displayed.</p>
+<pre><code>$ hops &#39;{1,2,3}&#39;
+{&quot;hops&quot;:&quot;{1,2,3}&quot;,&quot;seq&quot;:[1,2,3]}
+$ hops &#39;1/(1-{0,1,1})&#39;
+{&quot;hops&quot;:&quot;1/(1-{0,1,1})&quot;,&quot;seq&quot;:[1,1,2]}</code></pre>
+<p>Indeterminate sequences are useful in investigating a mostly unknown sequence (perhaps enumerating some combinatorial objects). For example, we might know that a sequence starts <em>1,1,2,5,18,77,362</em> and we want to apply different transformations and still know how many terms are definite. Viewing this sequence as the start of an ordinary generating function <em>f</em>, we might look at <em>f/(1-2x)</em></p>
+<pre><code>$ hops &#39;{1,1,2,5,18,77,362}/(1-2*x)&#39;
+{&quot;hops&quot;:&quot;{1,1,2,5,18,77,362}/(1-2*x)&quot;,&quot;seq&quot;:[1,3,8,21,60,197,756]}</code></pre>
+<p>and discover that this sequence is in the OEIS:</p>
+<pre><code>$ hops &#39;{1,1,2,5,18,77,362}/(1-2*x)&#39; | sloane | jq &#39;.name&#39;
+&quot;Boustrophedon transform of natural numbers, cf. A000027.</code></pre>
+<p>On the other hand, viewing <em>f</em> as a polynomial we have</p>
+<pre><code>$ hops &#39;[1,1,2,5,18,77,362]/(1-2*x)&#39;
+{&quot;hops&quot;:&quot;[1,1,2,5,18,77,362]/(1-2*x)&quot;,&quot;seq&quot;:[1,3,8,21,60,197,756,1512,3024,6048,
+  12096,24192,48384,96768,193536]}</code></pre>
+<p>which is less helpful, and looking up this sequence in the OEIS would not give a hit.</p>
+<h2 id="selecting-coefficients">Selecting coefficients</h2>
+<p>One can easily select specific coefficients using the <code>?</code> operator.</p>
+<pre><code>$ hops &#39;1/(1-x-x^2)&#39;
+{&quot;hops&quot;:&quot;1/(1-x-x^2)&quot;,&quot;seq&quot;:[1,1,2,3,5,8,13,21,34,55,89,144,233,377,610]}
+$ hops &#39;(1/(1-x-x^2))?[4,6]&#39;
+{&quot;hops&quot;:&quot;(1/(1-x-x^2))?[4,6]&quot;,&quot;seq&quot;:[5,13]}</code></pre>
+<p>The odd coefficients could be selected as follows:</p>
+<pre><code>$ hops &#39;(1/(1-x-x^2))?{2*n+1}&#39;
+{&quot;hops&quot;:&quot;(1/(1-x-x^2))?{2*n+1}&quot;,&quot;seq&quot;:[1,3,8,21,55,144,377]}</code></pre>
+<p>If all you want is a single coefficient, you can use a single integer without brackets:</p>
+<pre><code>$ hops &#39;(1/(1-x-x^2))?14&#39;
+{&quot;hops&quot;:&quot;(1/(1-x-x^2))?14&quot;,&quot;seq&quot;:[610]}</code></pre>
 <h2 id="composing-programs">Composing programs</h2>
 <p>Using the special variable <code>stdin</code> we can compose programs:</p>
 <pre><code>$ hops &#39;f=1+(x+x^2)*f&#39; | hops &#39;stdin/(1-x)&#39;
@@ -170,16 +198,16 @@ $ hops &#39;{n^3}&#39;
 }</code></pre>
 <h2 id="a-more-involved-example">A more involved example</h2>
 <p>We shall use <code>hops</code> and <a href="https://stedolan.github.io/jq/">jq</a> to reimplement an idea due to <a href="https://github.com/baruchel/oeis-deconvolution">Thomas Baruchel</a>. Assume that we save the following bash script in a file named <code>deconv</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">norm=</span><span class="st">&quot;map (.*.) | add&quot;</span>
-<span class="ot">d=</span><span class="kw">`jq</span> -n <span class="st">&quot;[</span><span class="ot">$1</span><span class="st">] | length&quot;</span><span class="kw">`</span>
-<span class="ot">N=</span><span class="kw">`jq</span> -n <span class="st">&quot;[</span><span class="ot">$1</span><span class="st">] | </span><span class="ot">$norm</span><span class="st"> | sqrt&quot;</span><span class="kw">`</span>
-<span class="kw">hops</span> --dump --prec=<span class="ot">$d</span> \
-  <span class="kw">|</span> <span class="kw">jq</span> -c <span class="st">&quot;if (.seq | length) == </span><span class="ot">$d</span><span class="st"> then . else empty end&quot;</span> \
-  <span class="kw">|</span> <span class="kw">hops</span> --prec=<span class="ot">$d</span> <span class="st">&quot;{</span><span class="ot">$1</span><span class="st">}/stdin&quot;</span> \
-  <span class="kw">|</span> <span class="kw">jq</span> -c <span class="st">&quot;if (.seq | length) == </span><span class="ot">$d</span><span class="st"> then . else empty end&quot;</span> \
-  <span class="kw">|</span> <span class="kw">jq</span> -c <span class="st">&quot;if (.seq | </span><span class="ot">$norm</span><span class="st">) &lt; </span><span class="ot">$N</span><span class="st"> then . else empty end&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">norm=</span><span class="st">&quot;map (.*.) | add&quot;</span>
+<span class="va">d=</span><span class="kw">`</span><span class="ex">jq</span> -n <span class="st">&quot;[</span><span class="va">$1</span><span class="st">] | length&quot;</span><span class="kw">`</span>
+<span class="va">N=</span><span class="kw">`</span><span class="ex">jq</span> -n <span class="st">&quot;[</span><span class="va">$1</span><span class="st">] | </span><span class="va">$norm</span><span class="st"> | sqrt&quot;</span><span class="kw">`</span>
+<span class="ex">hops</span> --dump --prec=<span class="va">$d</span> \
+  <span class="kw">|</span> <span class="ex">jq</span> -c <span class="st">&quot;if (.seq | length) == </span><span class="va">$d</span><span class="st"> then . else empty end&quot;</span> \
+  <span class="kw">|</span> <span class="ex">hops</span> --prec=<span class="va">$d</span> <span class="st">&quot;{</span><span class="va">$1</span><span class="st">}/stdin&quot;</span> \
+  <span class="kw">|</span> <span class="ex">jq</span> -c <span class="st">&quot;if (.seq | length) == </span><span class="va">$d</span><span class="st"> then . else empty end&quot;</span> \
+  <span class="kw">|</span> <span class="ex">jq</span> -c <span class="st">&quot;if (.seq | </span><span class="va">$norm</span><span class="st">) &lt; </span><span class="va">$N</span><span class="st"> then . else empty end&quot;</span></code></pre></div>
 <p>Then <code>./deconv &lt;sequence&gt;</code> would find power series <span class="math inline"><em>G</em></span> and <span class="math inline"><em>H</em></span> such that <span class="math inline"><em>F</em> = <em>G</em> ⋅ <em>H</em></span>, where <span class="math inline"><em>F</em></span> is the generating function for <code>&lt;sequence&gt;</code>, <span class="math inline"><em>G</em></span> is the generating function for some sequence in the OEIS, and <span class="math inline"><em>H</em></span> has &quot;small&quot; norm. Here, the norm of a finite sequence (or polynomial, or truncated power series) is the sum of the squares of its elements, and <span class="math inline"><em>H</em></span> is said to have small norm if its norm is smaller than the square root of the norm of <span class="math inline"><em>F</em></span>. For simplicity we further assume that the constant term of <span class="math inline"><em>G</em></span> is <span class="math inline">1</span>. It should also be noted that using <code>jq</code> this way comes with a caveat: In contrast with <code>hops</code>, <code>jq</code> only supports IEEE 754 64-bit numbers, so rounding could occur for numbers with more that 15 decimal digits.</p>
-<p>As an alternative to restricting the norm of <span class="math inline"><em>H</em></span> we could require that <span class="math inline"><em>H</em></span> be in the OEIS, and one way to accomplished that would be to replace the last three lines in the above script with <code>sloane --filter</code> (see <a href="http://akc.is/sloane/">sloane</a>).</p>
+<p>As an alternative to restricting the norm of <span class="math inline"><em>H</em></span> we could require that <span class="math inline"><em>H</em></span> be in the OEIS, and one way to accomplished that would be to replace the last two lines in the above script with <code>sloane --filter</code> (see <a href="http://akc.is/sloane/">sloane</a>).</p>
 <h2 id="oeis-a-numbers">OEIS A-numbers</h2>
 <p>OEIS A-numbers can be used directly in HOPS programs and they are interpreted as ordinary generating functions. E.g. this is the difference between the Catalan numbers (<a href="https://oeis.org/A000108">A000108</a>) and the Motzkin numbers (<a href="https://oeis.org/A001006">A001006</a>):</p>
 <pre><code>$ hops &#39;A000108-A001006&#39;
@@ -189,24 +217,23 @@ $ hops &#39;{n^3}&#39;
 }</code></pre>
 <p>The first time you use A-numbers with <code>hops</code> you will be asked to run <code>hops --update</code>. This will download <code>https://oeis.org/stripped.gz</code> and unpack it into <code>.oeis-data/stripped</code> in your home directory. Alternatively, you can do this by hand using <code>wget</code> and <code>gunzip</code>, say, if you prefer.</p>
 <h2 id="misc-transformations">Misc transformations</h2>
-<p>HOPS knows about many of the <a href="https://oeis.org/transforms.html">transformations used by the OEIS</a>. As an example, the sequence <a href="https://oeis.org/A067145">A067145</a> claims to shift left under reversion:</p>
-<pre><code>$ sloane A067145 | jq &#39;.seq=(.seq[:10]|@csv)&#39;
+<p>HOPS knows about many combinatorial transformations. As an example, the sequence <a href="https://oeis.org/A038072">A038072</a> claims to shift left under the Euler transform:</p>
+<pre><code>$ sloane A038072
 {
-  &quot;hops&quot;: &quot;A067145&quot;,
-  &quot;name&quot;: &quot;Shifts left under reversion.&quot;,
-  &quot;seq&quot;: &quot;1,1,-1,3,-13,69,-419,2809,-20353,157199&quot;
+  &quot;hops&quot;: &quot;A038072&quot;,
+  &quot;name&quot;: &quot;Shifts left under Euler transform.&quot;,
+  &quot;seq&quot;: [-1,-1,-1,0,1,2,0,-3,-5,-1]
 }</code></pre>
 <p>Let's test that claim:</p>
-<pre><code>$ hops &#39;REVERT(A067145)-LEFT(A067145)&#39;
+<pre><code>$ hops &#39;f=A038072;EULER(f)-LEFT(f)&#39;
 {
-  &quot;hops&quot;:&quot;REVERT(A067145)-LEFT(A067145)&quot;,
-  &quot;seq&quot;:[0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  &quot;hops&quot;: &quot;f=A038072;EULER(f)-LEFT(f)&quot;,
+  &quot;seq&quot;: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 }</code></pre>
 <h2 id="hops-scripts">HOPS scripts</h2>
 <p>Sometimes it is useful be able to apply many transformations to the same input. One way to achieve that is to write a script with the transformations we are interested in. E.g. if we create a file <code>transforms.hops</code> containing</p>
 <pre><code>BINOMIAL(stdin)
 EULER(stdin)
-REVEGF(stdin)
 STIRLING(stdin)</code></pre>
 <p>then we can apply all of these transforms to <code>1/(1-x)</code> as follows:</p>
 <pre><code>$ hops &#39;1/(1-x)&#39; | hops --prec=9 -f transforms.hops
@@ -217,10 +244,6 @@ STIRLING(stdin)</code></pre>
 {
   &quot;hops&quot;:&quot;f=1/(1-x);EULER(f)&quot;,
   &quot;seq&quot;:[1,2,3,5,7,11,15,22]
-}
-{
-  &quot;hops&quot;:&quot;f=1/(1-x);REVEGF(f)&quot;,
-  &quot;seq&quot;:[1,-2,9,-64,625,-7776,117649,-2097152]
 }
 {
   &quot;hops&quot;:&quot;f=1/(1-x);STIRLING(f)&quot;,
