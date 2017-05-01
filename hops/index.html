@@ -14,14 +14,14 @@
 <img src="hops.png" alt="HOPS" />HOPS - Handy Operations on Power Series
 </h1>
 <hr/>
-<p><strong>HOPS</strong> is a small domain specific scripting language for working with power series and integer sequences. It comes with an interpreter called <code>hops</code>.</p>
-<p>Here we generate the sequence of <a href="https://oeis.org/A000108">Catalan numbers</a> from its generating function:</p>
+<p><strong>HOPS</strong> is a small domain specific language for working with power series and integer sequences. It comes with an interpreter and command line program called <code>hops</code>.</p>
+<p>For instance, we can generate the sequence of <a href="https://oeis.org/A000108">Catalan numbers</a> from its generating function:</p>
 <pre><code>$ hops --prec=11 &#39;2/(1+sqrt(1-4*x))&#39;
 {
   &quot;hops&quot;:&quot;2/(1+sqrt(1-4*x))&quot;,
   &quot;seq&quot;:[1,1,2,5,14,42,132,429,1430,4862,16796]
 }</code></pre>
-<p>Or, using an implicit defition:</p>
+<p>Or, using a functional equation:</p>
 <pre><code>$ hops --prec=11 &#39;C=1+x*C^2&#39;
 {
   &quot;hops&quot;:&quot;C=1+x*C^2&quot;,
@@ -63,7 +63,7 @@
 
 <footer>
 Anders Claesson
-- 5 April 2017
+- 1 May 2017
 </footer>
 
 </body>
