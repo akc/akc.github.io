@@ -8499,144 +8499,126 @@ var _elm_lang$core$Set$partition = F2(
 			_1: _elm_lang$core$Set$Set_elm_builtin(p2)
 		};
 	});
-var _akc$wilf$Perm$commonPrefix = F2(
-	function (xs, ys) {
-		var _p0 = {ctor: '_Tuple2', _0: xs, _1: ys};
-		if (_p0._0.ctor === '::') {
-			if (_p0._1.ctor === '::') {
-				var _p1 = _p0._0._0;
-				return _elm_lang$core$Native_Utils.eq(_p1, _p0._1._0) ? {
-					ctor: '::',
-					_0: _p1,
-					_1: A2(_akc$wilf$Perm$commonPrefix, _p0._0._1, _p0._1._1)
-				} : {ctor: '[]'};
-			} else {
-				return {ctor: '[]'};
-			}
+var _akc$wilf$Perm$commonPrefix = F3(
+	function (n, xs, ys) {
+		if (_elm_lang$core$Native_Utils.eq(n, 0)) {
+			return _elm_lang$core$Maybe$Just(
+				{ctor: '[]'});
 		} else {
-			return {ctor: '[]'};
+			var _p0 = {ctor: '_Tuple2', _0: xs, _1: ys};
+			if (_p0._0.ctor === '::') {
+				if (_p0._1.ctor === '::') {
+					var _p2 = _p0._0._0;
+					if (_elm_lang$core$Native_Utils.eq(_p2, _p0._1._0)) {
+						var _p1 = A3(_akc$wilf$Perm$commonPrefix, n - 1, _p0._0._1, _p0._1._1);
+						if (_p1.ctor === 'Just') {
+							return _elm_lang$core$Maybe$Just(
+								{ctor: '::', _0: _p2, _1: _p1._0});
+						} else {
+							return _elm_lang$core$Maybe$Nothing;
+						}
+					} else {
+						return _elm_lang$core$Maybe$Nothing;
+					}
+				} else {
+					return _elm_lang$core$Maybe$Nothing;
+				}
+			} else {
+				return _elm_lang$core$Maybe$Nothing;
+			}
 		}
 	});
+var _akc$wilf$Perm$backelinWestXinAux = F2(
+	function (n, w) {
+		var xs = _elm_lang$core$List$sort(w);
+		var ys = _elm_lang$core$List$reverse(xs);
+		var vs = function () {
+			var _p3 = A3(_akc$wilf$Perm$commonPrefix, n, ys, w);
+			if (_p3.ctor === 'Nothing') {
+				return {ctor: '[]'};
+			} else {
+				var _p4 = _p3._0;
+				return {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$List$reverse(_p4),
+						A2(
+							_elm_lang$core$List$drop,
+							_elm_lang$core$List$length(_p4),
+							w)),
+					_1: {ctor: '[]'}
+				};
+			}
+		}();
+		var us = function () {
+			var _p5 = A3(_akc$wilf$Perm$commonPrefix, n, xs, w);
+			if (_p5.ctor === 'Nothing') {
+				return {ctor: '[]'};
+			} else {
+				var _p6 = _p5._0;
+				return {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$List$reverse(_p6),
+						A2(
+							_elm_lang$core$List$drop,
+							_elm_lang$core$List$length(_p6),
+							w)),
+					_1: {ctor: '[]'}
+				};
+			}
+		}();
+		return A2(_elm_lang$core$Basics_ops['++'], us, vs);
+	});
 var _akc$wilf$Perm$backelinWestXin = function (w) {
-	var xs = _elm_lang$core$List$sort(w);
-	var _p2 = A2(_akc$wilf$Perm$commonPrefix, xs, w);
-	if (_p2.ctor === '[]') {
-		var _p3 = A2(
-			_akc$wilf$Perm$commonPrefix,
-			_elm_lang$core$List$reverse(xs),
-			w);
-		if (_p3.ctor === '[]') {
-			return w;
-		} else {
-			var _p4 = _p3;
-			return A2(
-				_elm_lang$core$Basics_ops['++'],
-				_elm_lang$core$List$reverse(_p4),
-				A2(
-					_elm_lang$core$List$drop,
-					_elm_lang$core$List$length(_p4),
-					w));
-		}
-	} else {
-		var _p5 = _p2;
-		return A2(
-			_elm_lang$core$Basics_ops['++'],
-			_elm_lang$core$List$reverse(_p5),
-			A2(
-				_elm_lang$core$List$drop,
-				_elm_lang$core$List$length(_p5),
-				w));
-	}
+	var n = _elm_lang$core$List$length(w);
+	return A2(
+		_elm_lang$core$List$concatMap,
+		function (k) {
+			return A2(_akc$wilf$Perm$backelinWestXinAux, k, w);
+		},
+		A2(_elm_lang$core$List$range, 2, n - 1));
 };
 var _akc$wilf$Perm$stankovaWest = function (w) {
-	var _p6 = w;
-	_v3_2:
-	do {
-		if (((_p6.ctor === '::') && (_p6._1.ctor === '::')) && (_p6._1._1.ctor === '::')) {
-			switch (_p6._0) {
-				case 2:
-					if ((_p6._1._0 === 3) && (_p6._1._1._0 === 1)) {
-						return {
-							ctor: '::',
-							_0: 3,
-							_1: {
-								ctor: '::',
-								_0: 1,
-								_1: {ctor: '::', _0: 2, _1: _p6._1._1._1}
-							}
-						};
-					} else {
-						break _v3_2;
-					}
-				case 3:
-					if ((_p6._1._0 === 1) && (_p6._1._1._0 === 2)) {
-						return {
-							ctor: '::',
-							_0: 2,
-							_1: {
-								ctor: '::',
-								_0: 3,
-								_1: {ctor: '::', _0: 1, _1: _p6._1._1._1}
-							}
-						};
-					} else {
-						break _v3_2;
-					}
-				default:
-					break _v3_2;
-			}
-		} else {
-			break _v3_2;
-		}
-	} while(false);
-	return w;
-};
-var _akc$wilf$Perm$stankova = function (w) {
 	var _p7 = w;
 	_v4_2:
 	do {
-		if (((((_p7.ctor === '::') && (_p7._1.ctor === '::')) && (_p7._1._1.ctor === '::')) && (_p7._1._1._1.ctor === '::')) && (_p7._1._1._1._1.ctor === '[]')) {
+		if (((_p7.ctor === '::') && (_p7._1.ctor === '::')) && (_p7._1._1.ctor === '::')) {
 			switch (_p7._0) {
-				case 1:
-					if (((_p7._1._0 === 3) && (_p7._1._1._0 === 4)) && (_p7._1._1._1._0 === 2)) {
+				case 2:
+					if ((_p7._1._0 === 3) && (_p7._1._1._0 === 1)) {
 						return {
 							ctor: '::',
-							_0: 2,
-							_1: {
+							_0: {
 								ctor: '::',
-								_0: 4,
+								_0: 3,
 								_1: {
 									ctor: '::',
 									_0: 1,
-									_1: {
-										ctor: '::',
-										_0: 3,
-										_1: {ctor: '[]'}
-									}
+									_1: {ctor: '::', _0: 2, _1: _p7._1._1._1}
 								}
-							}
+							},
+							_1: {ctor: '[]'}
 						};
 					} else {
 						break _v4_2;
 					}
-				case 2:
-					if (((_p7._1._0 === 4) && (_p7._1._1._0 === 1)) && (_p7._1._1._1._0 === 3)) {
+				case 3:
+					if ((_p7._1._0 === 1) && (_p7._1._1._0 === 2)) {
 						return {
 							ctor: '::',
-							_0: 1,
-							_1: {
+							_0: {
 								ctor: '::',
-								_0: 3,
+								_0: 2,
 								_1: {
 									ctor: '::',
-									_0: 4,
-									_1: {
-										ctor: '::',
-										_0: 2,
-										_1: {ctor: '[]'}
-									}
+									_0: 3,
+									_1: {ctor: '::', _0: 1, _1: _p7._1._1._1}
 								}
-							}
+							},
+							_1: {ctor: '[]'}
 						};
 					} else {
 						break _v4_2;
@@ -8648,12 +8630,77 @@ var _akc$wilf$Perm$stankova = function (w) {
 			break _v4_2;
 		}
 	} while(false);
-	return w;
+	return {ctor: '[]'};
+};
+var _akc$wilf$Perm$stankova = function (w) {
+	var _p8 = w;
+	_v5_2:
+	do {
+		if (((((_p8.ctor === '::') && (_p8._1.ctor === '::')) && (_p8._1._1.ctor === '::')) && (_p8._1._1._1.ctor === '::')) && (_p8._1._1._1._1.ctor === '[]')) {
+			switch (_p8._0) {
+				case 1:
+					if (((_p8._1._0 === 3) && (_p8._1._1._0 === 4)) && (_p8._1._1._1._0 === 2)) {
+						return {
+							ctor: '::',
+							_0: {
+								ctor: '::',
+								_0: 2,
+								_1: {
+									ctor: '::',
+									_0: 4,
+									_1: {
+										ctor: '::',
+										_0: 1,
+										_1: {
+											ctor: '::',
+											_0: 3,
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							},
+							_1: {ctor: '[]'}
+						};
+					} else {
+						break _v5_2;
+					}
+				case 2:
+					if (((_p8._1._0 === 4) && (_p8._1._1._0 === 1)) && (_p8._1._1._1._0 === 3)) {
+						return {
+							ctor: '::',
+							_0: {
+								ctor: '::',
+								_0: 1,
+								_1: {
+									ctor: '::',
+									_0: 3,
+									_1: {
+										ctor: '::',
+										_0: 4,
+										_1: {
+											ctor: '::',
+											_0: 2,
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							},
+							_1: {ctor: '[]'}
+						};
+					} else {
+						break _v5_2;
+					}
+				default:
+					break _v5_2;
+			}
+		} else {
+			break _v5_2;
+		}
+	} while(false);
+	return {ctor: '[]'};
 };
 var _akc$wilf$Perm$flipV = _elm_lang$core$List$reverse;
-var _akc$wilf$Perm$r0 = function (w) {
-	return w;
-};
+var _akc$wilf$Perm$r0 = _elm_lang$core$Basics$identity;
 var _akc$wilf$Perm$orbit = F2(
 	function (fs, x) {
 		return _elm_lang$core$Set$toList(
@@ -8680,25 +8727,25 @@ var _akc$wilf$Perm$inverse = function (xs) {
 					_elm_lang$core$List$sort(xs)))));
 };
 var _akc$wilf$Perm$flipD = _akc$wilf$Perm$inverse;
-var _akc$wilf$Perm$r90 = function (_p8) {
+var _akc$wilf$Perm$r90 = function (_p9) {
 	return _akc$wilf$Perm$flipV(
-		_akc$wilf$Perm$flipD(_p8));
+		_akc$wilf$Perm$flipD(_p9));
 };
-var _akc$wilf$Perm$r180 = function (_p9) {
+var _akc$wilf$Perm$r180 = function (_p10) {
 	return _akc$wilf$Perm$r90(
-		_akc$wilf$Perm$r90(_p9));
+		_akc$wilf$Perm$r90(_p10));
 };
-var _akc$wilf$Perm$flipH = function (_p10) {
+var _akc$wilf$Perm$flipH = function (_p11) {
 	return _akc$wilf$Perm$r180(
-		_akc$wilf$Perm$flipV(_p10));
+		_akc$wilf$Perm$flipV(_p11));
 };
-var _akc$wilf$Perm$r270 = function (_p11) {
+var _akc$wilf$Perm$r270 = function (_p12) {
 	return _akc$wilf$Perm$r90(
-		_akc$wilf$Perm$r180(_p11));
+		_akc$wilf$Perm$r180(_p12));
 };
-var _akc$wilf$Perm$flipA = function (_p12) {
+var _akc$wilf$Perm$flipA = function (_p13) {
 	return _akc$wilf$Perm$r90(
-		_akc$wilf$Perm$flipV(_p12));
+		_akc$wilf$Perm$flipV(_p13));
 };
 var _akc$wilf$Perm$complement = function (xs) {
 	var n = _elm_lang$core$List$length(xs);
@@ -11448,7 +11495,7 @@ var _akc$wilf$Main$checkbox = F2(
 				}
 			});
 	});
-var _akc$wilf$Main$guide = '\n  * id - Identity map\n  * Rα - Clockwise rotation by α degrees\n  * H - Reflection through a horizontal axis (complement)\n  * V - Reflection through a vertical axis (reverse)\n  * D - Reflection through the main diagonal (inverse)\n  * A - Reflection through the anti diagonal\n  * St - Stankova (1994): 1342 ~ 2413\n  * StWe - Stankova and West (2002): 231 ⊕ β ~ 312 ⊕ β\n  * BaWeXi - Backelin, West and Xin (2007): 12̣…m ⊕ β ~ m…21 ⊕ β\n';
+var _akc$wilf$Main$guide = '\n  * id - Identity map\n  * Rα - Clockwise rotation by α degrees\n  * H - Reflection through a horizontal axis (complement)\n  * V - Reflection through a vertical axis (reverse)\n  * D - Reflection through the main diagonal (inverse)\n  * A - Reflection through the anti-diagonal\n  * S - Stankova (1994): 1342 ~ 2413\n  * SW - Stankova and West (2002): 231 ⊕ β ~ 312 ⊕ β\n  * BWX - Backelin, West and Xin (2007): 12̣…m ⊕ β ~ m…21 ⊕ β\n';
 var _akc$wilf$Main$toggleName = F2(
 	function (name, model) {
 		return A2(_elm_lang$core$Set$member, name, model.names) ? _elm_lang$core$Native_Utils.update(
@@ -11466,31 +11513,23 @@ var _akc$wilf$Main$isPerm = function (w) {
 		w,
 		_elm_community$list_extra$List_Extra$unique(w));
 };
-var _akc$wilf$Main$maybeImage = F2(
+var _akc$wilf$Main$image = F2(
 	function (model, _p0) {
 		var _p1 = _p0;
 		var _p2 = model.perm;
 		if (_p2.ctor === 'Ok') {
-			return _elm_lang$core$Maybe$Just(
-				_p1._1(_p2._0));
+			return _p1._1(_p2._0);
 		} else {
-			return _elm_lang$core$Maybe$Nothing;
+			return {ctor: '[]'};
 		}
 	});
 var _akc$wilf$Main$imageSet = F2(
 	function (model, fs) {
 		return _elm_lang$core$Set$fromList(
 			A2(
-				_elm_lang$core$List$filterMap,
-				_akc$wilf$Main$maybeImage(model),
+				_elm_lang$core$List$concatMap,
+				_akc$wilf$Main$image(model),
 				fs));
-	});
-var _akc$wilf$Main$image = F2(
-	function (model, f) {
-		return A2(
-			_elm_lang$core$Maybe$withDefault,
-			{ctor: '[]'},
-			A2(_akc$wilf$Main$maybeImage, model, f));
 	});
 var _akc$wilf$Main_ops = _akc$wilf$Main_ops || {};
 _akc$wilf$Main_ops['>>>'] = F2(
@@ -11501,7 +11540,9 @@ _akc$wilf$Main_ops['>>>'] = F2(
 			ctor: '_Tuple2',
 			_0: A2(_elm_lang$core$Basics_ops['++'], _p5._0, _p6._0),
 			_1: function (_p7) {
-				return _p6._1(
+				return A2(
+					_elm_lang$core$List$concatMap,
+					_p6._1,
 					_p5._1(_p7));
 			}
 		};
@@ -11526,7 +11567,10 @@ var _akc$wilf$Main$gen = {
 			_0: '',
 			_1: {ctor: '[]'}
 		},
-		_1: _akc$wilf$Perm$r0
+		_1: function (_p8) {
+			return _elm_lang$core$List$singleton(
+				_akc$wilf$Perm$r0(_p8));
+		}
 	},
 	_1: {
 		ctor: '::',
@@ -11537,7 +11581,10 @@ var _akc$wilf$Main$gen = {
 				_0: 'R90',
 				_1: {ctor: '[]'}
 			},
-			_1: _akc$wilf$Perm$r90
+			_1: function (_p9) {
+				return _elm_lang$core$List$singleton(
+					_akc$wilf$Perm$r90(_p9));
+			}
 		},
 		_1: {
 			ctor: '::',
@@ -11548,7 +11595,10 @@ var _akc$wilf$Main$gen = {
 					_0: 'R180',
 					_1: {ctor: '[]'}
 				},
-				_1: _akc$wilf$Perm$r180
+				_1: function (_p10) {
+					return _elm_lang$core$List$singleton(
+						_akc$wilf$Perm$r180(_p10));
+				}
 			},
 			_1: {
 				ctor: '::',
@@ -11559,7 +11609,10 @@ var _akc$wilf$Main$gen = {
 						_0: 'R270',
 						_1: {ctor: '[]'}
 					},
-					_1: _akc$wilf$Perm$r270
+					_1: function (_p11) {
+						return _elm_lang$core$List$singleton(
+							_akc$wilf$Perm$r270(_p11));
+					}
 				},
 				_1: {
 					ctor: '::',
@@ -11570,7 +11623,10 @@ var _akc$wilf$Main$gen = {
 							_0: 'H',
 							_1: {ctor: '[]'}
 						},
-						_1: _akc$wilf$Perm$flipH
+						_1: function (_p12) {
+							return _elm_lang$core$List$singleton(
+								_akc$wilf$Perm$flipH(_p12));
+						}
 					},
 					_1: {
 						ctor: '::',
@@ -11581,7 +11637,10 @@ var _akc$wilf$Main$gen = {
 								_0: 'V',
 								_1: {ctor: '[]'}
 							},
-							_1: _akc$wilf$Perm$flipV
+							_1: function (_p13) {
+								return _elm_lang$core$List$singleton(
+									_akc$wilf$Perm$flipV(_p13));
+							}
 						},
 						_1: {
 							ctor: '::',
@@ -11592,7 +11651,10 @@ var _akc$wilf$Main$gen = {
 									_0: 'D',
 									_1: {ctor: '[]'}
 								},
-								_1: _akc$wilf$Perm$flipD
+								_1: function (_p14) {
+									return _elm_lang$core$List$singleton(
+										_akc$wilf$Perm$flipD(_p14));
+								}
 							},
 							_1: {
 								ctor: '::',
@@ -11603,7 +11665,10 @@ var _akc$wilf$Main$gen = {
 										_0: 'A',
 										_1: {ctor: '[]'}
 									},
-									_1: _akc$wilf$Perm$flipA
+									_1: function (_p15) {
+										return _elm_lang$core$List$singleton(
+											_akc$wilf$Perm$flipA(_p15));
+									}
 								},
 								_1: {
 									ctor: '::',
@@ -11611,7 +11676,7 @@ var _akc$wilf$Main$gen = {
 										ctor: '_Tuple2',
 										_0: {
 											ctor: '::',
-											_0: 'St',
+											_0: 'S',
 											_1: {ctor: '[]'}
 										},
 										_1: _akc$wilf$Perm$stankova
@@ -11622,7 +11687,7 @@ var _akc$wilf$Main$gen = {
 											ctor: '_Tuple2',
 											_0: {
 												ctor: '::',
-												_0: 'StWe',
+												_0: 'SW',
 												_1: {ctor: '[]'}
 											},
 											_1: _akc$wilf$Perm$stankovaWest
@@ -11633,7 +11698,7 @@ var _akc$wilf$Main$gen = {
 												ctor: '_Tuple2',
 												_0: {
 													ctor: '::',
-													_0: 'BaWeXi',
+													_0: 'BWX',
 													_1: {ctor: '[]'}
 												},
 												_1: _akc$wilf$Perm$backelinWestXin
@@ -11653,9 +11718,9 @@ var _akc$wilf$Main$gen = {
 var _akc$wilf$Main$funs = function (names) {
 	return A2(
 		_elm_lang$core$List$filter,
-		function (_p8) {
-			var _p9 = _p8;
-			return A2(_elm_lang$core$Set$member, _p9._0, names);
+		function (_p16) {
+			var _p17 = _p16;
+			return A2(_elm_lang$core$Set$member, _p17._0, names);
 		},
 		_akc$wilf$Main$gen);
 };
@@ -11693,23 +11758,23 @@ var _akc$wilf$Main$closure = function (model) {
 };
 var _akc$wilf$Main$update = F2(
 	function (msg, model) {
-		var _p10 = msg;
-		if (_p10.ctor === 'NewPerm') {
-			var _p11 = _akc$wilf$Parse$parseInts(_p10._0);
-			if (_p11.ctor === 'Ok') {
-				var _p12 = _p11._0;
-				return _akc$wilf$Main$isPerm(_p12) ? _akc$wilf$Main$closure(
+		var _p18 = msg;
+		if (_p18.ctor === 'NewPerm') {
+			var _p19 = _akc$wilf$Parse$parseInts(_p18._0);
+			if (_p19.ctor === 'Ok') {
+				var _p20 = _p19._0;
+				return _akc$wilf$Main$isPerm(_p20) ? _akc$wilf$Main$closure(
 					_elm_lang$core$Native_Utils.update(
 						model,
 						{
-							perm: _elm_lang$core$Result$Ok(_p12)
+							perm: _elm_lang$core$Result$Ok(_p20)
 						})) : _elm_lang$core$Native_Utils.update(
 					model,
 					{
 						perm: _elm_lang$core$Result$Err(
 							A2(
 								_elm_lang$core$Basics_ops['++'],
-								_elm_lang$core$Basics$toString(_p12),
+								_elm_lang$core$Basics$toString(_p20),
 								' isn\'t a permutation'))
 					});
 			} else {
@@ -11717,28 +11782,100 @@ var _akc$wilf$Main$update = F2(
 					model,
 					{
 						perm: _elm_lang$core$Result$Err(
-							_elm_lang$core$Basics$toString(_p11._0.problem))
+							_elm_lang$core$Basics$toString(_p19._0.problem))
 					});
 			}
 		} else {
 			return _akc$wilf$Main$closure(
-				A2(_akc$wilf$Main$toggleName, _p10._0, model));
+				A2(_akc$wilf$Main$toggleName, _p18._0, model));
 		}
 	});
 var _akc$wilf$Main$genNames = A2(_elm_lang$core$List$map, _elm_lang$core$Tuple$first, _akc$wilf$Main$gen);
-var _akc$wilf$Main$showNamedFun = function (_p13) {
-	var _p14 = _p13;
-	var _p15 = A2(
+var _akc$wilf$Main$showNamedFun = function (_p21) {
+	var _p22 = _p21;
+	var _p23 = A2(
 		_elm_community$list_extra$List_Extra$dropWhile,
 		F2(
 			function (x, y) {
 				return _elm_lang$core$Native_Utils.eq(x, y);
 			})(''),
-		_p14._0);
-	if (_p15.ctor === '[]') {
+		_p22._0);
+	if (_p23.ctor === '[]') {
 		return 'id';
 	} else {
-		return A2(_elm_lang$core$String$join, '∘', _p15);
+		return A2(_elm_lang$core$String$join, '∘', _p23);
+	}
+};
+var _akc$wilf$Main$viewTable = function (model) {
+	var _p24 = model.perm;
+	if (_p24.ctor === 'Ok') {
+		return A2(
+			_elm_lang$html$Html$table,
+			{
+				ctor: '::',
+				_0: _akc$wilf$Main$tableStyle,
+				_1: {ctor: '[]'}
+			},
+			A2(
+				_elm_lang$core$List$concatMap,
+				function (f) {
+					return A2(
+						_elm_lang$core$List$map,
+						function (w) {
+							return A2(
+								_elm_lang$html$Html$tr,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$td,
+										{
+											ctor: '::',
+											_0: _akc$wilf$Main$trStyle,
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text(
+												_elm_lang$core$Basics$toString(w)),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$td,
+											{
+												ctor: '::',
+												_0: _akc$wilf$Main$trStyle,
+												_1: {ctor: '[]'}
+											},
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(
+													_akc$wilf$Main$showNamedFun(f)),
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
+								});
+						},
+						A2(_akc$wilf$Main$image, model, f));
+				},
+				model.funs));
+	} else {
+		return A2(
+			_elm_lang$html$Html$b,
+			{
+				ctor: '::',
+				_0: _akc$wilf$Main$bStyle,
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(
+					A2(_elm_lang$core$Basics_ops['++'], 'Error: ', _p24._0)),
+				_1: {ctor: '[]'}
+			});
 	}
 };
 var _akc$wilf$Main$initialModel = function () {
@@ -12019,10 +12156,10 @@ var _akc$wilf$Main$view = function (model) {
 											_akc$wilf$Main$ToggleName(
 												{
 													ctor: '::',
-													_0: 'St',
+													_0: 'S',
 													_1: {ctor: '[]'}
 												}),
-											'St'),
+											'S'),
 										_1: {
 											ctor: '::',
 											_0: A2(
@@ -12030,10 +12167,10 @@ var _akc$wilf$Main$view = function (model) {
 												_akc$wilf$Main$ToggleName(
 													{
 														ctor: '::',
-														_0: 'StWe',
+														_0: 'SW',
 														_1: {ctor: '[]'}
 													}),
-												'StWe'),
+												'SW'),
 											_1: {
 												ctor: '::',
 												_0: A2(
@@ -12041,10 +12178,10 @@ var _akc$wilf$Main$view = function (model) {
 													_akc$wilf$Main$ToggleName(
 														{
 															ctor: '::',
-															_0: 'BaWeXi',
+															_0: 'BWX',
 															_1: {ctor: '[]'}
 														}),
-													'BaWeXi'),
+													'BWX'),
 												_1: {ctor: '[]'}
 											}
 										}
@@ -12078,74 +12215,7 @@ var _akc$wilf$Main$view = function (model) {
 											}),
 										_1: {
 											ctor: '::',
-											_0: function () {
-												var _p16 = model.perm;
-												if (_p16.ctor === 'Ok') {
-													return A2(
-														_elm_lang$html$Html$table,
-														{
-															ctor: '::',
-															_0: _akc$wilf$Main$tableStyle,
-															_1: {ctor: '[]'}
-														},
-														A2(
-															_elm_lang$core$List$map,
-															function (f) {
-																return A2(
-																	_elm_lang$html$Html$tr,
-																	{ctor: '[]'},
-																	{
-																		ctor: '::',
-																		_0: A2(
-																			_elm_lang$html$Html$td,
-																			{
-																				ctor: '::',
-																				_0: _akc$wilf$Main$trStyle,
-																				_1: {ctor: '[]'}
-																			},
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html$text(
-																					_elm_lang$core$Basics$toString(
-																						A2(_akc$wilf$Main$image, model, f))),
-																				_1: {ctor: '[]'}
-																			}),
-																		_1: {
-																			ctor: '::',
-																			_0: A2(
-																				_elm_lang$html$Html$td,
-																				{
-																					ctor: '::',
-																					_0: _akc$wilf$Main$trStyle,
-																					_1: {ctor: '[]'}
-																				},
-																				{
-																					ctor: '::',
-																					_0: _elm_lang$html$Html$text(
-																						_akc$wilf$Main$showNamedFun(f)),
-																					_1: {ctor: '[]'}
-																				}),
-																			_1: {ctor: '[]'}
-																		}
-																	});
-															},
-															model.funs));
-												} else {
-													return A2(
-														_elm_lang$html$Html$b,
-														{
-															ctor: '::',
-															_0: _akc$wilf$Main$bStyle,
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html$text(
-																A2(_elm_lang$core$Basics_ops['++'], 'Error: ', _p16._0)),
-															_1: {ctor: '[]'}
-														});
-												}
-											}(),
+											_0: _akc$wilf$Main$viewTable(model),
 											_1: {ctor: '[]'}
 										}
 									}),
