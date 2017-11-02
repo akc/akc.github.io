@@ -11406,65 +11406,25 @@ var _akc$wilf$Main$onEnter = function (tagger) {
 			decodeEnter,
 			_elm_lang$html$Html_Events$targetValue));
 };
-var _akc$wilf$Main$trStyle = _elm_lang$html$Html_Attributes$style(
+var _akc$wilf$Main$tdStyle = _elm_lang$html$Html_Attributes$style(
 	{
 		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'padding', _1: '0px 10px'},
+		_0: {ctor: '_Tuple2', _0: 'padding', _1: '5px 15px'},
 		_1: {ctor: '[]'}
-	});
-var _akc$wilf$Main$guideStyle = _elm_lang$html$Html_Attributes$style(
-	{
-		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'border-style', _1: 'solid'},
-		_1: {
-			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'border-width', _1: '1px 0px 0px 0px'},
-			_1: {
-				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 'border-color', _1: '#ddd'},
-				_1: {
-					ctor: '::',
-					_0: {ctor: '_Tuple2', _0: 'padding', _1: '0px 0px 0px 16px'},
-					_1: {ctor: '[]'}
-				}
-			}
-		}
-	});
-var _akc$wilf$Main$fieldsetStyle = _elm_lang$html$Html_Attributes$style(
-	{
-		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'border-style', _1: 'solid'},
-		_1: {
-			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'border-width', _1: '1px 0px 0px 0px'},
-			_1: {
-				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 'border-color', _1: '#ddd'},
-				_1: {
-					ctor: '::',
-					_0: {ctor: '_Tuple2', _0: 'padding', _1: '16px'},
-					_1: {
-						ctor: '::',
-						_0: {ctor: '_Tuple2', _0: 'min-height', _1: '50px'},
-						_1: {ctor: '[]'}
-					}
-				}
-			}
-		}
 	});
 var _akc$wilf$Main$inputStyle = _elm_lang$html$Html_Attributes$style(
 	{
 		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'height', _1: '20px'},
+		_0: {ctor: '_Tuple2', _0: 'height', _1: '40px'},
 		_1: {
 			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'padding', _1: '10px 10px'},
+			_0: {ctor: '_Tuple2', _0: 'font-size', _1: '1.3em'},
 			_1: {
 				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 'font-size', _1: '1.3em'},
+				_0: {ctor: '_Tuple2', _0: 'border-width', _1: '0px'},
 				_1: {
 					ctor: '::',
-					_0: {ctor: '_Tuple2', _0: 'border-width', _1: '0px'},
+					_0: {ctor: '_Tuple2', _0: 'padding-left', _1: '15px'},
 					_1: {ctor: '[]'}
 				}
 			}
@@ -11480,20 +11440,30 @@ var _akc$wilf$Main$tableStyle = _elm_lang$html$Html_Attributes$style(
 	{
 		ctor: '::',
 		_0: {ctor: '_Tuple2', _0: 'font-size', _1: '1.1em'},
-		_1: {ctor: '[]'}
+		_1: {
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'width', _1: 'auto'},
+			_1: {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'margin', _1: '10px 0px'},
+				_1: {ctor: '[]'}
+			}
+		}
 	});
 var _akc$wilf$Main$h1Style = _elm_lang$html$Html_Attributes$style(
 	{
 		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'padding', _1: '15px 0px 15px 20px'},
+		_0: {ctor: '_Tuple2', _0: 'margin', _1: '11px 0px'},
+		_1: {ctor: '[]'}
+	});
+var _akc$wilf$Main$checkboxStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: {ctor: '_Tuple2', _0: 'padding', _1: '8px 15px'},
 		_1: {
 			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'margin', _1: '0px'},
-			_1: {
-				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 'color', _1: 'DodgerBlue'},
-				_1: {ctor: '[]'}
-			}
+			_0: {ctor: '_Tuple2', _0: 'display', _1: 'inline-block'},
+			_1: {ctor: '[]'}
 		}
 	});
 var _akc$wilf$Main$checkbox = F2(
@@ -11502,16 +11472,7 @@ var _akc$wilf$Main$checkbox = F2(
 			_elm_lang$html$Html$label,
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$style(
-					{
-						ctor: '::',
-						_0: {ctor: '_Tuple2', _0: 'padding', _1: '8px'},
-						_1: {
-							ctor: '::',
-							_0: {ctor: '_Tuple2', _0: 'display', _1: 'inline-block'},
-							_1: {ctor: '[]'}
-						}
-					}),
+				_0: _akc$wilf$Main$checkboxStyle,
 				_1: {ctor: '[]'}
 			},
 			{
@@ -11539,7 +11500,109 @@ var _akc$wilf$Main$checkbox = F2(
 				}
 			});
 	});
-var _akc$wilf$Main$guide = '\n  * id - Identity map\n  * Rα - Clockwise rotation by α degrees\n  * H - Reflection through a horizontal axis (complement)\n  * V - Reflection through a vertical axis (reverse)\n  * D - Reflection through the main diagonal (inverse)\n  * A - Reflection through the anti-diagonal\n  * S - Stankova (1994): 1342 ~ 2413\n  * SW - Stankova and West (2002): 231 ⊕ β ~ 312 ⊕ β\n  * BWX - Backelin, West and Xin (2007): 12…m ⊕ β ~ m…21 ⊕ β\n';
+var _akc$wilf$Main$viewGuide = A2(
+	_elm_lang$html$Html$ul,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html$li,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('id - Identity map'),
+				_1: {ctor: '[]'}
+			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$li,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Rα - Clockwise rotation by α degrees'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$li,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('H - Reflection through a horizontal axis (complement)'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$li,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('V - Reflection through a vertical axis (reverse)'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$li,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('D - Reflection through the main diagonal (inverse)'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$li,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('A - Reflection through the anti-diagonal'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$li,
+									{ctor: '[]'},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('S - Stankova (1994): 1342 ~ 2413'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$li,
+										{ctor: '[]'},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('SW - Stankova and West (2002): 231 ⊕ β ~ 312 ⊕ β'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$li,
+											{ctor: '[]'},
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html$text('BWX - Backelin, West and Xin (2007): 12…m ⊕ β ~ m…21 ⊕ β'),
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	});
 var _akc$wilf$Main$toggleName = F2(
 	function (name, model) {
 		return A2(_elm_lang$core$Set$member, name, model.names) ? _elm_lang$core$Native_Utils.update(
@@ -11875,7 +11938,7 @@ var _akc$wilf$Main$viewTable = function (model) {
 										_elm_lang$html$Html$td,
 										{
 											ctor: '::',
-											_0: _akc$wilf$Main$trStyle,
+											_0: _akc$wilf$Main$tdStyle,
 											_1: {ctor: '[]'}
 										},
 										{
@@ -11890,7 +11953,7 @@ var _akc$wilf$Main$viewTable = function (model) {
 											_elm_lang$html$Html$td,
 											{
 												ctor: '::',
-												_0: _akc$wilf$Main$trStyle,
+												_0: _akc$wilf$Main$tdStyle,
 												_1: {ctor: '[]'}
 											},
 											{
@@ -11965,7 +12028,16 @@ var _akc$wilf$Main$NewPerm = function (a) {
 var _akc$wilf$Main$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$style(
+				{
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'border-width', _1: '0px'},
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		},
 		{
 			ctor: '::',
 			_0: A2(
@@ -11984,11 +12056,7 @@ var _akc$wilf$Main$view = function (model) {
 				ctor: '::',
 				_0: A2(
 					_elm_lang$html$Html$fieldset,
-					{
-						ctor: '::',
-						_0: _akc$wilf$Main$fieldsetStyle,
-						_1: {ctor: '[]'}
-					},
+					{ctor: '[]'},
 					{
 						ctor: '::',
 						_0: A2(
@@ -11996,14 +12064,7 @@ var _akc$wilf$Main$view = function (model) {
 							{ctor: '[]'},
 							{
 								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$b,
-									{ctor: '[]'},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Input permutation'),
-										_1: {ctor: '[]'}
-									}),
+								_0: _elm_lang$html$Html$text('Input permutation'),
 								_1: {ctor: '[]'}
 							}),
 						_1: {
@@ -12031,11 +12092,7 @@ var _akc$wilf$Main$view = function (model) {
 					ctor: '::',
 					_0: A2(
 						_elm_lang$html$Html$fieldset,
-						{
-							ctor: '::',
-							_0: _akc$wilf$Main$fieldsetStyle,
-							_1: {ctor: '[]'}
-						},
+						{ctor: '[]'},
 						{
 							ctor: '::',
 							_0: A2(
@@ -12043,14 +12100,7 @@ var _akc$wilf$Main$view = function (model) {
 								{ctor: '[]'},
 								{
 									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$b,
-										{ctor: '[]'},
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html$text('Rotations'),
-											_1: {ctor: '[]'}
-										}),
+									_0: _elm_lang$html$Html$text('Symmetries'),
 									_1: {ctor: '[]'}
 								}),
 							_1: {
@@ -12086,7 +12136,55 @@ var _akc$wilf$Main$view = function (model) {
 													_1: {ctor: '[]'}
 												}),
 											'R270'),
-										_1: {ctor: '[]'}
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_akc$wilf$Main$checkbox,
+												_akc$wilf$Main$ToggleName(
+													{
+														ctor: '::',
+														_0: 'H',
+														_1: {ctor: '[]'}
+													}),
+												'H'),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_akc$wilf$Main$checkbox,
+													_akc$wilf$Main$ToggleName(
+														{
+															ctor: '::',
+															_0: 'V',
+															_1: {ctor: '[]'}
+														}),
+													'V'),
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_akc$wilf$Main$checkbox,
+														_akc$wilf$Main$ToggleName(
+															{
+																ctor: '::',
+																_0: 'D',
+																_1: {ctor: '[]'}
+															}),
+														'D'),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_akc$wilf$Main$checkbox,
+															_akc$wilf$Main$ToggleName(
+																{
+																	ctor: '::',
+																	_0: 'A',
+																	_1: {ctor: '[]'}
+																}),
+															'A'),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}
 									}
 								}
 							}
@@ -12095,11 +12193,7 @@ var _akc$wilf$Main$view = function (model) {
 						ctor: '::',
 						_0: A2(
 							_elm_lang$html$Html$fieldset,
-							{
-								ctor: '::',
-								_0: _akc$wilf$Main$fieldsetStyle,
-								_1: {ctor: '[]'}
-							},
+							{ctor: '[]'},
 							{
 								ctor: '::',
 								_0: A2(
@@ -12107,14 +12201,7 @@ var _akc$wilf$Main$view = function (model) {
 									{ctor: '[]'},
 									{
 										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$b,
-											{ctor: '[]'},
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html$text('Reflections'),
-												_1: {ctor: '[]'}
-											}),
+										_0: _elm_lang$html$Html$text('Wilf-equivalences'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
@@ -12124,10 +12211,10 @@ var _akc$wilf$Main$view = function (model) {
 										_akc$wilf$Main$ToggleName(
 											{
 												ctor: '::',
-												_0: 'H',
+												_0: 'S',
 												_1: {ctor: '[]'}
 											}),
-										'H'),
+										'S'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -12135,10 +12222,10 @@ var _akc$wilf$Main$view = function (model) {
 											_akc$wilf$Main$ToggleName(
 												{
 													ctor: '::',
-													_0: 'V',
+													_0: 'SW',
 													_1: {ctor: '[]'}
 												}),
-											'V'),
+											'SW'),
 										_1: {
 											ctor: '::',
 											_0: A2(
@@ -12146,23 +12233,11 @@ var _akc$wilf$Main$view = function (model) {
 												_akc$wilf$Main$ToggleName(
 													{
 														ctor: '::',
-														_0: 'D',
+														_0: 'BWX',
 														_1: {ctor: '[]'}
 													}),
-												'D'),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_akc$wilf$Main$checkbox,
-													_akc$wilf$Main$ToggleName(
-														{
-															ctor: '::',
-															_0: 'A',
-															_1: {ctor: '[]'}
-														}),
-													'A'),
-												_1: {ctor: '[]'}
-											}
+												'BWX'),
+											_1: {ctor: '[]'}
 										}
 									}
 								}
@@ -12171,11 +12246,7 @@ var _akc$wilf$Main$view = function (model) {
 							ctor: '::',
 							_0: A2(
 								_elm_lang$html$Html$fieldset,
-								{
-									ctor: '::',
-									_0: _akc$wilf$Main$fieldsetStyle,
-									_1: {ctor: '[]'}
-								},
+								{ctor: '[]'},
 								{
 									ctor: '::',
 									_0: A2(
@@ -12183,63 +12254,20 @@ var _akc$wilf$Main$view = function (model) {
 										{ctor: '[]'},
 										{
 											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$b,
-												{ctor: '[]'},
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html$text('Wilf-equivalences'),
-													_1: {ctor: '[]'}
-												}),
+											_0: _elm_lang$html$Html$text('Wilf-equivalent permutations'),
 											_1: {ctor: '[]'}
 										}),
 									_1: {
 										ctor: '::',
-										_0: A2(
-											_akc$wilf$Main$checkbox,
-											_akc$wilf$Main$ToggleName(
-												{
-													ctor: '::',
-													_0: 'S',
-													_1: {ctor: '[]'}
-												}),
-											'S'),
-										_1: {
-											ctor: '::',
-											_0: A2(
-												_akc$wilf$Main$checkbox,
-												_akc$wilf$Main$ToggleName(
-													{
-														ctor: '::',
-														_0: 'SW',
-														_1: {ctor: '[]'}
-													}),
-												'SW'),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_akc$wilf$Main$checkbox,
-													_akc$wilf$Main$ToggleName(
-														{
-															ctor: '::',
-															_0: 'BWX',
-															_1: {ctor: '[]'}
-														}),
-													'BWX'),
-												_1: {ctor: '[]'}
-											}
-										}
+										_0: _akc$wilf$Main$viewTable(model),
+										_1: {ctor: '[]'}
 									}
 								}),
 							_1: {
 								ctor: '::',
 								_0: A2(
 									_elm_lang$html$Html$fieldset,
-									{
-										ctor: '::',
-										_0: _akc$wilf$Main$fieldsetStyle,
-										_1: {ctor: '[]'}
-									},
+									{ctor: '[]'},
 									{
 										ctor: '::',
 										_0: A2(
@@ -12247,59 +12275,16 @@ var _akc$wilf$Main$view = function (model) {
 											{ctor: '[]'},
 											{
 												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$b,
-													{ctor: '[]'},
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html$text('Wilf-equivalent permutations'),
-														_1: {ctor: '[]'}
-													}),
+												_0: _elm_lang$html$Html$text('Legend'),
 												_1: {ctor: '[]'}
 											}),
 										_1: {
 											ctor: '::',
-											_0: _akc$wilf$Main$viewTable(model),
+											_0: _akc$wilf$Main$viewGuide,
 											_1: {ctor: '[]'}
 										}
 									}),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$fieldset,
-										{
-											ctor: '::',
-											_0: _akc$wilf$Main$guideStyle,
-											_1: {ctor: '[]'}
-										},
-										{
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$legend,
-												{ctor: '[]'},
-												{
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$b,
-														{ctor: '[]'},
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html$text('Legend'),
-															_1: {ctor: '[]'}
-														}),
-													_1: {ctor: '[]'}
-												}),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_evancz$elm_markdown$Markdown$toHtml,
-													{ctor: '[]'},
-													_akc$wilf$Main$guide),
-												_1: {ctor: '[]'}
-											}
-										}),
-									_1: {ctor: '[]'}
-								}
+								_1: {ctor: '[]'}
 							}
 						}
 					}
