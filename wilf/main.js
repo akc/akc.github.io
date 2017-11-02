@@ -11506,7 +11506,11 @@ var _akc$wilf$Main$checkbox = F2(
 					{
 						ctor: '::',
 						_0: {ctor: '_Tuple2', _0: 'padding', _1: '8px'},
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'display', _1: 'inline-block'},
+							_1: {ctor: '[]'}
+						}
 					}),
 				_1: {ctor: '[]'}
 			},
