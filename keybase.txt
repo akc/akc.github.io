@@ -1,0 +1,51 @@
+https://keybase.io/akc
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://akc.is
+  * I am akc (https://keybase.io/akc) on keybase.
+  * I have a public key ASA8QMn-vzJjV-WqdwFO_F2X9EwwWPMwH_uVnptBcIOkGQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010188bbf82a280ba29e379bbbbcf0e0d60e21ac1d72518880b65d7a69283da64f0a0a",
+            "host": "keybase.io",
+            "kid": "01203c40c9febf326357e5aa77014efc5d97f44c3058f3301ffb959e9b417083a4190a",
+            "uid": "ab89ca56fac05dfce3322d750c2d2100",
+            "username": "akc"
+        },
+        "service": {
+            "hostname": "akc.is",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1484126744,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1484126701,
+        "hash": "644adbd31e67142777a7cdaa156b9a500113cf7938aaa9ac675fdfba9def938cdd887e1387bc3c27f53a83d94b8a05258a320d548aa8f3c3a973c53fbeb30fbe",
+        "seqno": 794910
+    },
+    "prev": "e0c0487682617ba6b65e345c82c25459f4b887b748175a565c0980f12111d3cb",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgPEDJ/r8yY1flqncBTvxdl/RMMFjzMB/7lZ6bQXCDpBkKp3BheWxvYWTFAuh7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxODhiYmY4MmEyODBiYTI5ZTM3OWJiYmJjZjBlMGQ2MGUyMWFjMWQ3MjUxODg4MGI2NWQ3YTY5MjgzZGE2NGYwYTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwM2M0MGM5ZmViZjMyNjM1N2U1YWE3NzAxNGVmYzVkOTdmNDRjMzA1OGYzMzAxZmZiOTU5ZTliNDE3MDgzYTQxOTBhIiwidWlkIjoiYWI4OWNhNTZmYWMwNWRmY2UzMzIyZDc1MGMyZDIxMDAiLCJ1c2VybmFtZSI6ImFrYyJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiYWtjLmlzIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xOCJ9LCJjdGltZSI6MTQ4NDEyNjc0NCwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDg0MTI2NzAxLCJoYXNoIjoiNjQ0YWRiZDMxZTY3MTQyNzc3YTdjZGFhMTU2YjlhNTAwMTEzY2Y3OTM4YWFhOWFjNjc1ZmRmYmE5ZGVmOTM4Y2RkODg3ZTEzODdiYzNjMjdmNTNhODNkOTRiOGEwNTI1OGEzMjBkNTQ4YWE4ZjNjM2E5NzNjNTNmYmViMzBmYmUiLCJzZXFubyI6Nzk0OTEwfSwicHJldiI6ImUwYzA0ODc2ODI2MTdiYTZiNjVlMzQ1YzgyYzI1NDU5ZjRiODg3Yjc0ODE3NWE1NjVjMDk4MGYxMjExMWQzY2IiLCJzZXFubyI6NywidGFnIjoic2lnbmF0dXJlIn2jc2lnxEC9tVjYM7t18S/2Zv8Qk3Wi7U0HBIwRwyuFPR1qkP2XLRyrwtI9O3/EyPPqoJZOgqPv7W2DTSMZUUmmiKtS3u0JqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgUhdLvjj6g6kp7cvZ+Zw1keMCRStzqKMWJ9eR1ocvaRGjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/akc
