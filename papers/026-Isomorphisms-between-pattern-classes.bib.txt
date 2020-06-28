@@ -1,0 +1,13 @@
+@article {AlAtCl2015,
+    author = {Albert, M. H. and Atkinson, M. D. and Claesson, Anders},
+     title = {Isomorphisms between pattern classes},
+   journal = {J. Comb.},
+  fjournal = {Journal of Combinatorics},
+    volume = {6},
+      year = {2015},
+    number = {1-2},
+     pages = {3--17},
+      issn = {2156-3527},
+       doi = {10.4310/JOC.2015.v6.n1.a1},
+       url = {https://doi.org/10.4310/JOC.2015.v6.n1.a1},
+}

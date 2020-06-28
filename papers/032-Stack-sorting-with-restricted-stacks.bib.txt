@@ -1,0 +1,12 @@
+@article {CeClFe2020,
+    author = {Cerbai, Giulio and Claesson, Anders and Ferrari, Luca},
+     title = {Stack sorting with restricted stacks},
+   journal = {J. Combin. Theory Ser. A},
+  fjournal = {Journal of Combinatorial Theory. Series A},
+    volume = {173},
+      year = {2020},
+     pages = {105230, 19},
+      issn = {0097-3165},
+       doi = {10.1016/j.jcta.2020.105230},
+       url = {https://doi.org/10.1016/j.jcta.2020.105230},
+}

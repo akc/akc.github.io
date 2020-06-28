@@ -1,0 +1,14 @@
+@article {BrClSt2002,
+    author = {Br\"{a}nd\'{e}n, Petter and Claesson, Anders and Steingr\'{\i}msson, Einar},
+     title = {Catalan continued fractions and increasing subsequences in
+              permutations},
+   journal = {Discrete Math.},
+  fjournal = {Discrete Mathematics},
+    volume = {258},
+      year = {2002},
+    number = {1-3},
+     pages = {275--287},
+      issn = {0012-365X},
+       doi = {10.1016/S0012-365X(02)00353-9},
+       url = {https://doi.org/10.1016/S0012-365X(02)00353-9},
+}

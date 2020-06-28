@@ -1,0 +1,15 @@
+@article {ClLi2011,
+    author = {Claesson, Anders and Linusson, Svante},
+     title = {{$n!$} matchings, {$n!$} posets},
+   journal = {Proc. Amer. Math. Soc.},
+  fjournal = {Proceedings of the American Mathematical Society},
+    volume = {139},
+      year = {2011},
+    number = {2},
+     pages = {435--449},
+      issn = {0002-9939},
+       doi = {10.1090/S0002-9939-2010-10678-0},
+       url = {https://doi.org/10.1090/S0002-9939-2010-10678-0},
+}
+
+

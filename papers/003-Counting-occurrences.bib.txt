@@ -1,0 +1,14 @@
+@article {ClMa2002,
+    author = {Claesson, Anders and Mansour, Toufik},
+     title = {Counting occurrences of a pattern of type {$(1,2)$} or
+              {$(2,1)$} in permutations},
+   journal = {Adv. in Appl. Math.},
+  fjournal = {Advances in Applied Mathematics},
+    volume = {29},
+      year = {2002},
+    number = {2},
+     pages = {293--310},
+      issn = {0196-8858},
+       doi = {10.1016/S0196-8858(02)00012-X},
+       url = {https://doi.org/10.1016/S0196-8858(02)00012-X},
+}

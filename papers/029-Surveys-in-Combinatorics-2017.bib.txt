@@ -1,0 +1,7 @@
+@book{ClDuKiMaMe2017,
+     author = {Claesson, Anders and Dukes, Mark and Kitaev, Sergey and Manlove, David and Meeks, Kitty},
+      title = {Surveys in Combinatorics 2017},
+  publisher = {Cambridge University Press},
+     volume = {440},
+       year = {2017},
+}

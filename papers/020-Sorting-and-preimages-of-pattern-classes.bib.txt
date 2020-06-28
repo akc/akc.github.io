@@ -1,0 +1,10 @@
+@article{ClUl2012
+  author = {Claesson, Anders and Úlfarsson, Henning},
+  title = {Sorting and preimages of pattern classes},
+  journal = {{Discret Math. Theor. Comput. Sci.}},
+  fjournal = {{Discrete Mathematics \& Theoretical Computer Science}},
+  volume = {{DMTCS Proceedings vol. AR, 24th International Conference on
+             Formal Power Series and Algebraic Combinatorics (FPSAC 2012)}},
+  year = {2012},
+  url = {https://dmtcs.episciences.org/3066},
+}

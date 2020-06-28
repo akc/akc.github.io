@@ -1,0 +1,7 @@
+@article {Cl2015
+    author = {Claesson, Anders},
+     title = {Subword counting and the incidence algebra},
+   journal = {Preprint},
+      year = {2015},
+       url = {https://akc.is/papers/025-Subword-counting-and-the-incidence-algebra.pdf},
+}

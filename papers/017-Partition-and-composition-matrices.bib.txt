@@ -1,0 +1,13 @@
+@article {ClDuKu2011,
+    author = {Claesson, Anders and Dukes, Mark and Kubitzke, Martina},
+     title = {Partition and composition matrices},
+   journal = {J. Combin. Theory Ser. A},
+  fjournal = {Journal of Combinatorial Theory. Series A},
+    volume = {118},
+      year = {2011},
+    number = {5},
+     pages = {1624--1637},
+      issn = {0097-3165},
+       doi = {10.1016/j.jcta.2011.02.001},
+       url = {https://doi.org/10.1016/j.jcta.2011.02.001},
+}

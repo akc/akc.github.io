@@ -1,0 +1,16 @@
+@article {ClKiSt2009,
+    author = {Claesson, Anders and Kitaev, Sergey and Steingr\'{\i}msson, Einar},
+     title = {Decompositions and statistics for {$\beta(1,0)$}-trees and
+              nonseparable permutations},
+   journal = {Adv. in Appl. Math.},
+  fjournal = {Advances in Applied Mathematics},
+    volume = {42},
+      year = {2009},
+    number = {3},
+     pages = {313--328},
+      issn = {0196-8858},
+       doi = {10.1016/j.aam.2008.09.001},
+       url = {https://doi.org/10.1016/j.aam.2008.09.001},
+}
+
+
