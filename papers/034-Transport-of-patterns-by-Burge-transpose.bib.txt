@@ -1,0 +1,7 @@
+@article{CeCl2020,
+    title = {Transport of patterns by Burge transpose},
+   author = {Cerbai, Giulio and Claesson, Anders},
+  journal = {Preprint},
+     year = {2020},
+      url = {https://akc.is/papers/034-Transport-of-patterns-by-Burge-transpose.pdf},
+}

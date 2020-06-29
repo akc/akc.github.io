@@ -1,0 +1,15 @@
+@article {BoClDu2010,
+    author = {Bousquet-M\'{e}lou, Mireille and Claesson, Anders and Dukes, Mark
+              and Kitaev, Sergey},
+     title = {{$(2+2)$}-free posets, ascent sequences and pattern avoiding
+              permutations},
+   journal = {J. Combin. Theory Ser. A},
+  fjournal = {Journal of Combinatorial Theory. Series A},
+    volume = {117},
+      year = {2010},
+    number = {7},
+     pages = {884--909},
+      issn = {0097-3165},
+       doi = {10.1016/j.jcta.2009.12.007},
+       url = {https://doi.org/10.1016/j.jcta.2009.12.007},
+}

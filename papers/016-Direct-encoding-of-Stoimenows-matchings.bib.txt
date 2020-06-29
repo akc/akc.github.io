@@ -1,0 +1,11 @@
+@article {ClDuKi2011,
+    author = {Claesson, Anders and Dukes, Mark and Kitaev, Sergey},
+     title = {A direct encoding of {S}toimenow's matchings as ascent
+              sequences},
+   journal = {Australas. J. Combin.},
+  fjournal = {The Australasian Journal of Combinatorics},
+    volume = {49},
+      year = {2011},
+     pages = {47--59},
+      issn = {1034-4942},
+}

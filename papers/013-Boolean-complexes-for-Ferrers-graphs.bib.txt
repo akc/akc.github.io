@@ -1,0 +1,11 @@
+@article {ClKiRa2010,
+    author = {Claesson, Anders and Kitaev, Sergey and Ragnarsson, K\'{a}ri and
+              Tenner, Bridget Eileen},
+     title = {Boolean complexes for {F}errers graphs},
+   journal = {Australas. J. Combin.},
+  fjournal = {The Australasian Journal of Combinatorics},
+    volume = {48},
+      year = {2010},
+     pages = {159--173},
+      issn = {1034-4942},
+}

@@ -1,0 +1,13 @@
+@article {ClGu2018,
+    author = {Claesson, Anders and Gu\eth mundsson, Bjarki \'{A}g\'{u}st},
+     title = {Enumerating permutations sortable by {$k$} passes through a
+              pop-stack},
+   journal = {Adv. in Appl. Math.},
+  fjournal = {Advances in Applied Mathematics},
+    volume = {108},
+      year = {2019},
+     pages = {79--96},
+      issn = {0196-8858},
+       doi = {10.1016/j.aam.2019.04.002},
+       url = {https://doi.org/10.1016/j.aam.2019.04.002},
+}

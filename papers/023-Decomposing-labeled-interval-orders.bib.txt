@@ -1,0 +1,12 @@
+@article {ClHa2014,
+    author = {Claesson, Anders and Hannah, Stuart A.},
+     title = {Decomposing labeled interval orders as pairs of permutations},
+   journal = {Electron. J. Combin.},
+  fjournal = {Electronic Journal of Combinatorics},
+    volume = {21},
+      year = {2014},
+    number = {4},
+     pages = {Paper 4.16, 20},
+       doi = {10.37236/4360},
+       url = {https://doi.org/10.37236/4360},
+}

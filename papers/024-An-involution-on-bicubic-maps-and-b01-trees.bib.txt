@@ -1,0 +1,10 @@
+@article {ClKiMi2015,
+    author = {Claesson, Anders and Kitaev, Sergey and de Mier, Anna},
+     title = {An involution on bicubic maps and {$\beta(0,1)$}-trees},
+   journal = {Australas. J. Combin.},
+  fjournal = {The Australasian Journal of Combinatorics},
+    volume = {61},
+      year = {2015},
+     pages = {1--18},
+      issn = {1034-4942},
+}

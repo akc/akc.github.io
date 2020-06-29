@@ -1,0 +1,14 @@
+@article {AlAtBoClDu2011,
+    author = {Albert, Michael H. and Atkinson, M. D. and Bouvel, Mathilde
+              and Claesson, Anders and Dukes, Mark},
+     title = {On the inverse image of pattern classes under bubble sort},
+   journal = {J. Comb.},
+  fjournal = {Journal of Combinatorics},
+    volume = {2},
+      year = {2011},
+    number = {2},
+     pages = {231--243},
+      issn = {2156-3527},
+       doi = {10.4310/JOC.2011.v2.n2.a3},
+       url = {https://doi.org/10.4310/JOC.2011.v2.n2.a3},
+}

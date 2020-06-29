@@ -1,0 +1,13 @@
+@article {ClGoWa2003,
+    author = {Claesson, Anders and Godsil, Chris D. and Wagner, David G.},
+     title = {A permutation group determined by an ordered set},
+   journal = {Discrete Math.},
+  fjournal = {Discrete Mathematics},
+    volume = {269},
+      year = {2003},
+    number = {1-3},
+     pages = {273--279},
+      issn = {0012-365X},
+       doi = {10.1016/S0012-365X(03)00094-3},
+       url = {https://doi.org/10.1016/S0012-365X(03)00094-3},
+}

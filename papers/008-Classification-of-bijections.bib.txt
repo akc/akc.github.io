@@ -1,0 +1,10 @@
+@article {ClKi2008,
+    author = {Claesson, Anders and Kitaev, Sergey},
+     title = {Classification of bijections between 321- and 132-avoiding
+              permutations},
+   journal = {S\'{e}m. Lothar. Combin.},
+  fjournal = {S\'{e}minaire Lotharingien de Combinatoire},
+    volume = {60},
+      year = {2008},
+     pages = {Art. B60d, 30},
+}

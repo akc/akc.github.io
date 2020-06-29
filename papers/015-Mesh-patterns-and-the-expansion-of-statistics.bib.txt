@@ -1,0 +1,11 @@
+@article {BrCl2011,
+    author = {Br\"{a}nd\'{e}n, Petter and Claesson, Anders},
+     title = {Mesh patterns and the expansion of permutation statistics as
+              sums of permutation patterns},
+   journal = {Electron. J. Combin.},
+  fjournal = {Electronic Journal of Combinatorics},
+    volume = {18},
+      year = {2011},
+    number = {2},
+     pages = {Paper 5, 14},
+}
