@@ -1,7 +1,12 @@
 @article{ClGuPa2019,
     title = {Counting pop-stacked permutations in polynomial time},
-   author = {Claesson, Anders and Gu{\dh}mundsson, Bjarki {\'A}g{\'u}st and Pantone, Jay},
-  journal = {Preprint},
-     year = {2019},
-      url = {https://akc.is/papers/033-Counting-pop-stacked-permutations-in-polynomial-time.pdf}
+    author = {Claesson, Anders and Gu{\dh}mundsson, Bjarki {\'A}g{\'u}st and Pantone, Jay},
+    journal = {Experimental Mathematics},
+    volume = {0},
+    number = {0},
+    pages = {1-8},
+    year  = {2021},
+    publisher = {Taylor & Francis},
+    doi = {10.1080/10586458.2021.1926001},
+    url = {https://doi.org/10.1080/10586458.2021.1926001},
 }
