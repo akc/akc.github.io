@@ -1,0 +1,7 @@
+@article{CDFS2022,
+    title = {Counting tournament score sequences},
+   author = {Claesson, Anders and Dukes, Mark and Franklín, Atli Fannar and Stefánsson, Sigurður Örn}
+  journal = {Preprint},
+     year = {2022},
+      url = {https://akc.is/papers/039-Counting-score-sequences.pdf},
+}
