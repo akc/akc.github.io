@@ -1,0 +1,7 @@
+@article{CC2022,
+    title = {A solution to the duality problem on modified ascent sequences},
+   author = {Cerbai, Giulio and Claesson, Anders},
+  journal = {Preprint},
+     year = {2022},
+      url = {https://akc.is/papers/040-A-solution-to-the-duality-problem-on-modified-ascent-sequences.pdf},
+}
