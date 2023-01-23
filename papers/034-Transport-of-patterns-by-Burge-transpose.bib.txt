@@ -3,5 +3,10 @@
    author = {Cerbai, Giulio and Claesson, Anders},
   journal = {Preprint},
      year = {2020},
-      url = {https://akc.is/papers/034-Transport-of-patterns-by-Burge-transpose.pdf},
+   volume = {108},
+    pages = {103630},
+     year = {2023},
+     issn = {0195-6698},
+      doi = {https://doi.org/10.1016/j.ejc.2022.103630},
+      url = {https://www.sciencedirect.com/science/article/pii/S0195669822001263},
 }
