@@ -1,4 +1,4 @@
-@article{Cl2021,
+@article{Cl2022,
     title = {From Hertzsprung's problem to pattern-rewriting systems},
    author = {Claesson, Anders},
   journal = {Algebraic Combinatorics},
