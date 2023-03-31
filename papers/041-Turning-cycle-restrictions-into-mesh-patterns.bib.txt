@@ -1,0 +1,7 @@
+@article{CU2023,
+    title = {Turning cycle restrictions into mesh patterns via Foata's fundamental transformation},
+   author = {Claesson, Anders and Ulfarsson, Henning},
+  journal = {Preprint},
+     year = {2023},
+      url = {https://akc.is/papers/041-Turning-cycle-restrictions-into-mesh-patterns.pdf},
+}
