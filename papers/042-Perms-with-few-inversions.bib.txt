@@ -1,0 +1,7 @@
+@article{CFS2023,
+    title = {Permutations with few inversions},
+   author = {Claesson, Anders and Franklín, Atli Fannar and Steingrímsson, Einar},
+  journal = {Preprint},
+     year = {2023},
+      url = {https://akc.is/papers/042-Perms-with-few-inversions.pdf},
+}
