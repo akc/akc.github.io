@@ -1,0 +1,7 @@
+@article{CC2023,
+    title = {Fishburn trees},
+   author = {Cerbai, Giulio and Claesson, Anders},
+  journal = {Preprint},
+     year = {2023},
+      url = {https://akc.is/papers/040-Fishburn-trees.pdf},
+}
