@@ -1,0 +1,7 @@
+@article {CC2023b
+    author = {Cerbai, Giulio and Claesson, Anders},
+     title = {Caylerian polynomials},
+   journal = {Preprint},
+      year = {2023},
+       url = {https://akc.is/papers/043-Caylerian-polynomials.pdf},
+}
