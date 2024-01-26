@@ -1,7 +1,11 @@
 @article{CC2023,
     title = {Fishburn trees},
    author = {Cerbai, Giulio and Claesson, Anders},
-  journal = {Preprint},
+  journal = {Advances in Applied Mathematics},
+   volume = {151},
+    pages = {102592},
      year = {2023},
-      url = {https://akc.is/papers/040-Fishburn-trees.pdf},
+     issn = {0196-8858},
+      doi = {https://doi.org/10.1016/j.aam.2023.102592},
+      url = {https://www.sciencedirect.com/science/article/pii/S0196885823001100}
 }
