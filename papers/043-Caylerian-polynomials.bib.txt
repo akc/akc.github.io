@@ -1,7 +1,12 @@
-@article {CC2023b
-    author = {Cerbai, Giulio and Claesson, Anders},
-     title = {Caylerian polynomials},
-   journal = {Preprint},
-      year = {2023},
-       url = {https://akc.is/papers/043-Caylerian-polynomials.pdf},
+@article{CC2024,
+  author = {Cerbai, Giulio and Claesson, Anders},
+   title = {Caylerian polynomials},
+ journal = {Discrete Mathematics},
+  volume = {347},
+  number = {12},
+   pages = {114177},
+    year = {2024},
+    issn = {0012-365X},
+     doi = {https://doi.org/10.1016/j.disc.2024.114177},
+     url = {https://www.sciencedirect.com/science/article/pii/S0012365X2400308X},
 }
