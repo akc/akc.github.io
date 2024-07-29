@@ -1,0 +1,7 @@
+@article {CCEG2024
+    author = {Claesson, Anders and Cerbai, Giulio and Ernst, Dana C. and Golab, Hannah},
+     title = {Pattern-avoiding Cayley permutations via combinatorial species},
+   journal = {Preprint},
+      year = {2024},
+       url = {https://akc.is/papers/045-Pattern-avoiding-Cayley-perms.pdf},
+}
