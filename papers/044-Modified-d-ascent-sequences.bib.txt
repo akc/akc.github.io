@@ -1,0 +1,7 @@
+@article {CCS2024,
+    author = {Cerbai, Giulio and Claesson, Anders and Sagan, Bruce,
+     title = {Modified difference ascent sequences and Fishburn structures},
+   journal = {Preprint},
+      year = {2024},
+       url = {https://akc.is/papers/044-Modified-d-ascent-sequences.pdf},
+}

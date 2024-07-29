@@ -1,5 +1,5 @@
-@article {CCEG2024
-    author = {Claesson, Anders and Cerbai, Giulio and Ernst, Dana C. and Golab, Hannah},
+@article {CCEG2024,
+    author = {Cerbai, Giulio and Claesson, Anders and Ernst, Dana C. and Golab, Hannah},
      title = {Pattern-avoiding Cayley permutations via combinatorial species},
    journal = {Preprint},
       year = {2024},
