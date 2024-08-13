@@ -1,4 +1,4 @@
-@article {CCS2024,
+@article {CCS2024a,
     author = {Cerbai, Giulio and Claesson, Anders and Sagan, Bruce,
      title = {Modified difference ascent sequences and Fishburn structures},
    journal = {Preprint},

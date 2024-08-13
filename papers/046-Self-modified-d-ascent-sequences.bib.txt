@@ -1,0 +1,7 @@
+@article {CCS2024b,
+    author = {Cerbai, Giulio and Claesson, Anders and Sagan, Bruce,
+     title = {Self-modified difference ascent sequences},
+   journal = {Preprint},
+      year = {2024},
+       url = {https://akc.is/papers/046-Self-modified-d-ascent-sequences.pdf},
+}
