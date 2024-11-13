@@ -1,11 +1,11 @@
 @article{Cl2022,
-    title = {From Hertzsprung's problem to pattern-rewriting systems},
+    title = {From {H}ertzsprung's problem to pattern-rewriting systems},
    author = {Claesson, Anders},
   journal = {Algebraic Combinatorics},
    volume = {5},
    number = {6},
     pages = {1257--1277},
      year = {2022},
-      doi = {https://doi.org/10.5802/alco.202}
+      doi = {https://doi.org/10.5802/alco.202},
       url = {https://alco.centre-mersenne.org/item/10.5802/alco.202.pdf},
 }

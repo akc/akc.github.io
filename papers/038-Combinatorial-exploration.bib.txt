@@ -1,7 +1,7 @@
-@article{ABCNPU2022,
+@article{ABCNPU2024,
     title = {Combinatorial {E}xploration: An Algorithmic Framework for Enumeration},
    author = {Albert, Michael H. and Bean, Christian and Claesson, Anders and Nadeau, \'{E}mile and Pantone, Jay and Ulfarsson, Henning},
   journal = {Preprint},
-     year = {2022},
+     year = {2024},
       url = {https://akc.is/papers/038-Combinatorial-exploration.pdf},
 }
