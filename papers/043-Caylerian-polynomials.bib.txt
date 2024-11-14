@@ -1,4 +1,4 @@
-@article{CC2024,
+@article{CC2024a,
   author = {Cerbai, Giulio and Claesson, Anders},
    title = {Caylerian polynomials},
  journal = {Discrete Mathematics},
