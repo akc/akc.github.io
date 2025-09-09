@@ -1,7 +1,12 @@
 @article {CCS2024a,
-    author = {Cerbai, Giulio and Claesson, Anders and Sagan, Bruce,
+    author = {Giulio Cerbai and Anders Claesson and Bruce E. Sagan},
      title = {Modified difference ascent sequences and Fishburn structures},
-   journal = {Preprint},
-      year = {2024},
-       url = {https://akc.is/papers/044-Modified-d-ascent-sequences.pdf},
+   journal = {Discrete Mathematics},
+    volume = {349},
+    number = {1},
+     pages = {114719},
+      year = {2026},
+      issn = {0012-365X},
+       doi = {https://doi.org/10.1016/j.disc.2025.114719},
+       url = {https://www.sciencedirect.com/science/article/pii/S0012365X25003279}
 }
