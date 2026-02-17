@@ -1,7 +1,7 @@
-@article {CC2025,
+@article {CC2026,
     author = {Cerbai, Giulio and Claesson, Anders,
      title = {Counting fixed-point-free Cayley permutations},
    journal = {Preprint},
-      year = {2025},
+      year = {2026},
        url = {https://akc.is/papers/048-Counting-fixed-point-free-Cayley-permutations.pdf},
 }
