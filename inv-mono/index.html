@@ -6,8 +6,20 @@
     <title>The inversion monotonicity conjecture</title>
     <link rel="shortcut icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../style.css">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../katex/katex.min.css">
+    <script defer src="../katex/katex.min.js"></script>
+    <script defer src="../katex/contrib/auto-render.min.js"
+      onload="renderMathInElement(document.body, {delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false}
+      ], macros: {
+        '\\sym': '\\mathfrak{S}',
+        '\\inv': '\\mathrm{inv}',
+        '\\Fix': '\\mathrm{Fix}',
+        '\\Pow': '\\mathfrak{P}'
+      }})"></script>
   </head>
   <body>
     <main>
@@ -17,14 +29,13 @@
 <h1 id="the-inversion-monotonicity-conjecture">The inversion
 monotonicity conjecture</h1>
 <p>The celebrated Marcus-Tardos Theorem (2004) states: For every <span
-class="math inline">\(\tau\in\mathfrak{S}_{\ell}\)</span> there is a
-constant <span class="math inline">\(C=C(\tau)\)</span> such that <span
-class="math inline">\(|\mathfrak{S}_n(\tau)| \leq C^n\)</span> for all
-<span class="math inline">\(n\geq 0\)</span>. This used to be known as
-the <a
+class="math inline">\(\tau\in\sym_{\ell}\)</span> there is a constant
+<span class="math inline">\(C=C(\tau)\)</span> such that <span
+class="math inline">\(|\sym_n(\tau)| \leq C^n\)</span> for all <span
+class="math inline">\(n\geq 0\)</span>. This used to be known as the <a
 href="https://en.wikipedia.org/wiki/Stanley%E2%80%93Wilf_conjecture">Stanley-Wilf
 conjecture</a> and the constant <span class="math display">\[
-  L(\tau) = \lim_{n\to\infty}{|\mathfrak{S}_n(\tau)|^{1/n}}
+  L(\tau) = \lim_{n\to\infty}{|\sym_n(\tau)|^{1/n}}
 \]</span> is known as the <em>Stanley-Wilf limit</em> for <span
 class="math inline">\(\tau\)</span>. The smallest pattern <span
 class="math inline">\(\tau\)</span> for which <span
@@ -37,8 +48,8 @@ class="math inline">\(10.271 &lt; L(1324) &lt; 13.5\)</span></p>
 <p>Let us say that a pattern <span class="math inline">\(\tau\)</span>
 is <em>inversion-monotone</em>, or <em>inv-monotone</em> for short, if
 <span class="math display">\[
-|\{\pi\!\in\!\mathfrak{S}_n(\tau)\!: \mathrm{inv}(\pi)\!=\!k\}| \;\leq\;
-|\{\pi\!\in\!\mathfrak{S}_{n+1}(\tau)\!: \mathrm{inv}(\pi)\!=\!k\}|
+|\{\pi\!\in\!\sym_n(\tau)\!: \inv(\pi)\!=\!k\}| \;\leq\;
+|\{\pi\!\in\!\sym_{n+1}(\tau)\!: \inv(\pi)\!=\!k\}|
 \]</span> That is, among <span
 class="math inline">\(\tau\)</span>-avoiding permutations with exactly
 <span class="math inline">\(k\)</span> inversions there are at least as
@@ -47,8 +58,8 @@ length <span class="math inline">\(n\)</span>. For instance, <span
 class="math inline">\(\tau=132\)</span> is inv-monotone as is witnessed
 by the inversion preserving injection <span class="math inline">\(\pi
 \mapsto \pi\oplus 1\)</span>. More generally, any pattern <span
-class="math inline">\(\tau\in\mathfrak{S}_{\ell}\)</span> such that
-<span class="math inline">\(\tau(1)&gt;1\)</span> or <span
+class="math inline">\(\tau\in\sym_{\ell}\)</span> such that <span
+class="math inline">\(\tau(1)&gt;1\)</span> or <span
 class="math inline">\(\tau(\ell)&lt;\ell\)</span> is trivially
 inv-monotone.</p>
 <p>Consider the following deceptively simple conjecture.</p>
@@ -123,19 +134,9 @@ assumption that <span class="math inline">\(n\geq (k+7)/2\)</span>.</p>
 1  2  5  10  20  36  65  110  185  300  481  752  1165  1770  2665  3956  5822  8470  12230  17490  24842  35002  49010  68150  94235  129512  177087  240840  326015  439190  589128  786814  1046705  1386930  1831065  2408658  3157789  4126070  5374390  6978730  9035539  11664896  15018300  19283830  24697480  31551450  </code></pre>
 <p>As you can see each column is eventually constant and the sequence
 <span class="math inline">\(1,2,5,10,20,36,65,110,\dots\)</span> that
-emerges is <a href="https://oeis.org/A000712">A000712</a>. This part of
-the reason why the conjecture implies a new upper bound of <span
+emerges is <a href="https://oeis.org/A000712">A000712</a>. This is part
+of the reason why the conjecture implies a new upper bound of <span
 class="math inline">\(L(1324)\)</span>.</p>
     </main>
-    <!--
-    <footer>
-      <p>This site is available on the distributed web &#8212;
-        via <a href="https://ipfs.io">IPFS</a> &#8212; at
-      <a href="ipns://12D3KooWDYkc9uVDVjapB78u4U5D98CdVwNzt2yeEq8vqourCzuQ">
-        <code>/ipns/12D3KooWDYkc9uVDVjapB78u4U5D98CdVwNzt2yeEq8vqourCzuQ</code>
-      </a>
-      </p>
-    </footer>
-    -->
   </body>
 </html>
