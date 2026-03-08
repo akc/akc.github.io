@@ -1,0 +1,14 @@
+@article {ClJeSt2012,
+    author = {Claesson, Anders and Jel\'{\i}nek, V\'{\i}t and Steingr\'{\i}msson, Einar},
+     title = {Upper bounds for the {S}tanley-{W}ilf limit of 1324 and other
+              layered patterns},
+   journal = {J. Combin. Theory Ser. A},
+  fjournal = {Journal of Combinatorial Theory. Series A},
+    volume = {119},
+      year = {2012},
+    number = {8},
+     pages = {1680--1691},
+      issn = {0097-3165},
+       doi = {10.1016/j.jcta.2012.05.006},
+       url = {https://doi.org/10.1016/j.jcta.2012.05.006},
+}

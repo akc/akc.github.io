@@ -1,0 +1,13 @@
+@article {ClPe2007,
+    author = {Claesson, Anders and Petersen, T. Kyle},
+     title = {Conway's napkin problem},
+   journal = {Amer. Math. Monthly},
+  fjournal = {American Mathematical Monthly},
+    volume = {114},
+      year = {2007},
+    number = {3},
+     pages = {217--231},
+      issn = {0002-9890},
+       doi = {10.1080/00029890.2007.11920408},
+       url = {https://doi.org/10.1080/00029890.2007.11920408},
+}

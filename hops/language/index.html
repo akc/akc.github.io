@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Anders Claesson" />
+  <title>The HOPS language</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../github-pandoc.css" type="text/css" />
+</head>
+<body>
+<h1 id="the-hops-language">The HOPS language</h1>
+<p>Each line of a HOPS script is an independent program and each line/program consists of a semicolon separated list of functional equations and generating functions. We shall now describe operations, functions and transformations that can be used when building such programs.</p>
+<h2 id="binary-operations">Binary operations</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f + g</code></td>
+<td>sum of <code>f</code> and <code>g</code></td>
+</tr>
+<tr class="even">
+<td><code>f - g</code></td>
+<td>difference of <code>f</code> and <code>g</code></td>
+</tr>
+<tr class="odd">
+<td><code>f ^ g</code></td>
+<td><code>f</code> to the power <code>g</code></td>
+</tr>
+<tr class="even">
+<td><code>f @ g</code></td>
+<td><code>f</code> composed with <code>g</code> (can also be written <code>f(g)</code> when <code>f</code> is a name)</td>
+</tr>
+<tr class="odd">
+<td><code>f ? g</code></td>
+<td>coefficients of <code>f</code> selected by nonnegative integer coefficients of <code>g</code></td>
+</tr>
+<tr class="even">
+<td><code>f * g</code></td>
+<td>product of <code>f</code> and <code>g</code></td>
+</tr>
+<tr class="odd">
+<td><code>f / g</code></td>
+<td>quotient of <code>f</code> and <code>g</code></td>
+</tr>
+<tr class="even">
+<td><code>f .* g</code></td>
+<td>coefficient-wise/Hadamard product of <code>f</code> and <code>g</code></td>
+</tr>
+<tr class="odd">
+<td><code>f ./ g</code></td>
+<td>coefficient-wise quotient of <code>f</code> and <code>g</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">Functions</h2>
+<table style="width:82%;">
+<colgroup>
+<col width="25%" />
+<col width="56%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>diff(f)</code></td>
+<td>derivative of <code>f</code></td>
+</tr>
+<tr class="even">
+<td><code>int(f)</code></td>
+<td>integral of <code>f</code></td>
+</tr>
+<tr class="odd">
+<td><code>sqrt(f)</code></td>
+<td><code>f^(1/2)</code></td>
+</tr>
+<tr class="even">
+<td><code>abs(f)</code></td>
+<td><code>f</code> multiplied by the sign of its leading coefficient</td>
+</tr>
+<tr class="odd">
+<td><code>log(f)</code></td>
+<td>logarithmic function</td>
+</tr>
+<tr class="even">
+<td><code>exp(f)</code></td>
+<td>exponential function</td>
+</tr>
+<tr class="odd">
+<td><code>sin(f)</code></td>
+<td>sine function</td>
+</tr>
+<tr class="even">
+<td><code>cos(f)</code></td>
+<td>cosine function</td>
+</tr>
+<tr class="odd">
+<td><code>tan(f)</code></td>
+<td>tangent function</td>
+</tr>
+<tr class="even">
+<td><code>sec(f)</code></td>
+<td><code>1/cos(f)</code></td>
+</tr>
+<tr class="odd">
+<td><code>arcsin(f)</code></td>
+<td>arcsine function</td>
+</tr>
+<tr class="even">
+<td><code>arccos(f)</code></td>
+<td>arccosine function</td>
+</tr>
+<tr class="odd">
+<td><code>arctan(f)</code></td>
+<td>arctangent function</td>
+</tr>
+<tr class="even">
+<td><code>sinh(f)</code></td>
+<td>hyperbolic sine function</td>
+</tr>
+<tr class="odd">
+<td><code>cosh(f)</code></td>
+<td>hyperbolic cosine function</td>
+</tr>
+<tr class="even">
+<td><code>tanh(f)</code></td>
+<td>hyperbolic tangent function</td>
+</tr>
+<tr class="odd">
+<td><code>arsinh(f)</code></td>
+<td>area hyperbolic sine function</td>
+</tr>
+<tr class="even">
+<td><code>arcosh(f)</code></td>
+<td>area hyperbolic cosine function</td>
+</tr>
+<tr class="odd">
+<td><code>artanh(f)</code></td>
+<td>area hyperbolic tangent function</td>
+</tr>
+<tr class="even">
+<td><code>laplace(f)</code></td>
+<td><code>f .* {n!}</code></td>
+</tr>
+<tr class="odd">
+<td><code>laplacei(f)</code></td>
+<td><code>f ./ {n!}</code></td>
+</tr>
+<tr class="even">
+<td><code>revert(f)</code></td>
+<td>the compositional inverse of <code>f</code></td>
+</tr>
+<tr class="odd">
+<td><code>absolute(f)</code></td>
+<td>coefficient-wise absolute value</td>
+</tr>
+<tr class="even">
+<td><code>bisect0(f)</code></td>
+<td>if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>bisect0(f)={a0,a2,a4,...}</code></td>
+</tr>
+<tr class="odd">
+<td><code>bisect1(f)</code></td>
+<td>if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>bisect1(f)={a1,a3,a5,...}</code></td>
+</tr>
+<tr class="even">
+<td><code>bous(f)</code></td>
+<td><a href="https://en.wikipedia.org/wiki/Boustrophedon_transform">Boustrophedon transform</a></td>
+</tr>
+<tr class="odd">
+<td><code>bousi(f)</code></td>
+<td>inverse <a href="https://en.wikipedia.org/wiki/Boustrophedon_transform">Boustrophedon transform</a></td>
+</tr>
+<tr class="even">
+<td><code>cyc(f)</code></td>
+<td><code>sum[(phi(k)/k)*log(1/(1-f(x^k)))], k&gt;0</code>; phi = totient function</td>
+</tr>
+<tr class="odd">
+<td><code>delta(f)</code></td>
+<td><code>shift(f)-f</code></td>
+</tr>
+<tr class="even">
+<td><code>euler(f)</code></td>
+<td><a href="http://mathworld.wolfram.com/EulerTransform.html">Euler transform</a></td>
+</tr>
+<tr class="odd">
+<td><code>euleri(f)</code></td>
+<td>inverse <a href="http://mathworld.wolfram.com/EulerTransform.html">Euler transform</a></td>
+</tr>
+<tr class="even">
+<td><code>hankel(f)</code></td>
+<td><a href="https://cs.uwaterloo.ca/journals/JIS/VOL4/LAYMAN/hankel.html">Hankel transform</a></td>
+</tr>
+<tr class="odd">
+<td><code>indicator(f)</code></td>
+<td>if <code>f={a_k}</code> then <code>indicator(f)={b_i}</code> where <code>b_(a_k)=1</code>; else <code>b_i=0</code></td>
+</tr>
+<tr class="even">
+<td><code>indicatorc(f)</code></td>
+<td>&quot;complement&quot; of <code>indicator(f)</code>: substituting 0 for 1 and 1 for 0</td>
+</tr>
+<tr class="odd">
+<td><code>shift(f)</code></td>
+<td>if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>shift(f)={a1,a2,a3,...}</code></td>
+</tr>
+<tr class="even">
+<td><code>mobius(f)</code></td>
+<td><a href="http://mathworld.wolfram.com/MoebiusTransform.html">Möbius transform</a></td>
+</tr>
+<tr class="odd">
+<td><code>mobiusi(f)</code></td>
+<td>inverse <a href="http://mathworld.wolfram.com/MoebiusTransform.html">Möbius transform</a></td>
+</tr>
+<tr class="even">
+<td><code>mset(f)</code></td>
+<td>if <code>f={a_k}</code> then <code>mset(f)=product[(1-x^k)^(-a_k)], k&gt;0</code></td>
+</tr>
+<tr class="odd">
+<td><code>partition(f)</code></td>
+<td>see <a href="https://oeis.org/transforms.txt" class="uri">https://oeis.org/transforms.txt</a> (Includes constant term)</td>
+</tr>
+<tr class="even">
+<td><code>point(f)</code></td>
+<td><code>laplace(x*diff(laplacei(f)))</code></td>
+</tr>
+<tr class="odd">
+<td><code>prods(f)</code></td>
+<td>if <code>f = {a0,a1,a2,...}</code> then <code>prods(f)={a0,a0*a1,a0*a1*a2,...}</code></td>
+</tr>
+<tr class="even">
+<td><code>pset(f)</code></td>
+<td>if <code>f={a_k}</code> then <code>pset(f)=product[(1+x^k)^a_k], k&gt;0</code></td>
+</tr>
+<tr class="odd">
+<td><code>seq(f)</code></td>
+<td><code>1/(1-f)</code></td>
+</tr>
+<tr class="even">
+<td><code>T019(f)</code></td>
+<td>if <code>f={a[n]}</code> then <code>{a[n+2]-2*a[n+1]+a[n]}</code></td>
+</tr>
+<tr class="odd">
+<td><code>trisect0(f)</code></td>
+<td>if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>trisect0(f)={a0,a3,a6,...}</code></td>
+</tr>
+<tr class="even">
+<td><code>trisect1(f)</code></td>
+<td>if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>trisect0(f)={a1,a4,a7,...}</code></td>
+</tr>
+<tr class="odd">
+<td><code>trisect2(f)</code></td>
+<td>if <code>f={a0,a1,a2,a3,a4,...}</code> then <code>trisect0(f)={a2,a5,a8,...}</code></td>
+</tr>
+<tr class="even">
+<td><code>weight(f)</code></td>
+<td>if <code>f={a0,a1,a2,...}</code> then <code>weight(f)=(1+x^n)^a0*(1+x^n)^a1*...</code></td>
+</tr>
+<tr class="odd">
+<td><code>dirichlet(f,g)</code></td>
+<td><a href="https://en.wikipedia.org/wiki/Dirichlet_convolution">Dirichlet convolution</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="a-grammar-for-hops-scripts">A grammar for HOPS scripts</h2>
+<p>A HOPS script is a list of independent programs (<code>prg</code>) - one program per line:</p>
+<pre><code>hops = prg { &quot;\n&quot; prg }</code></pre>
+<p>A program is a list of semicolon separated commands (<code>cmd</code>):</p>
+<pre><code>prg = cmd { &quot;;&quot; cmd }</code></pre>
+<p>A command is a generating function expression (<code>expr0</code>) or an assignment:</p>
+<pre><code>cmd = expr0 | name &quot;=&quot; expr0</code></pre>
+<p>We use the precedence climbing method to define generating function expressions:</p>
+<pre><code>expr0 = expr0 (&quot;+&quot; | &quot;-&quot;) expr0 | expr1
+
+expr1 = expr1 (&quot;*&quot; | &quot;/&quot; | &quot;.*&quot; | &quot;./&quot;) expr1 | expr2
+
+expr2 = (&quot;-&quot; | &quot;+&quot;) expr2 | expr3 &quot;!&quot; | expr3 &quot;^&quot; expr3 | expr3 &quot;@&quot; expr3 | expr3 &quot;?&quot; expr3 |expr3
+
+expr3 = &quot;x&quot; | anum | tag | name | lit | &quot;{&quot; { terms } &quot;}&quot; | &quot;[&quot; { terms } &quot;]&quot; | name &quot;(&quot; expr0 { &quot;,&quot; expr0 }  &quot;)&quot; | name expr3 | &quot;(&quot; expr0 &quot;)&quot;
+
+lit = int
+
+int = digit { digit }
+
+digit = &quot;0&quot; | &quot;1&quot; | ... | &quot;9&quot;
+
+alpha = &quot;A&quot; | &quot;B&quot; | ... | &quot;Z&quot; | &quot;a&quot; | &quot;b&quot; | ... | &quot;z&quot;
+
+alphanum = alpha | digit
+
+name = alphanum { alphanum | &quot;_&quot; }
+
+terms = cexpr0 { &quot;,&quot; expr0 } (&quot;...&quot; | cexpr0 | fun)
+
+fun = the same as cexpr0 except lit = linear
+
+linear = int | int &quot;*n&quot;
+
+cexpr0 = cexpr0 (&quot;+&quot; | &quot;-&quot;) cexpr0 | cexpr1
+
+cexpr1 = cexpr1 (&quot;*&quot; | &quot;/&quot;) cexpr1 | cexpr2
+
+cexpr2 = (&quot;+&quot; | &quot;-&quot;) cexpr2 | cexpr3 &quot;!&quot; | cexpr3 &quot;^&quot; cexpr3 | cexpr3
+
+cexpr3 = lit | cexpr0</code></pre>
+<!--
+
+Deleted transforms:
+
+BARRY1(f)    == 1/(1-x-x^2*f)
+BARRY2(f)    == 1/(1+x+x^2*f)
+BIN1(f)      == shift((-{(-1)^n/n!} * (((x*f) ./ {n!})@(-x))) .* {n!})
+BINOMIAL(f)  == (f ./ {n!}) * {1/n!} .* {n!}
+BINOMIALi(f) == (f ./ {n!}) * {(-1)^n/n!} .* {n!}
+CATALAN(f)   == C=1+x*C^2;f@(x*C)
+CATALANi(f)  == f@(x*(1-x))
+EXP(f)       == (({1/n!}@(x*f./{n!}) - 1) .* {n!})/x
+lHANKEL(f)   == g=f.*f-shift(f).*(1+x*f);shift(g)
+LOG(f)       == ({0,(-1)^(n+1)/n}@(x*f./{n!}) .* {n!})/x
+LAH(f)       == (f./{n!})@(x/(1-x)) .* {n!}
+LAHi(f)      == (f./{n!})@(x/(1+x)) .* {n!}
+STIRLING(f)  == ((x*f ./ {n!})@({0,1/n!}) .* {n!})/x
+STIRLINGi(f) == ((x*f ./ {n!})@({0,(-1)^(n+1)/n}) .* {n!})/x
+RIGHT(f)     == 1+x*f
+
+-->
+
+<footer>
+Anders Claesson
+- 3 April 2017
+</footer>
+
+</body>
+</html>

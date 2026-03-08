@@ -1,0 +1,11 @@
+@article {BeUlCl2017,
+    author = {Bean, Christian and Ulfarsson, Henning and Claesson, Anders},
+     title = {Enumerations of permutations simultaneously avoiding a
+              vincular and a covincular pattern of length 3},
+   journal = {J. Integer Seq.},
+  fjournal = {Journal of Integer Sequences},
+    volume = {20},
+      year = {2017},
+    number = {7},
+     pages = {Art. 17.7.6, 25},
+}

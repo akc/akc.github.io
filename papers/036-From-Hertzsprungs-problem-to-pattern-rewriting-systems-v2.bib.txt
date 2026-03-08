@@ -1,0 +1,7 @@
+@article{Cl2021,
+    title = {From Hertzsprung's problem to pattern-rewriting systems},
+   author = {Claesson, Anders},
+  journal = {Preprint},
+     year = {2021},
+      url = {https://akc.is/papers/036-From-Hertzsprungs-problem-to-pattern-rewriting-systems.pdf},
+}

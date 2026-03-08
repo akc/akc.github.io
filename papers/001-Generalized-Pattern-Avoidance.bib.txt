@@ -1,0 +1,13 @@
+@article {Cl2001,
+    author = {Claesson, Anders},
+     title = {Generalized pattern avoidance},
+   journal = {European J. Combin.},
+  fjournal = {European Journal of Combinatorics},
+    volume = {22},
+      year = {2001},
+    number = {7},
+     pages = {961--971},
+      issn = {0195-6698},
+       doi = {10.1006/eujc.2001.0515},
+       url = {https://doi.org/10.1006/eujc.2001.0515},
+}

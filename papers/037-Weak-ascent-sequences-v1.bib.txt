@@ -1,0 +1,7 @@
+@article{BCD2021,
+    title = {Weak ascent sequences and related combinatorial structures},
+   author = {Bényi, Beáta and Claesson, Anders and Dukes, Mark},
+  journal = {Preprint},
+     year = {2021},
+      url = {https://akc.is/papers/037-Weak-ascent-sequences.pdf},
+}

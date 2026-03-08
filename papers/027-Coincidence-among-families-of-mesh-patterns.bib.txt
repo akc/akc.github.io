@@ -1,0 +1,11 @@
+@article {ClTeUl2015,
+    author = {Claesson, Anders and Tenner, Bridget Eileen and Ulfarsson,
+              Henning},
+     title = {Coincidence among families of mesh patterns},
+   journal = {Australas. J. Combin.},
+  fjournal = {The Australasian Journal of Combinatorics},
+    volume = {63},
+      year = {2015},
+     pages = {88--106},
+      issn = {1034-4942},
+}

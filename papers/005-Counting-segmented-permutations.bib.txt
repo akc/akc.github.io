@@ -1,0 +1,10 @@
+@article {Cl2005,
+    author = {Claesson, Anders},
+     title = {Counting segmented permutations using bicoloured {D}yck paths},
+   journal = {Electron. J. Combin.},
+  fjournal = {Electronic Journal of Combinatorics},
+    volume = {12},
+      year = {2005},
+     pages = {Research Paper 39, 18},
+       url = {http://www.combinatorics.org/Volume_12/Abstracts/v12i1r39.html},
+}

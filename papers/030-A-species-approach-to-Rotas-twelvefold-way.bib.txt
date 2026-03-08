@@ -1,0 +1,8 @@
+@article{Cl2019,
+     author = {Claesson, Anders},
+      title = {A species approach to {R}ota's twelvefold way},
+    journal = { Expo. Math.},
+   fjournal = {Expositiones Mathematicae},
+       year = {2019},
+  publisher = {Elsevier}
+}

@@ -1,0 +1,11 @@
+@article {ClMa2005,
+    author = {Claesson, Anders and Mansour, Toufik},
+     title = {Enumerating permutations avoiding a pair of
+              {B}abson-{S}teingr\'{\i}msson patterns},
+   journal = {Ars Combin.},
+  fjournal = {Ars Combinatoria},
+    volume = {77},
+      year = {2005},
+     pages = {17--31},
+      issn = {0381-7032},
+}
