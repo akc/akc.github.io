@@ -2,7 +2,9 @@
     author = {Cerbai, Giulio and Claesson, Anders},
      title = {Counting fixed-point-free {C}ayley permutations},
    journal = {Proceedings of the Edinburgh Mathematical Society},
+     pages = {1--34},
       year = {2026},
+      issn = {1464-3839},
        doi = {https://doi.org/10.1017/S0013091526101436},
        url = {https://www.cambridge.org/core/product/identifier/S0013091526101436/type/journal_article},
 }
