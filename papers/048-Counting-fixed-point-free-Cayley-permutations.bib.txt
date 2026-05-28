@@ -1,7 +1,8 @@
 @article {CC2026,
-    author = {Cerbai, Giulio and Claesson, Anders,
-     title = {Counting fixed-point-free Cayley permutations},
-   journal = {Preprint},
+    author = {Cerbai, Giulio and Claesson, Anders},
+     title = {Counting fixed-point-free {C}ayley permutations},
+   journal = {Proceedings of the Edinburgh Mathematical Society},
       year = {2026},
-       url = {https://akc.is/papers/048-Counting-fixed-point-free-Cayley-permutations.pdf},
+       doi = {https://doi.org/10.1017/S0013091526101436},
+       url = {https://www.cambridge.org/core/product/identifier/S0013091526101436/type/journal_article},
 }
