@@ -1,9 +1,10 @@
-@article{CDFS2022,
-    title = {Counting tournament score sequences},
-   author = {Claesson, Anders and Dukes, Mark and Franklín, Atli Fannar and Stefánsson, Sigurður Örn}
+@article{ClDuFrSt2023,
+  author = {Anders Claesson and Mark Dukes and Atli Fannar Frankl{\'\i}n and Sigur{\dh}ur {\"O}rn Stef{\'a}nsson},
+  title = {Counting tournament score sequences},
   journal = {Proceedings of the American Mathematical Society},
-     year = {2023},
-   volume = {151},
-    pages = {3691-3704},
-      doi = {https://doi.org/10.1090/proc/16425}
+  volume = {151},
+  pages = {3691--3704},
+  year = {2023},
+  note = {Extended abstract appeared at EUROCOMB'23},
+  doi = {10.1090/proc/16425},
 }

@@ -1,7 +1,7 @@
-@article {CLUV2026,
-    author = {Claesson, Anders and Linusson, Svante and Ulfarsson, Henning and Verkama, Emil},
-     title = {Inversion monotonicity in subclasses of the 1324-avoiders},
-   journal = {Preprint},
-      year = {2026},
-       url = {https://akc.is/papers/049-Inversion-monotonicity-in-subclasses-of-1324-avoiders.pdf},
+@misc{ClLiUlVe2026,
+  author = {Anders Claesson and Svante Linusson and Henning {\'U}lfarsson and Emil Verkama},
+  title = {Inversion monotonicity in subclasses of the 1324-avoiders},
+  year = {2026},
+  note = {Preprint},
+  url = {https://akc.is/papers/049-Inversion-monotonicity-in-subclasses-of-1324-avoiders.pdf},
 }

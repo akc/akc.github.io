@@ -1,7 +1,9 @@
 @book{ClDuKiMaMe2017,
-     author = {Claesson, Anders and Dukes, Mark and Kitaev, Sergey and Manlove, David and Meeks, Kitty},
-      title = {Surveys in Combinatorics 2017},
+  editor = {Anders Claesson and Mark Dukes and Sergey Kitaev and David Manlove and Kitty Meeks},
+  title = {Surveys in {C}ombinatorics 2017},
   publisher = {Cambridge University Press},
-     volume = {440},
-       year = {2017},
+  series = {London Mathematical Society Lecture Note Series},
+  volume = {440},
+  year = {2017},
+  doi = {10.1017/9781108332699},
 }

@@ -1,7 +1,7 @@
-@article {CC2026,
-    author = {Cerbai, Giulio and Claesson, Anders},
-     title = {Finiteness theorems for Cayley permutation classes},
-   journal = {Preprint},
-      year = {2026},
-       url = {https://akc.is/papers/053-Finiteness-theorems-for-Cayley-permutation-classes.pdf},
+@misc{CeCl2026c,
+  author = {Giulio Cerbai and Anders Claesson},
+  title = {Finiteness theorems for {C}ayley permutation classes},
+  year = {2026},
+  note = {Preprint},
+  url = {https://akc.is/papers/053-Finiteness-theorems-for-Cayley-permutation-classes.pdf},
 }

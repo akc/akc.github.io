@@ -1,7 +1,7 @@
-@article {Cl2026,
-    author = {Claesson, Anders},
-     title = {The species of interval orders},
-   journal = {Preprint},
-      year = {2026},
-       url = {https://akc.is/papers/051-The-species-of-interval-orders.pdf},
+@misc{Cl2026,
+  author = {Anders Claesson},
+  title = {The species of interval orders},
+  year = {2026},
+  note = {Preprint},
+  url = {https://akc.is/papers/051-The-species-of-interval-orders.pdf},
 }

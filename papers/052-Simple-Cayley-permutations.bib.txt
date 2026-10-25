@@ -1,7 +1,7 @@
-@article {CC2026,
-    author = {Cerbai, Giulio and Claesson, Anders},
-     title = {Simple Cayley permutations},
-   journal = {Preprint},
-      year = {2026},
-       url = {https://akc.is/papers/052-Simple-Cayley-permutations.pdf},
+@misc{CeCl2026b,
+  author = {Giulio Cerbai and Anders Claesson},
+  title = {Simple {C}ayley permutations},
+  year = {2026},
+  note = {Preprint},
+  url = {https://akc.is/papers/052-Simple-Cayley-permutations.pdf},
 }

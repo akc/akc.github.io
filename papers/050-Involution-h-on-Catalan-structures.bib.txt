@@ -1,7 +1,7 @@
-@article {CKSW2026,
-    author = {Claesson, Anders and Kitaev, Sergey and Steingr\'{\i}msson, Einar and Wang, Lintong},
-     title = {Involution {$h$} on {C}atalan structures},
-   journal = {Preprint},
-      year = {2026},
-       url = {https://akc.is/papers/050-Involution-h-on-Catalan-structures.pdf},
+@misc{ClKiStWa2026,
+  author = {Anders Claesson and Sergey Kitaev and Einar Steingr{\'\i}msson and Lintong Wang},
+  title = {Involution h on {C}atalan structures},
+  year = {2026},
+  note = {Preprint},
+  url = {https://akc.is/papers/050-Involution-h-on-Catalan-structures.pdf},
 }
