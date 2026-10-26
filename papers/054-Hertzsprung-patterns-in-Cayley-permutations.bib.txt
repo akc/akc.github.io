@@ -1,0 +1,7 @@
+@misc{CeCl2026d,
+  author = {Giulio Cerbai and Anders Claesson},
+  title = {Hertzsprung patterns in {C}ayley permutations},
+  year = {2026},
+  note = {Preprint},
+  url = {https://akc.is/papers/054-Hertzsprung-patterns-in-Cayley-permutations.pdf},
+}
