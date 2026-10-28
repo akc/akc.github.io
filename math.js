@@ -1,5 +1,5 @@
-// The math of a page, as loki writes it, \(...\) or \[...\] in a span of
-// class math, typeset by KaTeX.
+// The math of a page, as akc.is writes it, \(...\) or \[...\] in a
+// span of class math, typeset by KaTeX.
 const macros = {
   "\\sym": "\\mathfrak{S}",
   "\\inv": "\\mathrm{inv}",

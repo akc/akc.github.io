@@ -1,24 +1,53 @@
-/* One column, in the system's fonts, light or dark as the reader's
-   system is. */
+/* One column, in Akc Text (Charis SIL, subset by originals/fonts.py),
+   light or dark as the reader's system is. */
+
+@font-face {
+  font-family: "Akc Text";
+  src: url(fonts/text-regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Akc Text";
+  src: url(fonts/text-italic.woff2) format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Akc Text";
+  src: url(fonts/text-bold.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Akc Text";
+  src: url(fonts/text-bolditalic.woff2) format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
   color-scheme: light dark;
-  --bg: #ffffff;
-  --fg: #1b1b1b;
-  --muted: #5c5c5c;
-  --link: #0b57d0;
-  --rule: #d6d6d6;
-  --code-bg: #f2f2f2;
+  --bg: #fdfdfc;
+  --fg: #1c1c1e;
+  --muted: #666666;
+  --link: #1d4ea0;
+  --rule: #e0e0e0;
+  --code-bg: #f3f3f1;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1e1f20;
-    --fg: #e6e6e6;
-    --muted: #a8a8a8;
-    --link: #7ab4ff;
-    --rule: #454545;
-    --code-bg: #2b2c2e;
+    --bg: #18191b;
+    --fg: #e6e4e0;
+    --muted: #9b9b9b;
+    --link: #8db4f5;
+    --rule: #3a3b3d;
+    --code-bg: #26272a;
   }
 }
 
@@ -30,22 +59,23 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(1.0625rem, 0.95rem + 0.4vw, 1.1875rem);
-  line-height: 1.6;
+  font-family: "Akc Text", Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  font-size: clamp(1.0625rem, 0.97rem + 0.35vw, 1.1875rem);
+  line-height: 1.55;
 }
 
-main { max-width: 44rem; margin: 0 auto; padding: 1.25rem 1rem 4rem }
+main { max-width: 42rem; margin: 0 auto; padding: 1.5rem 1rem 4rem }
 
 @media (min-width: 40rem) {
-  main { padding: 3rem 1.5rem 5rem }
+  main { padding: 3.5rem 1.5rem 5rem }
 }
 
-h1, h2, h3 { line-height: 1.25; font-weight: 600 }
-h1 { font-size: 2em; margin: 0 0 0.6em }
-h2 { font-size: 1.35em; margin: 2.2em 0 0.7em }
-h3 { font-size: 1.1em; margin: 1.8em 0 0.5em }
+h1, h2, h3 { line-height: 1.2; font-weight: 400; text-wrap: balance }
+h1 { font-size: 2.3em; letter-spacing: -0.01em; margin: 0 0 0.4em }
+h2 { font-size: 1.5em; margin: 2em 0 0.7em }
+h3 { font-size: 1.2em; margin: 1.8em 0 0.5em }
 
+p, li { text-wrap: pretty }
 p, ul, ol, pre, table, blockquote { margin: 0 0 1em }
 
 a {
@@ -53,17 +83,36 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
-  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
 }
 a:hover { text-decoration-color: currentColor }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 2px }
 
-nav { font-size: 1.15em; margin-bottom: 1.5em }
+nav { font-size: 0.95em; color: var(--muted); margin-bottom: 2.5em }
+nav a { color: inherit }
+nav a:hover { color: var(--link) }
 
 img { max-width: 100%; height: auto }
 
+/* The photo at the top of the home page, round, to the right of the
+   name. */
+main > p:has(> img[src$="anders-claesson.webp"]:only-child) { margin: 0 }
+img[src$="anders-claesson.webp"] {
+  float: right;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  margin: 0.25rem 0 1rem 1.5rem;
+}
+
+@media (max-width: 40rem) {
+  h1 { font-size: 2em }
+  img[src$="anders-claesson.webp"] { width: 4rem; height: 4rem; margin-left: 1rem }
+}
+
 code, pre {
   font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Ubuntu Mono", "DejaVu Sans Mono", Menlo, Consolas, monospace;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 pre {
@@ -81,12 +130,21 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2em 0 }
 table { border-collapse: collapse; display: block; max-width: 100%; overflow-x: auto }
 th, td { padding: 0.3em 0.7em; border-bottom: 1px solid var(--rule) }
 
+/* KaTeX's math at the x-height of the text: 0.482em against KaTeX_Main's
+   0.431em. */
+main .katex { font-size: 1.12em }
 .katex-display { overflow-x: auto; overflow-y: hidden }
 
-ol.papers { padding-left: 2.2em }
-ol.papers > li { margin-bottom: 1em }
-ol.papers > li::marker { color: var(--muted) }
-.links { font-size: 0.875em; color: var(--muted) }
+ol.papers { padding-left: 2.4em }
+ol.papers > li { margin-bottom: 1.15em; line-height: 1.45 }
+ol.papers > li::marker { color: var(--muted); font-size: 0.9em; font-variant-numeric: tabular-nums }
+.papers .title { font-size: 1.05em }
+.papers .title a { text-decoration: none }
+.papers .title a:hover { text-decoration: underline; text-decoration-color: currentColor }
+.papers .venue, .papers .note { color: var(--muted) }
+.links { font-size: 0.85em; color: var(--muted) }
+.links a { color: inherit }
+.links a:hover { color: var(--link) }
 
 ul.posts { list-style: none; padding: 0 }
 ul.posts time { color: var(--muted); font-variant-numeric: tabular-nums; margin-right: 0.6em }
