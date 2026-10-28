@@ -94,20 +94,8 @@ nav a:hover { color: var(--link) }
 
 img { max-width: 100%; height: auto }
 
-/* The photo at the top of the home page, round, to the right of the
-   name. */
-main > p:has(> img[src$="anders-claesson.webp"]:only-child) { margin: 0 }
-img[src$="anders-claesson.webp"] {
-  float: right;
-  width: 5.5rem;
-  height: 5.5rem;
-  border-radius: 50%;
-  margin: 0.25rem 0 1rem 1.5rem;
-}
-
 @media (max-width: 40rem) {
   h1 { font-size: 2em }
-  img[src$="anders-claesson.webp"] { width: 4rem; height: 4rem; margin-left: 1rem }
 }
 
 code, pre {
