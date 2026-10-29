@@ -77,6 +77,9 @@ h3 { font-size: 1.2em; margin: 1.8em 0 0.5em }
 
 p, li { text-wrap: pretty }
 p, ul, ol, pre, table, blockquote { margin: 0 0 1em }
+/* The markers at the text's left edge: a bullet, or a number below 10. */
+ul { padding-left: 0.85em }
+ol { padding-left: 1.1em }
 
 a {
   color: var(--link);
@@ -123,7 +126,8 @@ th, td { padding: 0.3em 0.7em; border-bottom: 1px solid var(--rule) }
 main .katex { font-size: 1.12em }
 .katex-display { overflow-x: auto; overflow-y: hidden }
 
-ol.papers { padding-left: 2.4em }
+/* Two-digit numbers at the text's left edge. */
+ol.papers { padding-left: 1.55em }
 ol.papers > li { margin-bottom: 1.15em; line-height: 1.45 }
 ol.papers > li::marker { color: var(--muted); font-size: 0.9em; font-variant-numeric: tabular-nums }
 .papers .title { font-size: 1.05em }
